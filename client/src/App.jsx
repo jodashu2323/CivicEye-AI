@@ -14,6 +14,9 @@ import "./App.css";
 
 
 
+
+
+
 import AdminDashboard from "./AdminDashboard";
 
 
@@ -27,7 +30,7 @@ import IssueMap from "./IssueMap";
 
 
 
-
+const API_URL = "https://civiceye-ai-m1cw.onrender.com";
 
 
 
@@ -127,7 +130,7 @@ const fetchNotifications = async () => {
   if (!token || user?.role === "admin") return;
 
   try {
-    const response = await fetch("http://localhost:5000/api/notifications", {
+    const response = await fetch("https://civiceye-ai-m1cw.onrender.com/api/notifications", {
       headers: { Authorization: `Bearer ${token}` },
     });
 
@@ -160,7 +163,7 @@ const markNotificationRead = async (notificationId) => {
 
   try {
     const response = await fetch(
-      `http://localhost:5000/api/notifications/${notificationId}/read`,
+      `https://civiceye-ai-m1cw.onrender.com/api/notifications/${notificationId}/read`,
       {
         method: "PATCH",
         headers: { Authorization: `Bearer ${token}` },
@@ -351,7 +354,7 @@ useEffect(() => {
   useEffect(() => {
     const fetchPublicIssues = async () => {
       try {
-        const response = await fetch("http://localhost:5000/api/issues");
+        const response = await fetch("https://civiceye-ai-m1cw.onrender.com/api/issues");
         const data = await response.json();
         if (response.ok && data.success && Array.isArray(data.issues)) {
           setPublicIssues(data.issues);
@@ -869,7 +872,7 @@ useEffect(() => {
 
 
 
-        "http://localhost:5000/api/auth/signup",
+        "https://civiceye-ai-m1cw.onrender.com/api/auth/signup",
 
 
 
@@ -1189,7 +1192,7 @@ useEffect(() => {
 
 
 
-        "http://localhost:5000/api/auth/login",
+        "https://civiceye-ai-m1cw.onrender.com/api/auth/login",
 
 
 
@@ -1589,7 +1592,7 @@ useEffect(() => {
 
 
 
-        "http://localhost:5000/api/ai/analyze",
+        "https://civiceye-ai-m1cw.onrender.com/api/ai/analyze",
 
 
 
@@ -1980,7 +1983,7 @@ setIsSubmitting(true);
 
       // must not block the complaint if the AI service is unavailable.
 
-      const response = await fetch("http://localhost:5000/api/issues", {
+      const response = await fetch("https://civiceye-ai-m1cw.onrender.com/api/issues", {
 
         method: "POST",
 
@@ -2058,7 +2061,7 @@ setIsSubmitting(true);
 
       alert(
 
-        "Unable to connect to the backend. Check that the server is running on http://localhost:5000."
+        "Unable to connect to the backend. Check that the server is running on https://civiceye-ai-m1cw.onrender.com."
 
       );
 
@@ -2155,7 +2158,7 @@ setIsSubmitting(true);
 
 
       const response = await fetch(
-        "http://localhost:5000/api/issues/user",
+        "https://civiceye-ai-m1cw.onrender.com/api/issues/user",
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token") || ""}`,
