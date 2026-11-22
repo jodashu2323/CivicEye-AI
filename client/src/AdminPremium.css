@@ -1,0 +1,1379 @@
+
+/* =========================================
+   CIVICEYE AI — PREMIUM ADMIN THEME
+   Existing functionality remains unchanged
+   ========================================= */
+
+.admin-page {
+  --premium-bg: #07111f;
+  --premium-panel: rgba(15, 29, 48, 0.92);
+  --premium-panel-hover: #172b43;
+  --premium-border: rgba(148, 163, 184, 0.16);
+  --premium-text: #f1f5f9;
+  --premium-muted: #94a9c2;
+  --premium-green: #27d6a2;
+  --premium-blue: #60a5fa;
+
+  min-height: 100vh;
+  color: var(--premium-text);
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(39, 214, 162, 0.10), transparent 34%),
+    radial-gradient(ellipse at 100% 35%, rgba(59, 130, 246, 0.09), transparent 32%),
+    var(--premium-bg);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.admin-page *,
+.admin-page *::before,
+.admin-page *::after {
+  box-sizing: border-box;
+}
+
+.admin-page button,
+.admin-page select,
+.admin-page input {
+  font: inherit;
+}
+
+.admin-page button {
+  transition:
+    transform 180ms ease,
+    background 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.admin-page button:focus-visible,
+.admin-page select:focus-visible,
+.admin-page input:focus-visible {
+  outline: 2px solid var(--premium-green);
+  outline-offset: 3px;
+}
+
+/* Top navigation */
+
+.admin-navbar {
+  min-height: 76px;
+  height: auto;
+  padding: 15px clamp(20px, 5vw, 76px);
+  gap: 24px;
+  background: rgba(7, 17, 31, 0.86);
+  border-bottom: 1px solid var(--premium-border);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+  backdrop-filter: blur(22px);
+}
+
+.admin-navbar .logo {
+  font-size: 25px;
+  font-weight: 850;
+  letter-spacing: -1.2px;
+  white-space: nowrap;
+}
+
+.admin-navbar .logo-icon {
+  color: var(--premium-green);
+}
+
+.admin-navbar .logo small {
+  display: inline-block;
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 800;
+  background: var(--premium-green);
+  box-shadow: 0 0 18px rgba(39, 214, 162, 0.20);
+}
+
+.admin-title {
+  gap: 12px;
+  color: #d8e5f4;
+  font-size: 13px;
+}
+
+.admin-title::before {
+  padding: 6px 10px;
+  border-radius: 7px;
+  background: rgba(39, 214, 162, 0.09);
+  border: 1px solid rgba(39, 214, 162, 0.24);
+}
+
+.admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-avatar {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 13px;
+  color: #06251c;
+  background: linear-gradient(135deg, #6ee7c0, #27d6a2);
+  font-weight: 850;
+  box-shadow: 0 6px 22px rgba(39, 214, 162, 0.16);
+}
+
+.admin-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-user-info strong {
+  color: #f1f5f9;
+  font-size: 13px;
+}
+
+.admin-user-info span {
+  color: var(--premium-muted);
+  font-size: 11px;
+}
+
+.admin-logout-btn {
+  margin-left: 8px;
+  padding: 9px 13px;
+  border: 1px solid var(--premium-border);
+  border-radius: 9px;
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.035);
+  cursor: pointer;
+}
+
+.admin-logout-btn:hover {
+  color: white;
+  border-color: rgba(248, 113, 113, 0.55);
+  background: rgba(248, 113, 113, 0.10);
+}
+
+/* Main heading */
+
+.admin-container {
+  width: min(1380px, 92%);
+  padding: 42px 0 72px;
+}
+
+.admin-heading {
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.admin-heading .about-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: var(--premium-green);
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 2.5px;
+}
+
+.admin-heading .about-label::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--premium-green);
+  box-shadow: 0 0 12px rgba(39, 214, 162, 0.7);
+}
+
+.admin-heading h1 {
+  margin: 0 0 10px;
+  color: #f8fafc;
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.12;
+  font-weight: 850;
+  letter-spacing: -1.8px;
+}
+
+.admin-heading p {
+  max-width: 620px;
+  margin: 0;
+  color: var(--premium-muted);
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+/* Buttons */
+
+.admin-page .refresh-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 10px 15px;
+  border: 1px solid rgba(39, 214, 162, 0.24);
+  border-radius: 10px;
+  color: #d8fff2;
+  background: rgba(39, 214, 162, 0.08);
+  font-size: 12px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.admin-page .refresh-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(39, 214, 162, 0.55);
+  background: rgba(39, 214, 162, 0.15);
+  box-shadow: 0 7px 24px rgba(39, 214, 162, 0.08);
+}
+
+.admin-page button:active {
+  transform: translateY(0);
+}
+
+/* Overview statistic cards */
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.admin-stat-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 112px;
+  padding: 23px;
+  overflow: hidden;
+  border: 1px solid var(--premium-border);
+  border-radius: 18px;
+  background:
+    linear-gradient(145deg, rgba(24, 42, 64, 0.88), rgba(12, 25, 42, 0.96));
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.admin-stat-card::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: -58px;
+  right: -42px;
+  border-radius: 50%;
+  background: rgba(39, 214, 162, 0.055);
+  pointer-events: none;
+}
+
+.admin-stat-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(148, 163, 184, 0.30);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.19);
+}
+
+.admin-stat-card .stat-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(148, 163, 184, 0.10);
+  border-radius: 14px;
+  background: rgba(148, 163, 184, 0.10);
+  font-size: 21px;
+}
+
+.admin-stat-card strong {
+  display: block;
+  color: #f8fafc;
+  font-size: 30px;
+  font-weight: 850;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.admin-stat-card p {
+  margin: 7px 0 0;
+  color: var(--premium-muted);
+  font-size: 12px;
+  font-weight: 550;
+}
+
+.admin-stat-card.pending-stat {
+  border-color: rgba(245, 158, 11, 0.22);
+}
+
+.admin-stat-card.progress-stat {
+  border-color: rgba(96, 165, 250, 0.24);
+}
+
+.admin-stat-card.resolved-stat {
+  border-color: rgba(39, 214, 162, 0.24);
+}
+
+/* Navigation tabs */
+
+.admin-tabs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 0 0 20px;
+  padding: 7px;
+  border: 1px solid var(--premium-border);
+  border-radius: 14px;
+  background: rgba(10, 23, 39, 0.76);
+}
+
+.admin-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 16px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  color: #9eb2ca;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.admin-tab:hover {
+  color: #f1f5f9;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.admin-tab.active {
+  color: #baf8e4;
+  border-color: rgba(39, 214, 162, 0.24);
+  background: linear-gradient(135deg, rgba(39, 214, 162, 0.15), rgba(39, 214, 162, 0.055));
+  box-shadow: inset 0 0 16px rgba(39, 214, 162, 0.035);
+}
+
+/* Main content panels */
+
+.admin-issues,
+.admin-analytics,
+.admin-section,
+.admin-page .analytics-section {
+  color: var(--premium-text);
+}
+
+.admin-issues {
+  padding: clamp(18px, 2.6vw, 30px);
+  border: 1px solid var(--premium-border);
+  border-radius: 21px;
+  background:
+    linear-gradient(145deg, rgba(18, 34, 54, 0.96), rgba(10, 23, 39, 0.97));
+  box-shadow: 0 24px 65px rgba(0, 0, 0, 0.16);
+}
+
+.admin-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 23px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--premium-border);
+}
+
+.admin-section-header h2 {
+  margin: 0 0 7px;
+  color: #f8fafc;
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.admin-section-header p {
+  margin: 0;
+  color: var(--premium-muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.admin-issues h3 {
+  color: #f1f5f9;
+}
+
+.admin-issues p {
+  color: var(--premium-muted);
+}
+
+/* Complaint map */
+
+.admin-page .civiceye-map-wrapper {
+  position: relative;
+  border: 1px solid rgba(148, 163, 184, 0.20);
+  border-radius: 17px;
+  background: #0b1727;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.16);
+}
+
+.admin-page .civiceye-map-wrapper .leaflet-container {
+  border-radius: inherit;
+  background: #dbe5ed;
+}
+
+.admin-page .civiceye-map-legend {
+  color: #c4d4e7;
+  background: rgba(10, 23, 39, 0.97);
+  border-top: 1px solid var(--premium-border);
+}
+
+/* Complaint list cards */
+
+.admin-issue-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 22px;
+}
+
+.admin-issue-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 22px;
+  padding: 21px;
+  border: 1px solid var(--premium-border);
+  border-radius: 17px;
+  background: rgba(18, 34, 54, 0.78);
+  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.admin-issue-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(96, 165, 250, 0.26);
+  background: rgba(23, 43, 67, 0.94);
+}
+
+.issue-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 0;
+  flex: 1;
+}
+
+.admin-issue-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(148, 163, 184, 0.13);
+  border-radius: 14px;
+  background: rgba(148, 163, 184, 0.09);
+  font-size: 22px;
+}
+
+.admin-issue-info {
+  min-width: 0;
+}
+
+.admin-issue-info h3 {
+  margin: 1px 0 9px;
+  color: #f8fafc;
+  font-size: 16px;
+  font-weight: 780;
+  overflow-wrap: anywhere;
+}
+
+.admin-issue-info .issue-description {
+  margin: 0 0 13px;
+  color: #a8bbd1;
+  font-size: 13px;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.issue-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 11px;
+}
+
+.issue-details span {
+  display: inline-flex;
+  padding: 6px 9px;
+  border: 1px solid var(--premium-border);
+  border-radius: 8px;
+  color: #b9cce0;
+  background: rgba(148, 163, 184, 0.055);
+  font-size: 11px;
+}
+
+.admin-issue-info small {
+  color: #8197b1;
+  font-size: 11px;
+}
+
+.admin-issue-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 9px;
+  flex: 0 0 180px;
+  min-width: 150px;
+}
+
+.admin-issue-actions .refresh-btn {
+  width: 100%;
+  margin-bottom: 0 !important;
+}
+
+.admin-issue-actions select,
+.admin-page select {
+  width: 100%;
+  min-height: 40px;
+  padding: 9px 11px;
+  border: 1px solid rgba(148, 163, 184, 0.20);
+  border-radius: 10px;
+  color: #e2e8f0;
+  background: #101f32;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.admin-page select option {
+  color: #f1f5f9;
+  background: #101f32;
+}
+
+.admin-status {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+  padding: 7px 11px;
+  border: 1px solid rgba(245, 158, 11, 0.23);
+  border-radius: 999px;
+  color: #fcd34d;
+  background: rgba(245, 158, 11, 0.09);
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.admin-status.in-progress {
+  color: #93c5fd;
+  border-color: rgba(96, 165, 250, 0.24);
+  background: rgba(96, 165, 250, 0.10);
+}
+
+.admin-status.resolved {
+  color: #6ee7b7;
+  border-color: rgba(39, 214, 162, 0.25);
+  background: rgba(39, 214, 162, 0.09);
+}
+
+/* Users table and generic table styling */
+
+.admin-page table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-page th {
+  padding: 14px 15px;
+  color: #91a9c4;
+  background: rgba(148, 163, 184, 0.055);
+  text-align: left;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.admin-page td {
+  padding: 15px;
+  color: #d7e3f1;
+  border-bottom: 1px solid var(--premium-border);
+  font-size: 13px;
+}
+
+.admin-page tr:hover td {
+  background: rgba(148, 163, 184, 0.035);
+}
+
+/* Empty state */
+
+.no-issues {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 20px;
+  border: 1px dashed rgba(148, 163, 184, 0.22);
+  border-radius: 16px;
+  background: rgba(148, 163, 184, 0.025);
+  text-align: center;
+}
+
+.no-issues > div {
+  display: grid;
+  place-items: center;
+  width: 66px;
+  height: 66px;
+  margin-bottom: 13px;
+  border-radius: 20px;
+  background: rgba(148, 163, 184, 0.08);
+  font-size: 30px;
+}
+
+.no-issues h3 {
+  margin: 0 0 7px;
+  color: #e8f0fa;
+  font-size: 17px;
+}
+
+.no-issues p {
+  margin: 0;
+  color: var(--premium-muted);
+  font-size: 12px;
+}
+
+/* Loading state */
+
+.admin-loading {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  color: #c9d8e9;
+  text-align: center;
+  font-size: 14px;
+}
+
+.admin-loading > div {
+  padding: 34px 42px;
+  border: 1px solid var(--premium-border);
+  border-radius: 22px;
+  background: var(--premium-panel);
+  box-shadow: 0 22px 70px rgba(0, 0, 0, 0.22);
+}
+
+/* Smooth appearance */
+
+@media (prefers-reduced-motion: no-preference) {
+  .admin-heading,
+  .admin-stats,
+  .admin-tabs,
+  .admin-issues {
+    animation: premium-enter 420ms ease both;
+  }
+
+  .admin-stats {
+    animation-delay: 60ms;
+  }
+
+  .admin-tabs {
+    animation-delay: 100ms;
+  }
+
+  .admin-issues {
+    animation-delay: 140ms;
+  }
+
+  @keyframes premium-enter {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Responsive layout */
+
+@media (max-width: 1000px) {
+  .admin-container {
+    width: 94%;
+    padding-top: 32px;
+  }
+
+  .admin-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-heading {
+    align-items: flex-start;
+  }
+
+  .admin-issue-card {
+    flex-direction: column;
+  }
+
+  .admin-issue-actions {
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  .admin-issue-actions .admin-status {
+    align-self: center;
+  }
+
+  .admin-issue-actions .refresh-btn,
+  .admin-issue-actions select {
+    width: auto;
+    flex: 1 1 150px;
+  }
+}
+
+@media (max-width: 650px) {
+  .admin-navbar {
+    position: relative;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 15px 4%;
+  }
+
+  .admin-navbar .logo {
+    font-size: 21px;
+  }
+
+  .admin-title {
+    display: none;
+  }
+
+  .admin-profile {
+    gap: 8px;
+  }
+
+  .admin-avatar {
+    width: 35px;
+    height: 35px;
+  }
+
+  .admin-user-info strong {
+    font-size: 11px;
+  }
+
+  .admin-user-info span {
+    font-size: 10px;
+  }
+
+  .admin-logout-btn {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+
+  .admin-container {
+    width: 92%;
+    padding: 28px 0 48px;
+  }
+
+  .admin-heading {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+    margin-bottom: 23px;
+  }
+
+  .admin-heading h1 {
+    font-size: 31px;
+    letter-spacing: -1px;
+  }
+
+  .admin-heading .refresh-btn {
+    width: 100%;
+  }
+
+  .admin-stats {
+    gap: 10px;
+  }
+
+  .admin-stat-card {
+    min-height: 96px;
+    padding: 14px;
+    gap: 10px;
+    border-radius: 14px;
+  }
+
+  .admin-stat-card .stat-icon {
+    flex-basis: 36px;
+    width: 36px;
+    height: 36px;
+    font-size: 17px;
+  }
+
+  .admin-stat-card strong {
+    font-size: 25px;
+  }
+
+  .admin-stat-card p {
+    font-size: 10px;
+  }
+
+  .admin-tabs {
+    gap: 5px;
+    padding: 5px;
+  }
+
+  .admin-tab {
+    flex: 1;
+    padding: 10px 7px;
+    font-size: 11px;
+  }
+
+  .admin-issues {
+    padding: 17px;
+    border-radius: 16px;
+  }
+
+  .admin-section-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 13px;
+  }
+
+  .admin-section-header .refresh-btn {
+    width: 100%;
+  }
+
+  .admin-issue-card {
+    padding: 15px;
+  }
+
+  .issue-main {
+    gap: 12px;
+  }
+
+  .admin-issue-icon {
+    flex-basis: 39px;
+    width: 39px;
+    height: 39px;
+    font-size: 18px;
+  }
+
+  .issue-details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-issue-actions {
+    align-items: stretch;
+  }
+
+  .admin-issue-actions .admin-status {
+    align-self: flex-start;
+  }
+
+  .admin-page table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 380px) {
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-stat-card {
+    min-height: 82px;
+  }
+
+  .admin-profile .admin-user-info {
+    display: none;
+  }
+}
+
+
+/* TEMPORARY VISUAL TEST */
+.admin-page {
+  background: #25103d !important;
+}
+
+.admin-page h1 {
+  color: #00ffb3 !important;
+  font-size: 52px !important;
+}
+
+
+/* CIVICEYE AI — FINAL PREMIUM DASHBOARD OVERRIDE */
+
+.admin-page {
+  --accent: #2dd4a5;
+  --accent-soft: rgba(45, 212, 165, 0.12);
+  --surface: #0d1b2c;
+  --surface-raised: #13243a;
+  --stroke: rgba(148, 163, 184, 0.17);
+  --muted: #91a6c0;
+
+  background:
+    radial-gradient(ellipse at 5% 0%, rgba(45,212,165,.10), transparent 32%),
+    radial-gradient(ellipse at 95% 15%, rgba(59,130,246,.09), transparent 30%),
+    #07111f !important;
+  color: #eef5ff !important;
+}
+
+.admin-page .admin-container {
+  width: min(1440px, 94%) !important;
+  padding-top: 36px !important;
+}
+
+.admin-page .admin-heading h1 {
+  font-size: clamp(34px, 4vw, 48px) !important;
+  line-height: 1.1 !important;
+  font-weight: 850 !important;
+  letter-spacing: -1.8px !important;
+}
+
+.admin-page .admin-heading p,
+.admin-page .admin-section-header p {
+  color: var(--muted) !important;
+  line-height: 1.7 !important;
+}
+
+.admin-page .about-label {
+  color: var(--accent) !important;
+  letter-spacing: 2px !important;
+  font-weight: 800 !important;
+}
+
+/* KPI cards */
+
+.admin-page .admin-stats {
+  gap: 17px !important;
+  margin-bottom: 28px !important;
+}
+
+.admin-page .admin-stat-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 122px !important;
+  padding: 23px !important;
+  border: 1px solid var(--stroke) !important;
+  border-radius: 19px !important;
+  background: linear-gradient(145deg, #162940, #0d192a) !important;
+  box-shadow: 0 14px 32px rgba(0,0,0,.14) !important;
+  transition: transform .2s ease, border-color .2s ease !important;
+}
+
+.admin-page .admin-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(45,212,165,.5) !important;
+}
+
+.admin-page .admin-stat-card strong {
+  color: #f8fafc !important;
+  font-size: 32px !important;
+  font-weight: 850 !important;
+}
+
+.admin-page .admin-stat-card p {
+  color: #9eb2ca !important;
+  font-size: 12px !important;
+}
+
+.admin-page .admin-stat-card .stat-icon {
+  display: grid;
+  place-items: center;
+  width: 46px !important;
+  height: 46px !important;
+  border-radius: 14px !important;
+  background: rgba(148,163,184,.10) !important;
+}
+
+.admin-page .pending-stat {
+  border-color: rgba(245,158,11,.26) !important;
+}
+
+.admin-page .progress-stat {
+  border-color: rgba(96,165,250,.28) !important;
+}
+
+.admin-page .resolved-stat {
+  border-color: rgba(45,212,165,.28) !important;
+}
+
+/* Navigation tabs */
+
+.admin-page .admin-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px !important;
+  padding: 7px !important;
+  margin-bottom: 20px !important;
+  border: 1px solid var(--stroke) !important;
+  border-radius: 14px !important;
+  background: #0a1727 !important;
+}
+
+.admin-page .admin-tab {
+  padding: 11px 17px !important;
+  border: 1px solid transparent !important;
+  border-radius: 10px !important;
+  color: #a4b7ce !important;
+  background: transparent !important;
+  font-weight: 700 !important;
+}
+
+.admin-page .admin-tab.active {
+  color: #baf8e5 !important;
+  border-color: rgba(45,212,165,.32) !important;
+  background: rgba(45,212,165,.12) !important;
+}
+
+/* Main content panel */
+
+.admin-page .admin-issues {
+  padding: clamp(18px, 2.5vw, 30px) !important;
+  border: 1px solid var(--stroke) !important;
+  border-radius: 21px !important;
+  background: linear-gradient(145deg, #101f32, #0a1626) !important;
+  box-shadow: 0 22px 60px rgba(0,0,0,.17) !important;
+}
+
+.admin-page .admin-section-header {
+  padding-bottom: 21px !important;
+  border-bottom: 1px solid var(--stroke) !important;
+  gap: 15px !important;
+}
+
+.admin-page .admin-section-header h2 {
+  color: #f4f8ff !important;
+  font-size: 21px !important;
+  font-weight: 800 !important;
+}
+
+.admin-page .refresh-btn {
+  padding: 11px 15px !important;
+  border: 1px solid rgba(45,212,165,.32) !important;
+  border-radius: 10px !important;
+  color: #baf8e5 !important;
+  background: rgba(45,212,165,.08) !important;
+  font-weight: 750 !important;
+  cursor: pointer;
+}
+
+.admin-page .refresh-btn:hover {
+  background: rgba(45,212,165,.17) !important;
+  transform: translateY(-2px);
+}
+
+/* Analytics: replace the white inline-style cards */
+
+.admin-page .admin-issues div[style*="background: var(--card-bg"],
+.admin-page .admin-issues div[style*="background:var(--card-bg"] {
+  color: #eaf2ff !important;
+  background: linear-gradient(145deg, #172a41, #101e31) !important;
+  border: 1px solid var(--stroke) !important;
+  border-radius: 17px !important;
+  box-shadow: 0 10px 26px rgba(0,0,0,.12) !important;
+}
+
+.admin-page .admin-issues div[style*="background: var(--card-bg"] h3,
+.admin-page .admin-issues div[style*="background:var(--card-bg"] h3 {
+  color: #f4f8ff !important;
+  font-size: 16px !important;
+  font-weight: 750 !important;
+}
+
+.admin-page .admin-issues div[style*="background: var(--card-bg"] p,
+.admin-page .admin-issues div[style*="background:var(--card-bg"] p {
+  color: #9eb2ca !important;
+}
+
+/* Category distribution progress tracks */
+
+.admin-page .admin-issues div[style*="height: 9px"],
+.admin-page .admin-issues div[style*="height:9px"] {
+  background: #263950 !important;
+}
+
+.admin-page .admin-issues div[style*="height: 9px"] > div,
+.admin-page .admin-issues div[style*="height:9px"] > div {
+  background: linear-gradient(90deg, #2dd4a5, #60a5fa) !important;
+  border-radius: 99px !important;
+}
+
+/* Resolution rate progress */
+
+.admin-page .admin-issues div[style*="height: 12px"],
+.admin-page .admin-issues div[style*="height:12px"] {
+  background: #263950 !important;
+}
+
+.admin-page .admin-issues div[style*="height: 12px"] > div,
+.admin-page .admin-issues div[style*="height:12px"] > div {
+  background: linear-gradient(90deg, #2dd4a5, #34d399) !important;
+  border-radius: 99px !important;
+}
+
+/* Monthly chart: polish existing bars */
+
+.admin-page .admin-issues div[style*="grid-template-columns: repeat(6"] {
+  padding: 18px 8px 8px;
+}
+
+.admin-page .admin-issues div[style*="grid-template-columns: repeat(6"] > div {
+  color: #a7bbd2 !important;
+}
+
+.admin-page .admin-issues div[style*="grid-template-columns: repeat(6"] > div > div[style*="background"] {
+  background: linear-gradient(180deg, #2dd4a5, #0d9488) !important;
+  border-radius: 7px 7px 2px 2px !important;
+  box-shadow: 0 0 16px rgba(45,212,165,.12);
+}
+
+/* Complaint cards and tables */
+
+.admin-page .admin-issue-card {
+  padding: 21px !important;
+  border: 1px solid var(--stroke) !important;
+  border-radius: 16px !important;
+  background: #122238 !important;
+}
+
+.admin-page .admin-issue-card:hover {
+  border-color: rgba(45,212,165,.38) !important;
+  transform: translateY(-2px);
+}
+
+.admin-page table th {
+  color: #9db2ca !important;
+  background: #14253b !important;
+}
+
+.admin-page table td {
+  color: #dbe7f6 !important;
+  border-bottom: 1px solid var(--stroke) !important;
+}
+
+.admin-page select,
+.admin-page input {
+  color: #eef5ff !important;
+  background: #0c192a !important;
+  border: 1px solid var(--stroke) !important;
+  border-radius: 10px !important;
+}
+
+/* Map container */
+
+.admin-page .civiceye-map-wrapper {
+  overflow: hidden;
+  border: 1px solid var(--stroke) !important;
+  border-radius: 17px !important;
+  box-shadow: 0 12px 30px rgba(0,0,0,.16);
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .admin-page .admin-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-page .admin-container {
+    width: 92% !important;
+    padding-top: 24px !important;
+  }
+
+  .admin-page .admin-heading {
+    align-items: stretch !important;
+    gap: 15px !important;
+  }
+
+  .admin-page .admin-heading h1 {
+    font-size: 32px !important;
+  }
+
+  .admin-page .admin-stat-card {
+    min-height: 94px !important;
+    padding: 13px !important;
+    gap: 10px !important;
+  }
+
+  .admin-page .admin-stat-card strong {
+    font-size: 25px !important;
+  }
+
+  .admin-page .admin-stat-card .stat-icon {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .admin-page .admin-issues {
+    padding: 15px !important;
+  }
+
+  .admin-page .admin-section-header {
+    align-items: stretch !important;
+  }
+}
+
+
+/* ==========================================
+   CIVICEYE RESPONSIVE WIDTH FIX
+   Desktop / Laptop / Tablet / Mobile
+   ========================================== */
+
+/* Main app must use the full available viewport */
+html,
+body,
+#root {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.admin-page {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  overflow-x: clip;
+}
+
+/* Full-width navigation */
+.admin-page .admin-navbar {
+  width: 100% !important;
+  max-width: none !important;
+  box-sizing: border-box !important;
+}
+
+/* Desktop and laptop content */
+.admin-page .admin-container {
+  width: calc(100% - 64px) !important;
+  max-width: 1600px !important;
+  min-width: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+}
+
+/* Four statistic cards in one row on desktop */
+.admin-page .admin-stats {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+  width: 100% !important;
+}
+
+.admin-page .admin-stat-card {
+  min-width: 0 !important;
+}
+
+/* Main panel and map should fill their container */
+.admin-page .admin-issues {
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.admin-page .civiceye-map-wrapper {
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+.admin-page .civiceye-map-wrapper .leaflet-container {
+  width: 100% !important;
+}
+
+/* Laptop screens */
+@media (min-width: 1024px) {
+  .admin-page .admin-container {
+    padding-top: 38px !important;
+  }
+
+  .admin-page .admin-heading {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  .admin-page .admin-issue-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+  }
+
+  .admin-page .admin-issue-actions {
+    flex-shrink: 0 !important;
+  }
+}
+
+/* Tablet */
+@media (min-width: 651px) and (max-width: 1023px) {
+  .admin-page .admin-container {
+    width: calc(100% - 40px) !important;
+  }
+
+  .admin-page .admin-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 650px) {
+  .admin-page .admin-container {
+    width: calc(100% - 24px) !important;
+    padding-top: 24px !important;
+  }
+
+  .admin-page .admin-navbar {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+    flex-wrap: wrap;
+  }
+
+  .admin-page .admin-heading {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 15px !important;
+  }
+
+  .admin-page .admin-heading h1 {
+    font-size: clamp(27px, 7vw, 35px) !important;
+  }
+
+  .admin-page .admin-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  .admin-page .admin-stat-card {
+    min-height: 90px !important;
+    padding: 12px !important;
+  }
+
+  .admin-page .admin-issues {
+    padding: 15px !important;
+  }
+
+  .admin-page .admin-issue-card {
+    flex-direction: column !important;
+  }
+
+  .admin-page .admin-issue-actions {
+    width: 100% !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+  }
+
+  .admin-page .civiceye-map-wrapper .leaflet-container {
+    min-height: 300px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 380px) {
+  .admin-page .admin-stats {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+

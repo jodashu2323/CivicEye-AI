@@ -1,0 +1,320 @@
+
+.civic-ai-float {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 62px;
+  height: 62px;
+  border: none;
+  border-radius: 50%;
+  background: #27d6a2;
+  color: #07111f;
+  font-size: 28px;
+  cursor: pointer;
+  z-index: 9998;
+  box-shadow: 0 8px 30px rgba(39, 214, 162, 0.3);
+}
+
+.civic-ai-window {
+  position: fixed;
+  right: 25px;
+  bottom: 100px;
+  width: 380px;
+  height: 540px;
+  max-height: calc(100vh - 125px);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid rgba(39, 214, 162, 0.25);
+  border-radius: 18px;
+  background: #0d1b2b;
+  color: white;
+  z-index: 9999;
+  box-shadow: 0 15px 60px rgba(0, 0, 0, 0.45);
+}
+
+.civic-ai-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 17px;
+  background: #12263a;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.civic-ai-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.civic-ai-avatar {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(39,214,162,0.12);
+  font-size: 23px;
+}
+
+.civic-ai-heading h3 {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.civic-ai-heading span {
+  color: #27d6a2;
+  font-size: 10px;
+}
+
+.civic-ai-header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.civic-ai-header-actions button {
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.civic-ai-content {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+}
+
+.civic-ai-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+  color: #91a1b5;
+  font-size: 11px;
+}
+
+.civic-ai-toolbar select {
+  background: #172b40;
+  color: white;
+  border: 1px solid #33475d;
+  border-radius: 7px;
+  padding: 7px;
+  outline: none;
+}
+
+.civic-ai-messages {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+}
+
+.civic-ai-message {
+  max-width: 88%;
+  padding: 12px 14px;
+  border-radius: 13px;
+  font-size: 12px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.bot-message {
+  align-self: flex-start;
+  color: #dce6f1;
+  background: #192d42;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.user-message {
+  align-self: flex-end;
+  color: #061b16;
+  background: #27d6a2;
+}
+
+.typing-message {
+  color: #27d6a2;
+  font-style: italic;
+}
+
+.civic-ai-quick {
+  display: flex;
+  gap: 7px;
+  padding: 8px 12px;
+  overflow-x: auto;
+}
+
+.civic-ai-quick button {
+  flex-shrink: 0;
+  border: 1px solid rgba(39,214,162,0.25);
+  border-radius: 20px;
+  padding: 7px 10px;
+  background: rgba(39,214,162,0.07);
+  color: #27d6a2;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.civic-ai-quick button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.civic-ai-input {
+  display: flex;
+  gap: 9px;
+  padding: 12px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.civic-ai-input input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #33475d;
+  border-radius: 10px;
+  outline: none;
+  background: #14263a;
+  color: white;
+  font-size: 12px;
+}
+
+.civic-ai-input input:focus {
+  border-color: #27d6a2;
+}
+
+.civic-ai-input button {
+  width: 42px;
+  border: none;
+  border-radius: 10px;
+  background: #27d6a2;
+  color: #07111f;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.civic-ai-input button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Dedicated Assistant Page */
+
+.civic-ai-page {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  overflow-y: auto;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(0,180,255,0.10), transparent 30%),
+    #07111f;
+  color: white;
+}
+
+.civic-ai-page-top {
+  min-height: 70px;
+  padding: 12px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: #0b1928;
+}
+
+.civic-ai-page-top button {
+  border: 1px solid #33475d;
+  border-radius: 8px;
+  padding: 9px 13px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.civic-ai-page-top span {
+  color: #27d6a2;
+  font-weight: 700;
+}
+
+.civic-ai-page-content {
+  width: min(850px, 92%);
+  margin: 35px auto;
+}
+
+.civic-ai-page-title {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.civic-ai-page-title > div {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+.civic-ai-page-title h1 {
+  font-size: clamp(23px, 4vw, 34px);
+  margin-bottom: 10px;
+}
+
+.civic-ai-page-title p {
+  color: #91a1b5;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.full-page-chat {
+  height: min(620px, 68vh);
+  border: 1px solid rgba(39,214,162,0.2);
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0d1b2b;
+}
+
+.full-page-chat .civic-ai-message {
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .civic-ai-float {
+    width: 55px;
+    height: 55px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .civic-ai-window {
+    right: 10px;
+    bottom: 82px;
+    width: calc(100vw - 20px);
+    height: min(540px, calc(100vh - 100px));
+  }
+
+  .civic-ai-page-top {
+    padding: 10px;
+  }
+
+  .civic-ai-page-top button {
+    padding: 8px;
+    font-size: 11px;
+  }
+
+  .civic-ai-page-top span {
+    font-size: 12px;
+  }
+
+  .civic-ai-page-content {
+    margin: 22px auto;
+  }
+
+  .full-page-chat {
+    height: 68vh;
+  }
+}

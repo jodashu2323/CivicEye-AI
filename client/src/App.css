@@ -1,0 +1,10141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #07111f;
+  color: white;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.app {
+  min-height: 100vh;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(0, 180, 255, 0.12), transparent 30%),
+    radial-gradient(circle at 20% 80%, rgba(0, 255, 180, 0.07), transparent 30%),
+    #07111f;
+}
+
+/* NAVBAR */
+
+.navbar {
+  height: 75px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: rgba(7,17,31,0.85);
+  backdrop-filter: blur(15px);
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.logo span:not(.logo-icon) {
+  color: #27d6a2;
+}
+
+.logo-icon {
+  display: inline-flex;
+  margin-right: 7px;
+  color: #27d6a2;
+}
+
+.logo small {
+  font-size: 11px;
+  margin-left: 4px;
+  padding: 3px 6px;
+  border-radius: 5px;
+  background: #27d6a2;
+  color: #06121d;
+}
+
+.nav-links {
+  display: flex;
+  gap: 35px;
+}
+
+.nav-links a {
+  color: #aab7c7;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.login-btn,
+.signup-btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.login-btn {
+  background: transparent;
+  border: 1px solid #334256;
+  color: white;
+}
+
+.signup-btn {
+  border: none;
+  background: #27d6a2;
+  color: #06121d;
+}
+
+/* HERO */
+
+.hero-section {
+  min-height: 650px;
+  padding: 90px 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 70px;
+}
+
+.hero-content {
+  max-width: 650px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid rgba(39,214,162,0.3);
+  border-radius: 30px;
+  color: #27d6a2;
+  background: rgba(39,214,162,0.08);
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+
+.hero-content h1 {
+  font-size: clamp(48px, 6vw, 78px);
+  line-height: 1;
+  letter-spacing: -4px;
+  margin-bottom: 25px;
+}
+
+.hero-content h1 span {
+  display: block;
+  color: #27d6a2;
+}
+
+.hero-content > p {
+  color: #9eacbd;
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 560px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 35px;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 15px 23px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.primary-btn {
+  border: none;
+  background: #27d6a2;
+  color: #06121d;
+}
+
+.secondary-btn {
+  background: transparent;
+  border: 1px solid #344357;
+  color: white;
+}
+
+.stats {
+  display: flex;
+  gap: 45px;
+  margin-top: 55px;
+}
+
+.stats div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.stats strong {
+  font-size: 24px;
+  color: white;
+}
+
+.stats span {
+  color: #718095;
+  font-size: 12px;
+}
+
+/* HERO CARD */
+
+.hero-card {
+  width: 420px;
+  padding: 25px;
+  border-radius: 20px;
+  background: rgba(18,32,51,0.9);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  color: #dce4ed;
+  font-weight: 700;
+}
+
+.live {
+  color: #27d6a2;
+  font-size: 11px;
+}
+
+.issue-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  margin-bottom: 12px;
+  background: rgba(255,255,255,0.045);
+  border-radius: 12px;
+}
+
+.issue-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.07);
+}
+
+.issue-card h3 {
+  font-size: 14px;
+}
+
+.issue-card p {
+  color: #78879b;
+  font-size: 11px;
+  margin-top: 4px;
+}
+
+.status {
+  margin-left: auto;
+  font-size: 9px;
+  padding: 5px 7px;
+  border-radius: 6px;
+}
+
+.pending {
+  background: rgba(255,180,60,0.12);
+  color: #ffbf55;
+}
+
+.progress {
+  background: rgba(70,150,255,0.12);
+  color: #66aaff;
+}
+
+.resolved {
+  background: rgba(39,214,162,0.12);
+  color: #27d6a2;
+}
+
+.ai-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px;
+  margin-top: 20px;
+  border: 1px solid rgba(39,214,162,0.2);
+  border-radius: 12px;
+  background: rgba(39,214,162,0.06);
+}
+
+.ai-box > span {
+  font-size: 22px;
+}
+
+.ai-box strong {
+  font-size: 13px;
+}
+
+.ai-box p {
+  margin-top: 4px;
+  color: #7e8d9f;
+  font-size: 10px;
+}
+
+/* FEATURES */
+
+.features {
+  padding: 100px 8%;
+  background: rgba(255,255,255,0.025);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 650px;
+  margin: auto;
+}
+
+.section-heading span,
+.about-label {
+  color: #27d6a2;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.section-heading h2 {
+  font-size: 40px;
+  margin: 15px 0;
+}
+
+.section-heading p {
+  color: #8492a5;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 60px;
+}
+
+.feature {
+  padding: 30px 25px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.025);
+}
+
+.feature-icon {
+  font-size: 28px;
+  margin-bottom: 22px;
+}
+
+.feature h3 {
+  margin-bottom: 10px;
+}
+
+.feature p {
+  color: #7d8b9e;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ABOUT */
+
+.about {
+  padding: 100px 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.about h2 {
+  font-size: 42px;
+  margin-top: 15px;
+}
+
+.about p {
+  color: #8b99ab;
+  line-height: 1.9;
+  font-size: 17px;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 35px 8%;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+footer p {
+  color: #68778b;
+  font-size: 13px;
+}
+
+/* MODAL */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0,0,0,0.75);
+  backdrop-filter: blur(8px);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.modal {
+  width: 400px;
+  max-width: 100%;
+  padding: 35px;
+  border-radius: 20px;
+  background: #101d2e;
+  border: 1px solid rgba(255,255,255,0.12);
+  position: relative;
+  box-shadow: 0 30px 100px rgba(0,0,0,0.5);
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 18px;
+  border: none;
+  background: transparent;
+  color: #8b99aa;
+  font-size: 28px;
+}
+
+.modal-icon {
+  font-size: 35px;
+  margin-bottom: 12px;
+}
+
+.modal h2 {
+  font-size: 28px;
+}
+
+.modal > p {
+  color: #8290a2;
+  font-size: 13px;
+  margin: 8px 0 25px;
+}
+
+.modal input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+  border-radius: 9px;
+  border: 1px solid #304055;
+  background: #0a1625;
+  color: white;
+  outline: none;
+}
+
+.modal input:focus {
+  border-color: #27d6a2;
+}
+
+.modal-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 9px;
+  background: #27d6a2;
+  color: #06121d;
+  font-weight: 800;
+}
+
+.switch {
+  text-align: center;
+  color: #7f8da0;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+.switch button {
+  border: none;
+  background: none;
+  color: #27d6a2;
+  font-weight: 700;
+  margin-left: 5px;
+}
+
+/* =========================================================
+   ADMIN DASHBOARD UI
+   ========================================================= */
+
+.admin-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 85% 5%, rgba(39,214,162,0.10), transparent 25%),
+    radial-gradient(circle at 10% 90%, rgba(70,150,255,0.08), transparent 30%),
+    #07111f;
+  color: white;
+}
+
+.admin-navbar {
+  height: 75px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(7,17,31,0.88);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(18px);
+  position: sticky;
+  top: 0;
+  z-index: 30;
+}
+
+.admin-title {
+  font-size: 14px;
+  color: #9eacbd;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.admin-container {
+  width: min(1250px, 90%);
+  margin: auto;
+  padding: 55px 0 80px;
+}
+
+.admin-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 35px;
+}
+
+.admin-heading h1 {
+  font-size: 38px;
+  margin-top: 12px;
+  letter-spacing: -1px;
+}
+
+.admin-heading p {
+  margin-top: 10px;
+  color: #8190a3;
+  font-size: 14px;
+}
+
+/* ADMIN STATS */
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 35px;
+}
+
+.admin-stat-card {
+  padding: 23px;
+  min-height: 115px;
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  background: rgba(255,255,255,0.035);
+  box-shadow: 0 15px 45px rgba(0,0,0,0.18);
+  transition: 0.25s ease;
+}
+
+.admin-stat-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(39,214,162,0.25);
+}
+
+.stat-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.06);
+  font-size: 21px;
+}
+
+.admin-stat-card strong {
+  font-size: 28px;
+  display: block;
+}
+
+.admin-stat-card p {
+  color: #7f8da0;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.pending-stat {
+  border-color: rgba(255,191,85,0.15);
+}
+
+.progress-stat {
+  border-color: rgba(102,170,255,0.15);
+}
+
+.resolved-stat {
+  border-color: rgba(39,214,162,0.15);
+}
+
+/* ADMIN ISSUES SECTION */
+
+.admin-issues {
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  background: rgba(18,32,51,0.62);
+  box-shadow: 0 25px 70px rgba(0,0,0,0.22);
+}
+
+.admin-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.admin-section-header h2 {
+  font-size: 22px;
+}
+
+.admin-section-header p {
+  color: #78879b;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.refresh-btn {
+  padding: 10px 16px;
+  border-radius: 9px;
+  border: 1px solid #344357;
+  background: rgba(255,255,255,0.03);
+  color: white;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.refresh-btn:hover {
+  border-color: #27d6a2;
+  color: #27d6a2;
+}
+
+/* ISSUE CARD */
+
+.admin-issue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.admin-issue-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 22px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.025);
+  transition: 0.25s ease;
+}
+
+.admin-issue-card:hover {
+  background: rgba(255,255,255,0.045);
+  border-color: rgba(39,214,162,0.18);
+  transform: translateY(-2px);
+}
+
+.issue-main {
+  display: flex;
+  gap: 17px;
+  min-width: 0;
+}
+
+.admin-issue-icon {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: rgba(39,214,162,0.08);
+  border: 1px solid rgba(39,214,162,0.12);
+  font-size: 22px;
+}
+
+.admin-issue-info {
+  min-width: 0;
+}
+
+.admin-issue-info h3 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.issue-description {
+  color: #8795a7;
+  font-size: 13px;
+  line-height: 1.6;
+  max-width: 650px;
+}
+
+.issue-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 13px;
+}
+
+.issue-details span {
+  color: #738196;
+  font-size: 11px;
+}
+
+.admin-issue-info small {
+  display: block;
+  margin-top: 12px;
+  color: #566579;
+  font-size: 10px;
+}
+
+/* ADMIN ACTIONS */
+
+.admin-issue-actions {
+  min-width: 155px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 13px;
+}
+
+.admin-status {
+  padding: 7px 11px;
+  border-radius: 7px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.admin-status.pending {
+  background: rgba(255,191,85,0.12);
+  color: #ffbf55;
+}
+
+.admin-status.in-progress {
+  background: rgba(102,170,255,0.12);
+  color: #66aaff;
+}
+
+.admin-status.resolved {
+  background: rgba(39,214,162,0.12);
+  color: #27d6a2;
+}
+
+.admin-issue-actions select {
+  width: 145px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #304055;
+  background: #0a1625;
+  color: white;
+  outline: none;
+  cursor: pointer;
+}
+
+.admin-issue-actions select:focus {
+  border-color: #27d6a2;
+}
+
+/* NO ISSUES */
+
+.no-issues {
+  text-align: center;
+  padding: 55px 20px;
+}
+
+.no-issues > div {
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+.no-issues h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.no-issues p {
+  color: #758398;
+  font-size: 12px;
+}
+
+/* ADMIN LOADING */
+
+.admin-loading {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  color: #27d6a2;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* ADMIN RESPONSIVE */
+
+@media (max-width: 1000px) {
+  .admin-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-issue-card {
+    flex-direction: column;
+  }
+
+  .admin-issue-actions {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+@media (max-width: 650px) {
+  .admin-container {
+    width: 92%;
+    padding-top: 35px;
+  }
+
+  .admin-navbar {
+    padding: 0 4%;
+  }
+
+  .admin-navbar .logo {
+    font-size: 20px;
+  }
+
+  .admin-title {
+    font-size: 11px;
+  }
+
+  .admin-heading h1 {
+    font-size: 29px;
+  }
+
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-issues {
+    padding: 18px;
+  }
+
+  .admin-section-header {
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .admin-section-header h2 {
+    font-size: 19px;
+  }
+
+  .admin-issue-card {
+    padding: 17px;
+  }
+
+  .issue-main {
+    gap: 12px;
+  }
+
+  .issue-details {
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .admin-issue-actions {
+    flex-wrap: wrap;
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-buttons,
+  .stats {
+    justify-content: center;
+  }
+
+  .hero-card {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 550px) {
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .login-btn {
+    display: none;
+  }
+
+  .hero-section,
+  .features,
+  .about {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .hero-content h1 {
+    font-size: 48px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .stats {
+    gap: 20px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* =========================================================
+   CIVICEYE ADMIN DASHBOARD
+   Only affects AdminDashboard classes
+   Citizen UI remains unchanged
+   ========================================================= */
+
+.admin-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 85% 10%, rgba(39, 214, 162, 0.08), transparent 25%),
+    radial-gradient(circle at 10% 90%, rgba(70, 150, 255, 0.06), transparent 25%),
+    #07111f;
+  color: #fff;
+}
+
+/* =========================
+   ADMIN NAVBAR
+   ========================= */
+
+.admin-navbar {
+  height: 76px;
+  padding: 0 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  background: rgba(7, 17, 31, 0.92);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-navbar .logo {
+  font-size: 23px;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.admin-navbar .logo span:not(.logo-icon) {
+  color: #27d6a2;
+}
+
+.admin-navbar .logo-icon {
+  color: #27d6a2;
+  margin-right: 7px;
+}
+
+.admin-navbar .logo small {
+  font-size: 10px;
+  margin-left: 5px;
+  padding: 3px 6px;
+  border-radius: 5px;
+  background: #27d6a2;
+  color: #06121d;
+}
+
+.admin-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #dce5ef;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.admin-title::before {
+  content: "ADMIN";
+  padding: 5px 9px;
+  border-radius: 6px;
+  background: rgba(39, 214, 162, 0.1);
+  border: 1px solid rgba(39, 214, 162, 0.2);
+  color: #27d6a2;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+/* =========================
+   ADMIN CONTAINER
+   ========================= */
+
+.admin-container {
+  width: min(1250px, 90%);
+  margin: auto;
+  padding: 55px 0 80px;
+}
+
+/* =========================
+   HEADING
+   ========================= */
+
+.admin-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 38px;
+}
+
+.admin-heading .about-label {
+  display: inline-block;
+  color: #27d6a2;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  margin-bottom: 12px;
+}
+
+.admin-heading h1 {
+  font-size: clamp(34px, 4vw, 50px);
+  line-height: 1;
+  letter-spacing: -2px;
+  margin-bottom: 13px;
+}
+
+.admin-heading p {
+  color: #8190a5;
+  font-size: 14px;
+}
+
+/* =========================
+   LOADING
+   ========================= */
+
+.admin-loading {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  color: #27d6a2;
+  font-size: 18px;
+  font-weight: 700;
+  background: #07111f;
+}
+
+/* =========================
+   STATS
+   ========================= */
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 45px;
+}
+
+.admin-stat-card {
+  min-height: 145px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,0.045),
+      rgba(255,255,255,0.015)
+    );
+
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+
+  transition: all 0.25s ease;
+}
+
+.admin-stat-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(39, 214, 162, 0.25);
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.28);
+}
+
+.stat-icon {
+  width: 52px;
+  height: 52px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.055);
+
+  font-size: 23px;
+}
+
+.admin-stat-card strong {
+  display: block;
+  font-size: 32px;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.admin-stat-card p {
+  color: #8291a5;
+  font-size: 12px;
+}
+
+.pending-stat {
+  border-color: rgba(255, 191, 85, 0.18);
+}
+
+.progress-stat {
+  border-color: rgba(102, 170, 255, 0.18);
+}
+
+.resolved-stat {
+  border-color: rgba(39, 214, 162, 0.18);
+}
+
+/* =========================
+   ISSUES SECTION
+   ========================= */
+
+.admin-issues {
+  padding: 30px;
+  border-radius: 22px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18, 32, 51, 0.95),
+      rgba(10, 23, 38, 0.95)
+    );
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22);
+}
+
+.admin-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-bottom: 25px;
+  margin-bottom: 25px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.admin-section-header h2 {
+  font-size: 23px;
+  margin-bottom: 7px;
+}
+
+.admin-section-header p {
+  color: #718095;
+  font-size: 12px;
+}
+
+.refresh-btn {
+  padding: 11px 17px;
+  border-radius: 9px;
+
+  border: 1px solid #344357;
+  background: rgba(255, 255, 255, 0.025);
+  color: #dce5ef;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  transition: 0.2s;
+}
+
+.refresh-btn:hover {
+  background: rgba(39, 214, 162, 0.08);
+  border-color: rgba(39, 214, 162, 0.35);
+  color: #27d6a2;
+}
+
+/* =========================
+   ISSUE LIST
+   ========================= */
+
+.admin-issue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.admin-issue-card {
+  padding: 22px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  transition: all 0.25s ease;
+}
+
+.admin-issue-card:hover {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(39, 214, 162, 0.18);
+  transform: translateY(-2px);
+}
+
+.issue-main {
+  min-width: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+}
+
+.admin-issue-icon {
+  width: 55px;
+  height: 55px;
+  min-width: 55px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 14px;
+
+  background: rgba(39, 214, 162, 0.08);
+  border: 1px solid rgba(39, 214, 162, 0.12);
+
+  font-size: 24px;
+}
+
+.admin-issue-info {
+  min-width: 0;
+}
+
+.admin-issue-info h3 {
+  font-size: 16px;
+  margin-bottom: 7px;
+  color: #f1f5f9;
+}
+
+.issue-description {
+  max-width: 650px;
+  color: #8492a5;
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.issue-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 9px;
+}
+
+.issue-details span {
+  color: #718095;
+  font-size: 11px;
+}
+
+.admin-issue-info small {
+  color: #536176;
+  font-size: 10px;
+}
+
+/* =========================
+   ADMIN ACTIONS
+   ========================= */
+
+.admin-issue-actions {
+  min-width: 150px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.admin-status {
+  padding: 6px 10px;
+  border-radius: 7px;
+
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.admin-status.pending {
+  background: rgba(255, 191, 85, 0.1);
+  color: #ffbf55;
+  border: 1px solid rgba(255, 191, 85, 0.15);
+}
+
+.admin-status.in-progress {
+  background: rgba(102, 170, 255, 0.1);
+  color: #66aaff;
+  border: 1px solid rgba(102, 170, 255, 0.15);
+}
+
+.admin-status.resolved {
+  background: rgba(39, 214, 162, 0.1);
+  color: #27d6a2;
+  border: 1px solid rgba(39, 214, 162, 0.15);
+}
+
+.admin-issue-actions select {
+  width: 145px;
+  padding: 9px 11px;
+
+  border-radius: 8px;
+
+  border: 1px solid #304055;
+  background: #0a1625;
+  color: #cbd5e1;
+
+  outline: none;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.admin-issue-actions select:focus {
+  border-color: #27d6a2;
+}
+
+/* =========================
+   NO ISSUES
+   ========================= */
+
+.no-issues {
+  text-align: center;
+  padding: 65px 20px;
+}
+
+.no-issues > div:first-child {
+  font-size: 45px;
+  margin-bottom: 15px;
+}
+
+.no-issues h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.no-issues p {
+  color: #718095;
+  font-size: 12px;
+}
+
+/* =========================
+   ADMIN SCROLLBAR
+   ========================= */
+
+.admin-page::-webkit-scrollbar {
+  width: 8px;
+}
+
+.admin-page::-webkit-scrollbar-track {
+  background: #07111f;
+}
+
+.admin-page::-webkit-scrollbar-thumb {
+  background: #26384d;
+  border-radius: 10px;
+}
+
+.admin-page::-webkit-scrollbar-thumb:hover {
+  background: #27d6a2;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1000px) {
+
+  .admin-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-issue-card {
+    align-items: flex-start;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .admin-container {
+    width: 92%;
+    padding-top: 35px;
+  }
+
+  .admin-navbar {
+    padding: 0 4%;
+  }
+
+  .admin-title {
+    display: none;
+  }
+
+  .admin-heading {
+    display: block;
+  }
+
+  .admin-heading h1 {
+    font-size: 38px;
+  }
+
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-issues {
+    padding: 20px;
+  }
+
+  .admin-section-header {
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .admin-issue-card {
+    flex-direction: column;
+  }
+
+  .admin-issue-actions {
+    width: 100%;
+    align-items: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .admin-navbar {
+    height: 65px;
+  }
+
+  .admin-navbar .logo {
+    font-size: 20px;
+  }
+
+  .admin-heading h1 {
+    font-size: 32px;
+  }
+
+  .admin-issues {
+    border-radius: 16px;
+    padding: 16px;
+  }
+
+  .admin-section-header {
+    flex-direction: column;
+  }
+
+  .refresh-btn {
+    width: 100%;
+  }
+
+  .issue-main {
+    gap: 12px;
+  }
+
+  .admin-issue-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    font-size: 19px;
+  }
+
+  .issue-details {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+}
+
+/* =========================
+   ADMIN PROFILE
+   ========================= */
+
+.admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-avatar {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 10px;
+
+  background: rgba(39, 214, 162, 0.12);
+  border: 1px solid rgba(39, 214, 162, 0.25);
+
+  color: #27d6a2;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.admin-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.admin-user-info strong {
+  color: #e5edf5;
+  font-size: 12px;
+}
+
+.admin-user-info span {
+  color: #68778b;
+  font-size: 9px;
+}
+
+.admin-logout-btn {
+  margin-left: 10px;
+
+  padding: 8px 13px;
+
+  border-radius: 8px;
+
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.04);
+
+  color: #aab7c7;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  transition: 0.2s;
+}
+
+.admin-logout-btn:hover {
+  color: #fff;
+  border-color: rgba(255,80,80,0.35);
+  background: rgba(255,80,80,0.08);
+}
+
+/* =========================
+   ADMIN TABS
+   ========================= */
+
+.admin-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.admin-tab {
+  padding: 10px 17px;
+
+  border-radius: 9px;
+
+  border: 1px solid rgba(255,255,255,0.07);
+
+  background: rgba(255,255,255,0.025);
+
+  color: #718095;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  transition: 0.2s;
+}
+
+.admin-tab:hover {
+  color: #fff;
+  border-color: rgba(39,214,162,0.2);
+}
+
+.admin-tab.active {
+  background: rgba(39,214,162,0.1);
+  border-color: rgba(39,214,162,0.25);
+  color: #27d6a2;
+}
+
+/* =========================
+   USERS
+   ========================= */
+
+.admin-users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.admin-user-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  padding: 18px;
+
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.07);
+
+  transition: 0.2s;
+}
+
+.admin-user-card:hover {
+  background: rgba(255,255,255,0.045);
+  border-color: rgba(39,214,162,0.18);
+}
+
+.user-avatar {
+  width: 45px;
+  height: 45px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 12px;
+
+  background: rgba(39,214,162,0.1);
+  border: 1px solid rgba(39,214,162,0.15);
+
+  color: #27d6a2;
+  font-weight: 800;
+}
+
+.user-info {
+  flex: 1;
+}
+
+.user-info h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.user-info p {
+  color: #718095;
+  font-size: 11px;
+}
+
+.user-role {
+  padding: 5px 9px;
+
+  border-radius: 6px;
+
+  background: rgba(39,214,162,0.08);
+  color: #27d6a2;
+
+  font-size: 9px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.admin-role {
+  background: rgba(255,191,85,0.1);
+  color: #ffbf55;
+}
+
+.admin-user-card > small {
+  color: #536176;
+  font-size: 9px;
+}
+
+/* =========================
+   MOBILE ADMIN
+   ========================= */
+
+@media (max-width: 800px) {
+
+  .admin-profile {
+    gap: 5px;
+  }
+
+  .admin-user-info {
+    display: none;
+  }
+
+  .admin-logout-btn {
+    margin-left: 4px;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .admin-navbar {
+    padding: 0 4%;
+  }
+
+  .admin-profile {
+    display: flex;
+  }
+
+  .admin-avatar {
+    display: none;
+  }
+
+  .admin-logout-btn {
+    padding: 7px 10px;
+  }
+
+  .admin-tabs {
+    width: 100%;
+  }
+
+  .admin-tab {
+    flex: 1;
+  }
+
+  .admin-user-card {
+    flex-wrap: wrap;
+  }
+
+  .user-info {
+    min-width: 150px;
+  }
+
+}\* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+
+
+
+html {
+
+  scroll-behavior: smooth;
+
+}
+
+
+
+body {
+
+  font-family: Arial, Helvetica, sans-serif;
+
+  background: #07111f;
+
+  color: white;
+
+}
+
+
+
+button {
+
+  font-family: inherit;
+
+  cursor: pointer;
+
+}
+
+
+
+.app {
+
+  min-height: 100vh;
+
+  overflow: hidden;
+
+  background:
+
+    radial-gradient(circle at 80% 20%, rgba(0, 180, 255, 0.12), transparent 30%),
+
+    radial-gradient(circle at 20% 80%, rgba(0, 255, 180, 0.07), transparent 30%),
+
+    #07111f;
+
+}
+
+
+
+/\* NAVBAR \*/
+
+
+
+.navbar {
+
+  height: 75px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  padding: 0 8%;
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  background: rgba(7,17,31,0.85);
+
+  backdrop-filter: blur(15px);
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 20;
+
+}
+
+
+
+.logo {
+
+  font-size: 25px;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+
+}
+
+
+
+.logo span:not(.logo-icon) {
+
+  color: #27d6a2;
+
+}
+
+
+
+.logo-icon {
+
+  display: inline-flex;
+
+  margin-right: 7px;
+
+  color: #27d6a2;
+
+}
+
+
+
+.logo small {
+
+  font-size: 11px;
+
+  margin-left: 4px;
+
+  padding: 3px 6px;
+
+  border-radius: 5px;
+
+  background: #27d6a2;
+
+  color: #06121d;
+
+}
+
+
+
+.nav-links {
+
+  display: flex;
+
+  gap: 35px;
+
+}
+
+
+
+.nav-links a {
+
+  color: #aab7c7;
+
+  text-decoration: none;
+
+  font-size: 14px;
+
+}
+
+
+
+.nav-links a:hover {
+
+  color: white;
+
+}
+
+
+
+.nav-buttons {
+
+  display: flex;
+
+  gap: 10px;
+
+}
+
+
+
+.login-btn,
+
+.signup-btn {
+
+  padding: 10px 18px;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+
+}
+
+
+
+.login-btn {
+
+  background: transparent;
+
+  border: 1px solid #334256;
+
+  color: white;
+
+}
+
+
+
+.signup-btn {
+
+  border: none;
+
+  background: #27d6a2;
+
+  color: #06121d;
+
+}
+
+
+
+/\* HERO \*/
+
+
+
+.hero-section {
+
+  min-height: 650px;
+
+  padding: 90px 8%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 70px;
+
+}
+
+
+
+.hero-content {
+
+  max-width: 650px;
+
+}
+
+
+
+.badge {
+
+  display: inline-block;
+
+  padding: 8px 14px;
+
+  border: 1px solid rgba(39,214,162,0.3);
+
+  border-radius: 30px;
+
+  color: #27d6a2;
+
+  background: rgba(39,214,162,0.08);
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  margin-bottom: 25px;
+
+}
+
+
+
+.hero-content h1 {
+
+  font-size: clamp(48px, 6vw, 78px);
+
+  line-height: 1;
+
+  letter-spacing: -4px;
+
+  margin-bottom: 25px;
+
+}
+
+
+
+.hero-content h1 span {
+
+  display: block;
+
+  color: #27d6a2;
+
+}
+
+
+
+.hero-content > p {
+
+  color: #9eacbd;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+
+  max-width: 560px;
+
+}
+
+
+
+.hero-buttons {
+
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 35px;
+
+}
+
+
+
+.primary-btn,
+
+.secondary-btn {
+
+  padding: 15px 23px;
+
+  border-radius: 10px;
+
+  font-weight: 700;
+
+  font-size: 14px;
+
+}
+
+
+
+.primary-btn {
+
+  border: none;
+
+  background: #27d6a2;
+
+  color: #06121d;
+
+}
+
+
+
+.secondary-btn {
+
+  background: transparent;
+
+  border: 1px solid #344357;
+
+  color: white;
+
+}
+
+
+
+.stats {
+
+  display: flex;
+
+  gap: 45px;
+
+  margin-top: 55px;
+
+}
+
+
+
+.stats div {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+}
+
+
+
+.stats strong {
+
+  font-size: 24px;
+
+  color: white;
+
+}
+
+
+
+.stats span {
+
+  color: #718095;
+
+  font-size: 12px;
+
+}
+
+
+
+/\* HERO CARD \*/
+
+
+
+.hero-card {
+
+  width: 420px;
+
+  padding: 25px;
+
+  border-radius: 20px;
+
+  background: rgba(18,32,51,0.9);
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+
+}
+
+
+
+.card-top {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+
+  color: #dce4ed;
+
+  font-weight: 700;
+
+}
+
+
+
+.live {
+
+  color: #27d6a2;
+
+  font-size: 11px;
+
+}
+
+
+
+.issue-card {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px;
+
+  margin-bottom: 12px;
+
+  background: rgba(255,255,255,0.045);
+
+  border-radius: 12px;
+
+}
+
+
+
+.issue-icon {
+
+  width: 42px;
+
+  height: 42px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 10px;
+
+  background: rgba(255,255,255,0.07);
+
+}
+
+
+
+.issue-card h3 {
+
+  font-size: 14px;
+
+}
+
+
+
+.issue-card p {
+
+  color: #78879b;
+
+  font-size: 11px;
+
+  margin-top: 4px;
+
+}
+
+
+
+.status {
+
+  margin-left: auto;
+
+  font-size: 9px;
+
+  padding: 5px 7px;
+
+  border-radius: 6px;
+
+}
+
+
+
+.pending {
+
+  background: rgba(255,180,60,0.12);
+
+  color: #ffbf55;
+
+}
+
+
+
+.progress {
+
+  background: rgba(70,150,255,0.12);
+
+  color: #66aaff;
+
+}
+
+
+
+.resolved {
+
+  background: rgba(39,214,162,0.12);
+
+  color: #27d6a2;
+
+}
+
+
+
+.ai-box {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 15px;
+
+  margin-top: 20px;
+
+  border: 1px solid rgba(39,214,162,0.2);
+
+  border-radius: 12px;
+
+  background: rgba(39,214,162,0.06);
+
+}
+
+
+
+.ai-box > span {
+
+  font-size: 22px;
+
+}
+
+
+
+.ai-box strong {
+
+  font-size: 13px;
+
+}
+
+
+
+.ai-box p {
+
+  margin-top: 4px;
+
+  color: #7e8d9f;
+
+  font-size: 10px;
+
+}
+
+
+
+/\* FEATURES \*/
+
+
+
+.features {
+
+  padding: 100px 8%;
+
+  background: rgba(255,255,255,0.025);
+
+  border-top: 1px solid rgba(255,255,255,0.05);
+
+}
+
+
+
+.section-heading {
+
+  text-align: center;
+
+  max-width: 650px;
+
+  margin: auto;
+
+}
+
+
+
+.section-heading span,
+
+.about-label {
+
+  color: #27d6a2;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+}
+
+
+
+.section-heading h2 {
+
+  font-size: 40px;
+
+  margin: 15px 0;
+
+}
+
+
+
+.section-heading p {
+
+  color: #8492a5;
+
+}
+
+
+
+.feature-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+
+  margin-top: 60px;
+
+}
+
+
+
+.feature {
+
+  padding: 30px 25px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 16px;
+
+  background: rgba(255,255,255,0.025);
+
+}
+
+
+
+.feature-icon {
+
+  font-size: 28px;
+
+  margin-bottom: 22px;
+
+}
+
+
+
+.feature h3 {
+
+  margin-bottom: 10px;
+
+}
+
+
+
+.feature p {
+
+  color: #7d8b9e;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+}
+
+
+
+/\* ABOUT \*/
+
+
+
+.about {
+
+  padding: 100px 8%;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 80px;
+
+  align-items: center;
+
+}
+
+
+
+.about h2 {
+
+  font-size: 42px;
+
+  margin-top: 15px;
+
+}
+
+
+
+.about p {
+
+  color: #8b99ab;
+
+  line-height: 1.9;
+
+  font-size: 17px;
+
+}
+
+
+
+/\* FOOTER \*/
+
+
+
+footer {
+
+  padding: 35px 8%;
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+}
+
+
+
+footer p {
+
+  color: #68778b;
+
+  font-size: 13px;
+
+}
+
+
+
+/\* MODAL \*/
+
+
+
+.modal-overlay {
+
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 100;
+
+  background: rgba(0,0,0,0.75);
+
+  backdrop-filter: blur(8px);
+
+  display: grid;
+
+  place-items: center;
+
+  padding: 20px;
+
+}
+
+
+
+.modal {
+
+  width: 400px;
+
+  max-width: 100%;
+
+  padding: 35px;
+
+  border-radius: 20px;
+
+  background: #101d2e;
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  position: relative;
+
+  box-shadow: 0 30px 100px rgba(0,0,0,0.5);
+
+}
+
+
+
+.close {
+
+  position: absolute;
+
+  top: 15px;
+
+  right: 18px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #8b99aa;
+
+  font-size: 28px;
+
+}
+
+
+
+.modal-icon {
+
+  font-size: 35px;
+
+  margin-bottom: 12px;
+
+}
+
+
+
+.modal h2 {
+
+  font-size: 28px;
+
+}
+
+
+
+.modal > p {
+
+  color: #8290a2;
+
+  font-size: 13px;
+
+  margin: 8px 0 25px;
+
+}
+
+
+
+.modal input {
+
+  width: 100%;
+
+  padding: 14px;
+
+  margin-bottom: 12px;
+
+  border-radius: 9px;
+
+  border: 1px solid #304055;
+
+  background: #0a1625;
+
+  color: white;
+
+  outline: none;
+
+}
+
+
+
+.modal input:focus {
+
+  border-color: #27d6a2;
+
+}
+
+
+
+.modal-btn {
+
+  width: 100%;
+
+  padding: 14px;
+
+  margin-top: 8px;
+
+  border: none;
+
+  border-radius: 9px;
+
+  background: #27d6a2;
+
+  color: #06121d;
+
+  font-weight: 800;
+
+}
+
+
+
+.switch {
+
+  text-align: center;
+
+  color: #7f8da0;
+
+  font-size: 12px;
+
+  margin-top: 20px;
+
+}
+
+
+
+.switch button {
+
+  border: none;
+
+  background: none;
+
+  color: #27d6a2;
+
+  font-weight: 700;
+
+  margin-left: 5px;
+
+}
+
+
+
+/\* =========================================================
+
+   ADMIN DASHBOARD UI
+
+   ========================================================= \*/
+
+
+
+.admin-page {
+
+  min-height: 100vh;
+
+  background:
+
+    radial-gradient(circle at 85% 5%, rgba(39,214,162,0.10), transparent 25%),
+
+    radial-gradient(circle at 10% 90%, rgba(70,150,255,0.08), transparent 30%),
+
+    #07111f;
+
+  color: white;
+
+}
+
+
+
+.admin-navbar {
+
+  height: 75px;
+
+  padding: 0 7%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  background: rgba(7,17,31,0.88);
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(18px);
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 30;
+
+}
+
+
+
+.admin-title {
+
+  font-size: 14px;
+
+  color: #9eacbd;
+
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+
+}
+
+
+
+.admin-container {
+
+  width: min(1250px, 90%);
+
+  margin: auto;
+
+  padding: 55px 0 80px;
+
+}
+
+
+
+.admin-heading {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-end;
+
+  margin-bottom: 35px;
+
+}
+
+
+
+.admin-heading h1 {
+
+  font-size: 38px;
+
+  margin-top: 12px;
+
+  letter-spacing: -1px;
+
+}
+
+
+
+.admin-heading p {
+
+  margin-top: 10px;
+
+  color: #8190a3;
+
+  font-size: 14px;
+
+}
+
+
+
+/\* ADMIN STATS \*/
+
+
+
+.admin-stats {
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 18px;
+
+  margin-bottom: 35px;
+
+}
+
+
+
+.admin-stat-card {
+
+  padding: 23px;
+
+  min-height: 115px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 16px;
+
+  background: rgba(255,255,255,0.035);
+
+  box-shadow: 0 15px 45px rgba(0,0,0,0.18);
+
+  transition: 0.25s ease;
+
+}
+
+
+
+.admin-stat-card:hover {
+
+  transform: translateY(-3px);
+
+  border-color: rgba(39,214,162,0.25);
+
+}
+
+
+
+.stat-icon {
+
+  width: 48px;
+
+  height: 48px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 12px;
+
+  background: rgba(255,255,255,0.06);
+
+  font-size: 21px;
+
+}
+
+
+
+.admin-stat-card strong {
+
+  font-size: 28px;
+
+  display: block;
+
+}
+
+
+
+.admin-stat-card p {
+
+  color: #7f8da0;
+
+  font-size: 12px;
+
+  margin-top: 5px;
+
+}
+
+
+
+.pending-stat {
+
+  border-color: rgba(255,191,85,0.15);
+
+}
+
+
+
+.progress-stat {
+
+  border-color: rgba(102,170,255,0.15);
+
+}
+
+
+
+.resolved-stat {
+
+  border-color: rgba(39,214,162,0.15);
+
+}
+
+
+
+/\* ADMIN ISSUES SECTION \*/
+
+
+
+.admin-issues {
+
+  padding: 28px;
+
+  border: 1px solid rgba(255,255,255,0.08);
+
+  border-radius: 20px;
+
+  background: rgba(18,32,51,0.62);
+
+  box-shadow: 0 25px 70px rgba(0,0,0,0.22);
+
+}
+
+
+
+.admin-section-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 25px;
+
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+
+}
+
+
+
+.admin-section-header h2 {
+
+  font-size: 22px;
+
+}
+
+
+
+.admin-section-header p {
+
+  color: #78879b;
+
+  font-size: 12px;
+
+  margin-top: 6px;
+
+}
+
+
+
+.refresh-btn {
+
+  padding: 10px 16px;
+
+  border-radius: 9px;
+
+  border: 1px solid #344357;
+
+  background: rgba(255,255,255,0.03);
+
+  color: white;
+
+  font-weight: 600;
+
+  transition: 0.2s;
+
+}
+
+
+
+.refresh-btn:hover {
+
+  border-color: #27d6a2;
+
+  color: #27d6a2;
+
+}
+
+
+
+/\* ISSUE CARD \*/
+
+
+
+.admin-issue-list {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
+}
+
+
+
+.admin-issue-card {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 25px;
+
+  padding: 22px;
+
+  border-radius: 15px;
+
+  border: 1px solid rgba(255,255,255,0.07);
+
+  background: rgba(255,255,255,0.025);
+
+  transition: 0.25s ease;
+
+}
+
+
+
+.admin-issue-card:hover {
+
+  background: rgba(255,255,255,0.045);
+
+  border-color: rgba(39,214,162,0.18);
+
+  transform: translateY(-2px);
+
+}
+
+
+
+.issue-main {
+
+  display: flex;
+
+  gap: 17px;
+
+  min-width: 0;
+
+}
+
+
+
+.admin-issue-icon {
+
+  width: 50px;
+
+  height: 50px;
+
+  min-width: 50px;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 13px;
+
+  background: rgba(39,214,162,0.08);
+
+  border: 1px solid rgba(39,214,162,0.12);
+
+  font-size: 22px;
+
+}
+
+
+
+.admin-issue-info {
+
+  min-width: 0;
+
+}
+
+
+
+.admin-issue-info h3 {
+
+  font-size: 16px;
+
+  margin-bottom: 8px;
+
+}
+
+
+
+.issue-description {
+
+  color: #8795a7;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+
+  max-width: 650px;
+
+}
+
+
+
+.issue-details {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 15px;
+
+  margin-top: 13px;
+
+}
+
+
+
+.issue-details span {
+
+  color: #738196;
+
+  font-size: 11px;
+
+}
+
+
+
+.admin-issue-info small {
+
+  display: block;
+
+  margin-top: 12px;
+
+  color: #566579;
+
+  font-size: 10px;
+
+}
+
+
+
+/\* ADMIN ACTIONS \*/
+
+
+
+.admin-issue-actions {
+
+  min-width: 155px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  justify-content: center;
+
+  gap: 13px;
+
+}
+
+
+
+.admin-status {
+
+  padding: 7px 11px;
+
+  border-radius: 7px;
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+}
+
+
+
+.admin-status.pending {
+
+  background: rgba(255,191,85,0.12);
+
+  color: #ffbf55;
+
+}
+
+
+
+.admin-status.in-progress {
+
+  background: rgba(102,170,255,0.12);
+
+  color: #66aaff;
+
+}
+
+
+
+.admin-status.resolved {
+
+  background: rgba(39,214,162,0.12);
+
+  color: #27d6a2;
+
+}
+
+
+
+.admin-issue-actions select {
+
+  width: 145px;
+
+  padding: 10px 12px;
+
+  border-radius: 8px;
+
+  border: 1px solid #304055;
+
+  background: #0a1625;
+
+  color: white;
+
+  outline: none;
+
+  cursor: pointer;
+
+}
+
+
+
+.admin-issue-actions select:focus {
+
+  border-color: #27d6a2;
+
+}
+
+
+
+/\* NO ISSUES \*/
+
+
+
+.no-issues {
+
+  text-align: center;
+
+  padding: 55px 20px;
+
+}
+
+
+
+.no-issues > div {
+
+  font-size: 40px;
+
+  margin-bottom: 15px;
+
+}
+
+
+
+.no-issues h3 {
+
+  font-size: 18px;
+
+  margin-bottom: 8px;
+
+}
+
+
+
+.no-issues p {
+
+  color: #758398;
+
+  font-size: 12px;
+
+}
+
+
+
+/\* ADMIN LOADING \*/
+
+
+
+.admin-loading {
+
+  min-height: 100vh;
+
+  display: grid;
+
+  place-items: center;
+
+  color: #27d6a2;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+}
+
+
+
+/\* ADMIN RESPONSIVE \*/
+
+
+
+@media (max-width: 1000px) {
+
+  .admin-stats {
+
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+
+
+  .admin-issue-card {
+
+    flex-direction: column;
+
+  }
+
+
+
+  .admin-issue-actions {
+
+    flex-direction: row;
+
+    justify-content: flex-start;
+
+    align-items: center;
+
+  }
+
+}
+
+
+
+@media (max-width: 650px) {
+
+  .admin-container {
+
+    width: 92%;
+
+    padding-top: 35px;
+
+  }
+
+
+
+  .admin-navbar {
+
+    padding: 0 4%;
+
+  }
+
+
+
+  .admin-navbar .logo {
+
+    font-size: 20px;
+
+  }
+
+
+
+  .admin-title {
+
+    font-size: 11px;
+
+  }
+
+
+
+  .admin-heading h1 {
+
+    font-size: 29px;
+
+  }
+
+
+
+  .admin-stats {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+
+  .admin-issues {
+
+    padding: 18px;
+
+  }
+
+
+
+  .admin-section-header {
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+  }
+
+
+
+  .admin-section-header h2 {
+
+    font-size: 19px;
+
+  }
+
+
+
+  .admin-issue-card {
+
+    padding: 17px;
+
+  }
+
+
+
+  .issue-main {
+
+    gap: 12px;
+
+  }
+
+
+
+  .issue-details {
+
+    flex-direction: column;
+
+    gap: 7px;
+
+  }
+
+
+
+  .admin-issue-actions {
+
+    flex-wrap: wrap;
+
+  }
+
+}
+
+
+
+/\* RESPONSIVE \*/
+
+
+
+@media (max-width: 900px) {
+
+  .nav-links {
+
+    display: none;
+
+  }
+
+
+
+  .hero-section {
+
+    flex-direction: column;
+
+    text-align: center;
+
+  }
+
+
+
+  .hero-content {
+
+    max-width: 100%;
+
+  }
+
+
+
+  .hero-buttons,
+
+  .stats {
+
+    justify-content: center;
+
+  }
+
+
+
+  .hero-card {
+
+    width: 100%;
+
+    max-width: 500px;
+
+  }
+
+
+
+  .feature-grid {
+
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+
+
+  .about {
+
+    grid-template-columns: 1fr;
+
+  }
+
+}
+
+
+
+@media (max-width: 550px) {
+
+  .navbar {
+
+    padding: 0 5%;
+
+  }
+
+
+
+  .login-btn {
+
+    display: none;
+
+  }
+
+
+
+  .hero-section,
+
+  .features,
+
+  .about {
+
+    padding-left: 5%;
+
+    padding-right: 5%;
+
+  }
+
+
+
+  .hero-content h1 {
+
+    font-size: 48px;
+
+  }
+
+
+
+  .hero-buttons {
+
+    flex-direction: column;
+
+  }
+
+
+
+  .stats {
+
+    gap: 20px;
+
+  }
+
+
+
+  .feature-grid {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+
+  footer {
+
+    flex-direction: column;
+
+    gap: 15px;
+
+  }
+
+}
+
+
+
+/\* =========================================================
+
+   CIVICEYE ADMIN DASHBOARD
+
+   Only affects AdminDashboard classes
+
+   Citizen UI remains unchanged
+
+   ========================================================= \*/
+
+
+
+.admin-page {
+
+  min-height: 100vh;
+
+  background:
+
+    radial-gradient(circle at 85% 10%, rgba(39, 214, 162, 0.08), transparent 25%),
+
+    radial-gradient(circle at 10% 90%, rgba(70, 150, 255, 0.06), transparent 25%),
+
+    #07111f;
+
+  color: #fff;
+
+}
+
+
+
+/\* =========================
+
+   ADMIN NAVBAR
+
+   ========================= \*/
+
+
+
+.admin-navbar {
+
+  height: 76px;
+
+  padding: 0 5%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  position: sticky;
+
+  top: 0;
+
+  z-index: 50;
+
+
+
+  background: rgba(7, 17, 31, 0.92);
+
+  backdrop-filter: blur(18px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+}
+
+
+
+.admin-navbar .logo {
+
+  font-size: 23px;
+
+  font-weight: 800;
+
+  letter-spacing: -1px;
+
+}
+
+
+
+.admin-navbar .logo span:not(.logo-icon) {
+
+  color: #27d6a2;
+
+}
+
+
+
+.admin-navbar .logo-icon {
+
+  color: #27d6a2;
+
+  margin-right: 7px;
+
+}
+
+
+
+.admin-navbar .logo small {
+
+  font-size: 10px;
+
+  margin-left: 5px;
+
+  padding: 3px 6px;
+
+  border-radius: 5px;
+
+  background: #27d6a2;
+
+  color: #06121d;
+
+}
+
+
+
+.admin-title {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: #dce5ef;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+}
+
+
+
+.admin-title::before {
+
+  content: "ADMIN";
+
+  padding: 5px 9px;
+
+  border-radius: 6px;
+
+  background: rgba(39, 214, 162, 0.1);
+
+  border: 1px solid rgba(39, 214, 162, 0.2);
+
+  color: #27d6a2;
+
+  font-size: 9px;
+
+  letter-spacing: 1.5px;
+
+}
+
+
+
+/\* =========================
+
+   ADMIN CONTAINER
+
+   ========================= \*/
+
+
+
+.admin-container {
+
+  width: min(1250px, 90%);
+
+  margin: auto;
+
+  padding: 55px 0 80px;
+
+}
+
+
+
+/\* =========================
+
+   HEADING
+
+   ========================= \*/
+
+
+
+.admin-heading {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-end;
+
+  margin-bottom: 38px;
+
+}
+
+
+
+.admin-heading .about-label {
+
+  display: inline-block;
+
+  color: #27d6a2;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+
+  margin-bottom: 12px;
+
+}
+
+
+
+.admin-heading h1 {
+
+  font-size: clamp(34px, 4vw, 50px);
+
+  line-height: 1;
+
+  letter-spacing: -2px;
+
+  margin-bottom: 13px;
+
+}
+
+
+
+.admin-heading p {
+
+  color: #8190a5;
+
+  font-size: 14px;
+
+}
+
+
+
+/\* =========================
+
+   LOADING
+
+   ========================= \*/
+
+
+
+.admin-loading {
+
+  min-height: 100vh;
+
+  display: grid;
+
+  place-items: center;
+
+  color: #27d6a2;
+
+  font-size: 18px;
+
+  font-weight: 700;
+
+  background: #07111f;
+
+}
+
+
+
+/\* =========================
+
+   STATS
+
+   ========================= \*/
+
+
+
+.admin-stats {
+
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 16px;
+
+  margin-bottom: 45px;
+
+}
+
+
+
+.admin-stat-card {
+
+  min-height: 145px;
+
+  padding: 24px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 18px;
+
+
+
+  background:
+
+    linear-gradient(
+
+      145deg,
+
+      rgba(255,255,255,0.045),
+
+      rgba(255,255,255,0.015)
+
+    );
+
+
+
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+
+
+
+  transition: all 0.25s ease;
+
+}
+
+
+
+.admin-stat-card:hover {
+
+  transform: translateY(-4px);
+
+  border-color: rgba(39, 214, 162, 0.25);
+
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.28);
+
+}
+
+
+
+.stat-icon {
+
+  width: 52px;
+
+  height: 52px;
+
+
+
+  display: grid;
+
+  place-items: center;
+
+
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.055);
+
+
+
+  font-size: 23px;
+
+}
+
+
+
+.admin-stat-card strong {
+
+  display: block;
+
+  font-size: 32px;
+
+  line-height: 1;
+
+  margin-bottom: 8px;
+
+}
+
+
+
+.admin-stat-card p {
+
+  color: #8291a5;
+
+  font-size: 12px;
+
+}
+
+
+
+.pending-stat {
+
+  border-color: rgba(255, 191, 85, 0.18);
+
+}
+
+
+
+.progress-stat {
+
+  border-color: rgba(102, 170, 255, 0.18);
+
+}
+
+
+
+.resolved-stat {
+
+  border-color: rgba(39, 214, 162, 0.18);
+
+}
+
+
+
+/\* =========================
+
+   ISSUES SECTION
+
+   ========================= \*/
+
+
+
+.admin-issues {
+
+  padding: 30px;
+
+  border-radius: 22px;
+
+
+
+  background:
+
+    linear-gradient(
+
+      145deg,
+
+      rgba(18, 32, 51, 0.95),
+
+      rgba(10, 23, 38, 0.95)
+
+    );
+
+
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+
+
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.22);
+
+}
+
+
+
+.admin-section-header {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+
+
+  padding-bottom: 25px;
+
+  margin-bottom: 25px;
+
+
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+
+}
+
+
+
+.admin-section-header h2 {
+
+  font-size: 23px;
+
+  margin-bottom: 7px;
+
+}
+
+
+
+.admin-section-header p {
+
+  color: #718095;
+
+  font-size: 12px;
+
+}
+
+
+
+.refresh-btn {
+
+  padding: 11px 17px;
+
+  border-radius: 9px;
+
+
+
+  border: 1px solid #344357;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: #dce5ef;
+
+
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+
+
+  transition: 0.2s;
+
+}
+
+
+
+.refresh-btn:hover {
+
+  background: rgba(39, 214, 162, 0.08);
+
+  border-color: rgba(39, 214, 162, 0.35);
+
+  color: #27d6a2;
+
+}
+
+
+
+/\* =========================
+
+   ISSUE LIST
+
+   ========================= \*/
+
+
+
+.admin-issue-list {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 14px;
+
+}
+
+
+
+.admin-issue-card {
+
+  padding: 22px;
+
+
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 25px;
+
+
+
+  border-radius: 16px;
+
+
+
+  background: rgba(255, 255, 255, 0.025);
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+
+
+  transition: all 0.25s ease;
+
+}
+
+
+
+.admin-issue-card:hover {
+
+  background: rgba(255, 255, 255, 0.04);
+
+  border-color: rgba(39, 214, 162, 0.18);
+
+  transform: translateY(-2px);
+
+}
+
+
+
+.issue-main {
+
+  min-width: 0;
+
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 18px;
+
+}
+
+
+
+.admin-issue-icon {
+
+  width: 55px;
+
+  height: 55px;
+
+  min-width: 55px;
+
+
+
+  display: grid;
+
+  place-items: center;
+
+
+
+  border-radius: 14px;
+
+
+
+  background: rgba(39, 214, 162, 0.08);
+
+  border: 1px solid rgba(39, 214, 162, 0.12);
+
+
+
+  font-size: 24px;
+
+}
+
+
+
+.admin-issue-info {
+
+  min-width: 0;
+
+}
+
+
+
+.admin-issue-info h3 {
+
+  font-size: 16px;
+
+  margin-bottom: 7px;
+
+  color: #f1f5f9;
+
+}
+
+
+
+.issue-description {
+
+  max-width: 650px;
+
+  color: #8492a5;
+
+  font-size: 12px;
+
+  line-height: 1.6;
+
+  margin-bottom: 12px;
+
+}
+
+
+
+.issue-details {
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 15px;
+
+  margin-bottom: 9px;
+
+}
+
+
+
+.issue-details span {
+
+  color: #718095;
+
+  font-size: 11px;
+
+}
+
+
+
+.admin-issue-info small {
+
+  color: #536176;
+
+  font-size: 10px;
+
+}
+
+
+
+/\* =========================
+
+   ADMIN ACTIONS
+
+   ========================= \*/
+
+
+
+.admin-issue-actions {
+
+  min-width: 150px;
+
+
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 10px;
+
+}
+
+
+
+.admin-status {
+
+  padding: 6px 10px;
+
+  border-radius: 7px;
+
+
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+
+}
+
+
+
+.admin-status.pending {
+
+  background: rgba(255, 191, 85, 0.1);
+
+  color: #ffbf55;
+
+  border: 1px solid rgba(255, 191, 85, 0.15);
+
+}
+
+
+
+.admin-status.in-progress {
+
+  background: rgba(102, 170, 255, 0.1);
+
+  color: #66aaff;
+
+  border: 1px solid rgba(102, 170, 255, 0.15);
+
+}
+
+
+
+.admin-status.resolved {
+
+  background: rgba(39, 214, 162, 0.1);
+
+  color: #27d6a2;
+
+  border: 1px solid rgba(39, 214, 162, 0.15);
+
+}
+
+
+
+.admin-issue-actions select {
+
+  width: 145px;
+
+  padding: 9px 11px;
+
+
+
+  border-radius: 8px;
+
+
+
+  border: 1px solid #304055;
+
+  background: #0a1625;
+
+  color: #cbd5e1;
+
+
+
+  outline: none;
+
+  font-size: 11px;
+
+  cursor: pointer;
+
+}
+
+
+
+.admin-issue-actions select:focus {
+
+  border-color: #27d6a2;
+
+}
+
+
+
+/\* =========================
+
+   NO ISSUES
+
+   ========================= \*/
+
+
+
+.no-issues {
+
+  text-align: center;
+
+  padding: 65px 20px;
+
+}
+
+
+
+.no-issues > div:first-child {
+
+  font-size: 45px;
+
+  margin-bottom: 15px;
+
+}
+
+
+
+.no-issues h3 {
+
+  font-size: 18px;
+
+  margin-bottom: 8px;
+
+}
+
+
+
+.no-issues p {
+
+  color: #718095;
+
+  font-size: 12px;
+
+}
+
+
+
+/\* =========================
+
+   ADMIN SCROLLBAR
+
+   ========================= \*/
+
+
+
+.admin-page::-webkit-scrollbar {
+
+  width: 8px;
+
+}
+
+
+
+.admin-page::-webkit-scrollbar-track {
+
+  background: #07111f;
+
+}
+
+
+
+.admin-page::-webkit-scrollbar-thumb {
+
+  background: #26384d;
+
+  border-radius: 10px;
+
+}
+
+
+
+.admin-page::-webkit-scrollbar-thumb:hover {
+
+  background: #27d6a2;
+
+}
+
+
+
+/\* =========================
+
+   RESPONSIVE
+
+   ========================= \*/
+
+
+
+@media (max-width: 1000px) {
+
+
+
+  .admin-stats {
+
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+
+
+  .admin-issue-card {
+
+    align-items: flex-start;
+
+  }
+
+
+
+}
+
+
+
+@media (max-width: 700px) {
+
+
+
+  .admin-container {
+
+    width: 92%;
+
+    padding-top: 35px;
+
+  }
+
+
+
+  .admin-navbar {
+
+    padding: 0 4%;
+
+  }
+
+
+
+  .admin-title {
+
+    display: none;
+
+  }
+
+
+
+  .admin-heading {
+
+    display: block;
+
+  }
+
+
+
+  .admin-heading h1 {
+
+    font-size: 38px;
+
+  }
+
+
+
+  .admin-stats {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+
+  .admin-issues {
+
+    padding: 20px;
+
+  }
+
+
+
+  .admin-section-header {
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+  }
+
+
+
+  .admin-issue-card {
+
+    flex-direction: column;
+
+  }
+
+
+
+  .admin-issue-actions {
+
+    width: 100%;
+
+    align-items: flex-start;
+
+    flex-direction: row;
+
+    flex-wrap: wrap;
+
+  }
+
+
+
+}
+
+
+
+@media (max-width: 500px) {
+
+
+
+  .admin-navbar {
+
+    height: 65px;
+
+  }
+
+
+
+  .admin-navbar .logo {
+
+    font-size: 20px;
+
+  }
+
+
+
+  .admin-heading h1 {
+
+    font-size: 32px;
+
+  }
+
+
+
+  .admin-issues {
+
+    border-radius: 16px;
+
+    padding: 16px;
+
+  }
+
+
+
+  .admin-section-header {
+
+    flex-direction: column;
+
+  }
+
+
+
+  .refresh-btn {
+
+    width: 100%;
+
+  }
+
+
+
+  .issue-main {
+
+    gap: 12px;
+
+  }
+
+
+
+  .admin-issue-icon {
+
+    width: 45px;
+
+    height: 45px;
+
+    min-width: 45px;
+
+    font-size: 19px;
+
+  }
+
+
+
+  .issue-details {
+
+    flex-direction: column;
+
+    gap: 6px;
+
+  }
+
+
+
+}
+
+
+
+/\* =========================
+
+   ADMIN PROFILE
+
+   ========================= \*/
+
+
+
+.admin-profile {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+}
+
+
+
+.admin-avatar {
+
+  width: 38px;
+
+  height: 38px;
+
+
+
+  display: grid;
+
+  place-items: center;
+
+
+
+  border-radius: 10px;
+
+
+
+  background: rgba(39, 214, 162, 0.12);
+
+  border: 1px solid rgba(39, 214, 162, 0.25);
+
+
+
+  color: #27d6a2;
+
+  font-size: 14px;
+
+  font-weight: 800;
+
+}
+
+
+
+.admin-user-info {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+
+}
+
+
+
+.admin-user-info strong {
+
+  color: #e5edf5;
+
+  font-size: 12px;
+
+}
+
+
+
+.admin-user-info span {
+
+  color: #68778b;
+
+  font-size: 9px;
+
+}
+
+
+
+.admin-logout-btn {
+
+  margin-left: 10px;
+
+
+
+  padding: 8px 13px;
+
+
+
+  border-radius: 8px;
+
+
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  background: rgba(255,255,255,0.04);
+
+
+
+  color: #aab7c7;
+
+
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+
+
+  transition: 0.2s;
+
+}
+
+
+
+.admin-logout-btn:hover {
+
+  color: #fff;
+
+  border-color: rgba(255,80,80,0.35);
+
+  background: rgba(255,80,80,0.08);
+
+}
+
+
+
+/\* =========================
+
+   ADMIN TABS
+
+   ========================= \*/
+
+
+
+.admin-tabs {
+
+  display: flex;
+
+  gap: 8px;
+
+  margin-bottom: 18px;
+
+}
+
+
+
+.admin-tab {
+
+  padding: 10px 17px;
+
+
+
+  border-radius: 9px;
+
+
+
+  border: 1px solid rgba(255,255,255,0.07);
+
+
+
+  background: rgba(255,255,255,0.025);
+
+
+
+  color: #718095;
+
+
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+
+
+  transition: 0.2s;
+
+}
+
+
+
+.admin-tab:hover {
+
+  color: #fff;
+
+  border-color: rgba(39,214,162,0.2);
+
+}
+
+
+
+.admin-tab.active {
+
+  background: rgba(39,214,162,0.1);
+
+  border-color: rgba(39,214,162,0.25);
+
+  color: #27d6a2;
+
+}
+
+
+
+/\* =========================
+
+   USERS
+
+   ========================= \*/
+
+
+
+.admin-users-list {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 12px;
+
+}
+
+
+
+.admin-user-card {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+
+
+  padding: 18px;
+
+
+
+  border-radius: 14px;
+
+
+
+  background: rgba(255,255,255,0.025);
+
+  border: 1px solid rgba(255,255,255,0.07);
+
+
+
+  transition: 0.2s;
+
+}
+
+
+
+.admin-user-card:hover {
+
+  background: rgba(255,255,255,0.045);
+
+  border-color: rgba(39,214,162,0.18);
+
+}
+
+
+
+.user-avatar {
+
+  width: 45px;
+
+  height: 45px;
+
+
+
+  display: grid;
+
+  place-items: center;
+
+
+
+  border-radius: 12px;
+
+
+
+  background: rgba(39,214,162,0.1);
+
+  border: 1px solid rgba(39,214,162,0.15);
+
+
+
+  color: #27d6a2;
+
+  font-weight: 800;
+
+}
+
+
+
+.user-info {
+
+  flex: 1;
+
+}
+
+
+
+.user-info h3 {
+
+  font-size: 14px;
+
+  margin-bottom: 5px;
+
+}
+
+
+
+.user-info p {
+
+  color: #718095;
+
+  font-size: 11px;
+
+}
+
+
+
+.user-role {
+
+  padding: 5px 9px;
+
+
+
+  border-radius: 6px;
+
+
+
+  background: rgba(39,214,162,0.08);
+
+  color: #27d6a2;
+
+
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  text-transform: uppercase;
+
+}
+
+
+
+.admin-role {
+
+  background: rgba(255,191,85,0.1);
+
+  color: #ffbf55;
+
+}
+
+
+
+.admin-user-card > small {
+
+  color: #536176;
+
+  font-size: 9px;
+
+}
+
+
+
+/\* =========================
+
+   MOBILE ADMIN
+
+   ========================= \*/
+
+
+
+@media (max-width: 800px) {
+
+
+
+  .admin-profile {
+
+    gap: 5px;
+
+  }
+
+
+
+  .admin-user-info {
+
+    display: none;
+
+  }
+
+
+
+  .admin-logout-btn {
+
+    margin-left: 4px;
+
+  }
+
+
+
+}
+
+
+
+@media (max-width: 600px) {
+
+
+
+  .admin-navbar {
+
+    padding: 0 4%;
+
+  }
+
+
+
+  .admin-profile {
+
+    display: flex;
+
+  }
+
+
+
+  .admin-avatar {
+
+    display: none;
+
+  }
+
+
+
+  .admin-logout-btn {
+
+    padding: 7px 10px;
+
+  }
+
+
+
+  .admin-tabs {
+
+    width: 100%;
+
+  }
+
+
+
+  .admin-tab {
+
+    flex: 1;
+
+  }
+
+
+
+  .admin-user-card {
+
+    flex-wrap: wrap;
+
+  }
+
+
+
+  .user-info {
+
+    min-width: 150px;
+
+  }
+
+
+
+}
+
+/* =========================================================
+   REPORT ISSUE MODAL - ALIGNMENT FIX ONLY
+   ========================================================= */
+
+.report-modal {
+  width: 400px;
+  max-width: calc(100vw - 40px);
+  padding: 35px;
+}
+
+.report-modal form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0;
+}
+
+.report-modal input,
+.report-modal textarea,
+.report-modal select {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 0 12px;
+}
+
+.report-modal textarea {
+  min-height: 80px;
+  padding: 12px 14px;
+  resize: vertical;
+  border-radius: 9px;
+  border: 1px solid #304055;
+  background: #0a1625;
+  color: white;
+  outline: none;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.report-modal textarea:focus {
+  border-color: #27d6a2;
+}
+
+.report-modal select {
+  height: 46px;
+  padding: 0 14px;
+  border-radius: 9px;
+  border: 1px solid #304055;
+  background: #0a1625;
+  color: white;
+  outline: none;
+  font-family: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.report-modal select:focus {
+  border-color: #27d6a2;
+}
+
+.report-modal button:not(.close) {
+  width: 100%;
+  min-height: 46px;
+  box-sizing: border-box;
+  margin: 0 0 10px;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.report-modal .modal-btn {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+@media (max-width: 550px) {
+  .report-modal {
+    width: 100%;
+    max-width: calc(100vw - 30px);
+    padding: 30px 22px;
+  }
+}
+
+
+/* =========================================================
+   MY COMPLAINTS / TRACKING MODAL — PROFESSIONAL ALIGNMENT
+   Append this block at the END of App.css.
+   ========================================================= */
+
+.tracking-modal {
+  width: min(760px, calc(100vw - 32px));
+  max-width: 760px;
+  max-height: 88vh;
+  overflow-y: auto;
+  box-sizing: border-box;
+  padding: 32px;
+  text-align: left;
+}
+
+.tracking-modal > h2,
+.tracking-modal > p {
+  text-align: center;
+}
+
+.tracking-modal .complaints-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.tracking-modal .complaint-item {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 22px;
+  border: 1px solid #2b4057;
+  border-radius: 14px;
+  background: rgba(7, 20, 35, 0.72);
+  text-align: left;
+}
+
+.tracking-modal .complaint-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  width: 100%;
+  margin-bottom: 14px;
+}
+
+.tracking-modal .complaint-header h3 {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  color: #f4f7fb;
+  font-size: 17px;
+  line-height: 1.4;
+  font-weight: 750;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+
+.tracking-modal .complaint-item p {
+  margin: 9px 0;
+  color: #d5deea;
+  font-size: 14px;
+  line-height: 1.65;
+  text-align: left;
+  overflow-wrap: anywhere;
+}
+
+.tracking-modal .complaint-item p strong {
+  display: inline-block;
+  min-width: 88px;
+  color: #f5f8fc;
+  font-weight: 700;
+}
+
+.tracking-modal .complaint-item small {
+  display: block;
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(148, 163, 184, 0.18);
+  color: #91a2b8;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.tracking-modal .status {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 11px;
+  line-height: 1.2;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.tracking-modal .no-issues {
+  padding: 28px 16px;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  .tracking-modal {
+    width: calc(100vw - 24px);
+    max-height: 90vh;
+    padding: 24px 16px;
+  }
+
+  .tracking-modal .complaint-item {
+    padding: 16px;
+  }
+
+  .tracking-modal .complaint-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 9px;
+  }
+
+  .tracking-modal .complaint-header h3 {
+    font-size: 16px;
+  }
+
+  .tracking-modal .complaint-item p {
+    font-size: 13px;
+  }
+
+  .tracking-modal .complaint-item p strong {
+    min-width: 0;
+    margin-right: 4px;
+  }
+}
+
+
+
+/* Complaint tracking timeline */
+.complaint-timeline {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(148, 163, 184, 0.22);
+}
+
+.complaint-timeline h4 {
+  margin: 0 0 14px;
+  font-size: 14px;
+  color: #e2e8f0;
+}
+
+.timeline-entry {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  position: relative;
+  padding-bottom: 18px;
+}
+
+.timeline-entry:last-child {
+  padding-bottom: 0;
+}
+
+.timeline-dot {
+  width: 11px;
+  height: 11px;
+  min-width: 11px;
+  margin-top: 4px;
+  border-radius: 50%;
+  background: #fbbf24;
+  box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.12);
+}
+
+.timeline-dot.progress {
+  background: #60a5fa;
+  box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.12);
+}
+
+.timeline-dot.resolved {
+  background: #34d399;
+  box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.12);
+}
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.timeline-content strong {
+  color: #f1f5f9;
+  font-size: 12px;
+}
+
+.timeline-content p {
+  margin: 0;
+  color: #cbd5e1;
+  font-size: 12px;
+}
+
+.timeline-content small {
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+
+/* =========================================================
+   CIVICEYE ISSUE MAP - ADDITIONS ONLY
+   ========================================================= */
+.public-issues-map-section {
+  padding: 80px 7%;
+}
+
+.public-issues-map-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 28px auto 0;
+  overflow: hidden;
+  border: 1px solid rgba(128, 145, 165, 0.22);
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.12);
+}
+
+.public-issues-map-note,
+.issue-location-help {
+  margin: 10px 0 0;
+  color: #8190a5;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.issue-location-picker {
+  width: 100%;
+  margin: 8px 0 16px;
+}
+
+.issue-location-label {
+  display: block;
+  margin-bottom: 5px;
+  color: inherit;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.issue-location-picker .leaflet-container {
+  width: 100%;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.issue-location-coordinates {
+  margin: 8px 0 0;
+  color: #159b77;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.public-issues-map-container .leaflet-container {
+  width: 100%;
+  z-index: 1;
+}
+
+@media (max-width: 600px) {
+  .public-issues-map-section {
+    padding: 55px 5%;
+  }
+
+  .public-issues-map-container {
+    border-radius: 12px;
+  }
+}
+
+
+/* CIVICEYE PREMIUM OVERRIDE — paste at END of App.css */
+
+.admin-page {
+  background:
+    radial-gradient(ellipse at 10% 0%, rgba(16, 185, 129, .16), transparent 35%),
+    radial-gradient(ellipse at 95% 30%, rgba(59, 130, 246, .12), transparent 35%),
+    #060d19 !important;
+}
+
+.admin-page .admin-container {
+  width: min(1440px, 94%) !important;
+  padding-top: 42px !important;
+}
+
+.admin-page .admin-heading h1 {
+  font-size: clamp(34px, 4vw, 48px) !important;
+  font-weight: 850 !important;
+  letter-spacing: -1.8px !important;
+  color: #f8fafc !important;
+}
+
+.admin-page .admin-stat-card {
+  min-height: 125px !important;
+  padding: 25px !important;
+  border-radius: 20px !important;
+  background: linear-gradient(145deg, #17283d, #0c1829) !important;
+  border: 1px solid rgba(148, 163, 184, .22) !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, .18) !important;
+  transition: transform .2s ease, border-color .2s ease !important;
+}
+
+.admin-page .admin-stat-card:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(39, 214, 162, .65) !important;
+}
+
+.admin-page .admin-stat-card strong {
+  font-size: 34px !important;
+}
+
+.admin-page .admin-tabs {
+  padding: 8px !important;
+  gap: 10px !important;
+  border-radius: 15px !important;
+  background: #0b1727 !important;
+  border: 1px solid rgba(148, 163, 184, .17) !important;
+}
+
+.admin-page .admin-tab {
+  padding: 12px 18px !important;
+  border-radius: 10px !important;
+}
+
+.admin-page .admin-tab.active {
+  color: #baf8e4 !important;
+  background: rgba(39, 214, 162, .16) !important;
+  border: 1px solid rgba(39, 214, 162, .38) !important;
+}
+
+.admin-page .admin-issues {
+  padding: 30px !important;
+  border-radius: 22px !important;
+  background: linear-gradient(145deg, #111f32, #0a1525) !important;
+  border: 1px solid rgba(148, 163, 184, .20) !important;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, .22) !important;
+}
+
+.admin-page .admin-issue-card {
+  padding: 23px !important;
+  border-radius: 17px !important;
+  background: #14243a !important;
+  border: 1px solid rgba(148, 163, 184, .17) !important;
+}
+
+.admin-page .admin-issue-card:hover {
+  border-color: rgba(39, 214, 162, .45) !important;
+  transform: translateY(-2px) !important;
+}
+
+.admin-page .admin-section-header {
+  padding-bottom: 22px !important;
+  border-bottom: 1px solid rgba(148, 163, 184, .16) !important;
+}
+
+.admin-page .refresh-btn {
+  min-height: 42px !important;
+  padding: 11px 16px !important;
+  border-radius: 11px !important;
+  color: #c7f9e9 !important;
+  background: rgba(39, 214, 162, .10) !important;
+  border: 1px solid rgba(39, 214, 162, .35) !important;
+}
+
+.admin-page .refresh-btn:hover {
+  background: rgba(39, 214, 162, .20) !important;
+}
+
+.admin-page .civiceye-map-wrapper {
+  border: 1px solid rgba(148, 163, 184, .25) !important;
+  border-radius: 18px !important;
+  overflow: hidden !important;
+}
+
+@media (max-width: 650px) {
+  .admin-page .admin-container {
+    width: 92% !important;
+    padding-top: 25px !important;
+  }
+
+  .admin-page .admin-issues {
+    padding: 17px !important;
+  }
+
+  .admin-page .admin-stat-card {
+    min-height: 95px !important;
+    padding: 14px !important;
+  }
+}
+
+
+
+/* ==================================================
+   CIVICEYE AI — PREMIUM PUBLIC LANDING PAGE
+   Desktop-first, fully responsive
+   ================================================== */
+
+:root {
+  --ce-bg: #07111f;
+  --ce-panel: #101f32;
+  --ce-text: #f5f8ff;
+  --ce-muted: #9aadc5;
+  --ce-green: #27d6a2;
+  --ce-border: rgba(148, 163, 184, 0.18);
+}
+
+/* Global landing page polish */
+body {
+  background: var(--ce-bg);
+}
+
+.navbar,
+nav.navbar {
+  width: 100%;
+  min-height: 76px;
+  height: auto;
+  padding: 0 clamp(24px, 6vw, 100px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  background: rgba(7, 17, 31, 0.94);
+  border-bottom: 1px solid var(--ce-border);
+  backdrop-filter: blur(18px);
+  box-sizing: border-box;
+}
+
+.navbar .logo {
+  font-size: 25px;
+  font-weight: 850;
+  letter-spacing: -1px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #bdcadd;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--ce-green);
+}
+
+.login-btn,
+.navbar .login-btn {
+  padding: 11px 19px;
+  border: 1px solid rgba(148, 163, 184, .28);
+  border-radius: 10px;
+  background: transparent;
+  color: #f1f5f9;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  border-color: var(--ce-green);
+  color: var(--ce-green);
+}
+
+.navbar .signup-btn,
+.navbar .signup-btn button,
+.signup-btn {
+  border-radius: 10px;
+}
+
+/* Hero layout */
+.hero-section {
+  width: min(1440px, calc(100% - 80px));
+  min-height: 530px;
+  margin: 0 auto;
+  padding: 80px 0 70px;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(330px, 430px);
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(50px, 9vw, 150px);
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 680px;
+  min-width: 0;
+}
+
+.hero-content h1 {
+  max-width: 700px;
+  margin: 24px 0;
+  color: var(--ce-text);
+  font-size: clamp(48px, 5.4vw, 78px);
+  font-weight: 850;
+  line-height: 1.04;
+  letter-spacing: -3.6px;
+}
+
+.hero-content p {
+  max-width: 550px;
+  margin: 0 0 28px;
+  color: #afc0d5;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.hero-buttons button,
+.hero-buttons a {
+  min-height: 48px;
+  padding: 14px 21px;
+  border-radius: 11px;
+  font-size: 14px;
+  font-weight: 750;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.hero-buttons button:hover,
+.hero-buttons a:hover {
+  transform: translateY(-3px);
+}
+
+.hero-buttons button:first-child,
+.hero-buttons a:first-child {
+  box-shadow: 0 8px 25px rgba(39, 214, 162, .13);
+}
+
+.hero-buttons button:first-child:hover,
+.hero-buttons a:first-child:hover {
+  box-shadow: 0 12px 30px rgba(39, 214, 162, .24);
+}
+
+/* Hero statistics */
+.stats {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: clamp(26px, 4vw, 52px);
+  margin-top: 42px;
+}
+
+.stats > div,
+.stats > article {
+  min-width: 75px;
+}
+
+.stats strong {
+  display: block;
+  margin-bottom: 7px;
+  color: #f8fafc;
+  font-size: 24px;
+  font-weight: 850;
+}
+
+.stats span,
+.stats p {
+  color: var(--ce-muted);
+  font-size: 12px;
+}
+
+/* Live civic issues side panel */
+.hero-card {
+  width: 100%;
+  max-width: 430px;
+  min-width: 0;
+  padding: 23px;
+  border: 1px solid rgba(148, 163, 184, .20);
+  border-radius: 22px;
+  background: linear-gradient(145deg, #14253a, #0c192a);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .22);
+  box-sizing: border-box;
+}
+
+.hero-card h2,
+.hero-card h3 {
+  color: #f4f8ff;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.hero-card > div,
+.hero-card .issue-item {
+  border-radius: 13px;
+}
+
+.hero-card > div {
+  margin-top: 12px;
+  padding: 14px;
+  background: rgba(148, 163, 184, .07);
+  border: 1px solid rgba(148, 163, 184, .07);
+}
+
+.hero-card > div:last-child {
+  border-color: rgba(39, 214, 162, .23);
+  background: rgba(39, 214, 162, .06);
+}
+
+/* Live map section */
+.features,
+.about {
+  scroll-margin-top: 90px;
+}
+
+.map-section,
+.live-map-section,
+.civic-map-section {
+  width: min(1440px, calc(100% - 80px));
+  margin: 20px auto 90px;
+}
+
+.map-section h2,
+.live-map-section h2,
+.civic-map-section h2 {
+  color: var(--ce-text);
+  font-size: clamp(30px, 3vw, 42px);
+  font-weight: 850;
+  letter-spacing: -1.3px;
+}
+
+.map-section p,
+.live-map-section p,
+.civic-map-section p {
+  color: var(--ce-muted);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* Keep existing Leaflet map, make it larger */
+.leaflet-container {
+  font-family: inherit;
+}
+
+.hero-card .leaflet-container,
+.map-section .leaflet-container,
+.live-map-section .leaflet-container,
+.civic-map-section .leaflet-container {
+  width: 100%;
+  min-height: 440px;
+  border-radius: 16px;
+}
+
+.leaflet-container img {
+  max-width: none !important;
+}
+
+/* General public-page cards */
+.feature-grid {
+  width: min(1440px, calc(100% - 80px));
+  margin: 45px auto;
+  gap: 22px;
+}
+
+.feature-grid > * {
+  padding: 26px;
+  border: 1px solid var(--ce-border);
+  border-radius: 18px;
+  background: linear-gradient(145deg, #122238, #0c192a);
+  transition: transform .2s ease, border-color .2s ease;
+}
+
+.feature-grid > *:hover {
+  transform: translateY(-4px);
+  border-color: rgba(39, 214, 162, .35);
+}
+
+footer {
+  padding: 35px clamp(24px, 6vw, 100px);
+  border-top: 1px solid var(--ce-border);
+  color: var(--ce-muted);
+  background: #060e1a;
+}
+
+/* Medium laptop and tablet */
+@media (max-width: 1050px) {
+  .hero-section {
+    width: calc(100% - 48px);
+    min-height: auto;
+    padding: 65px 0;
+    grid-template-columns: minmax(0, 1fr) minmax(290px, 360px);
+    gap: 35px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(42px, 5vw, 58px);
+    letter-spacing: -2px;
+  }
+
+  .hero-card {
+    padding: 18px;
+  }
+
+  .stats {
+    gap: 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .navbar,
+  nav.navbar {
+    min-height: 68px;
+    padding: 12px 18px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .navbar .logo {
+    font-size: 21px;
+  }
+
+  .nav-links {
+    gap: 14px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .hero-section {
+    width: calc(100% - 36px);
+    min-height: auto;
+    padding: 48px 0 35px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 35px;
+  }
+
+  .hero-content {
+    max-width: none;
+  }
+
+  .hero-content h1 {
+    margin: 20px 0;
+    font-size: clamp(38px, 10vw, 55px);
+    line-height: 1.08;
+    letter-spacing: -1.8px;
+  }
+
+  .hero-content p {
+    font-size: 15px;
+  }
+
+  .hero-buttons {
+    gap: 10px;
+  }
+
+  .hero-buttons button,
+  .hero-buttons a {
+    min-height: 46px;
+  }
+
+  .stats {
+    gap: 28px;
+    margin-top: 30px;
+  }
+
+  .stats strong {
+    font-size: 21px;
+  }
+
+  .hero-card {
+    max-width: none;
+    padding: 17px;
+    border-radius: 17px;
+  }
+
+  .map-section,
+  .live-map-section,
+  .civic-map-section,
+  .feature-grid {
+    width: calc(100% - 36px);
+    margin-top: 35px;
+    margin-bottom: 50px;
+  }
+
+  .map-section h2,
+  .live-map-section h2,
+  .civic-map-section h2 {
+    font-size: 29px;
+    letter-spacing: -.7px;
+  }
+
+  .hero-card .leaflet-container,
+  .map-section .leaflet-container,
+  .live-map-section .leaflet-container,
+  .civic-map-section .leaflet-container {
+    min-height: 320px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  footer {
+    padding: 28px 18px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 420px) {
+  .navbar,
+  nav.navbar {
+    padding: 12px;
+  }
+
+  .nav-links {
+    gap: 10px;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+  }
+
+  .hero-section {
+    width: calc(100% - 28px);
+    padding-top: 35px;
+  }
+
+  .hero-content h1 {
+    font-size: 38px;
+  }
+
+  .hero-buttons {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .hero-buttons button,
+  .hero-buttons a {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .stats {
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .map-section,
+  .live-map-section,
+  .civic-map-section,
+  .feature-grid {
+    width: calc(100% - 28px);
+  }
+}
+
+
+/* =========================================
+   CIVICEYE AI — LARGER PREMIUM HOMEPAGE
+   Paste at the END of App.css
+   ========================================= */
+
+/* Navbar */
+.navbar,
+nav.navbar {
+  min-height: 84px !important;
+  padding-left: clamp(28px, 7vw, 120px) !important;
+  padding-right: clamp(28px, 7vw, 120px) !important;
+}
+
+.navbar .logo {
+  font-size: 29px !important;
+}
+
+.nav-links {
+  gap: 34px !important;
+}
+
+.nav-links a {
+  font-size: 15px !important;
+}
+
+/* Hero section — larger and more spacious */
+.hero-section {
+  width: min(1520px, calc(100% - 100px)) !important;
+  min-height: 650px !important;
+  padding-top: 95px !important;
+  padding-bottom: 90px !important;
+  grid-template-columns: minmax(0, 1.2fr) minmax(360px, 470px) !important;
+  gap: clamp(60px, 8vw, 145px) !important;
+}
+
+.hero-content {
+  max-width: 780px !important;
+}
+
+.hero-content h1 {
+  max-width: 780px !important;
+  font-size: clamp(58px, 5.6vw, 84px) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -3.8px !important;
+  margin-top: 28px !important;
+  margin-bottom: 28px !important;
+}
+
+.hero-content p {
+  max-width: 610px !important;
+  font-size: 18px !important;
+  line-height: 1.9 !important;
+  margin-bottom: 32px !important;
+}
+
+.hero-buttons {
+  gap: 16px !important;
+  margin-top: 34px !important;
+}
+
+.hero-buttons button,
+.hero-buttons a {
+  min-height: 54px !important;
+  padding: 16px 25px !important;
+  font-size: 15px !important;
+  border-radius: 12px !important;
+}
+
+/* Stats */
+.stats {
+  gap: clamp(32px, 4vw, 58px) !important;
+  margin-top: 48px !important;
+}
+
+.stats strong {
+  font-size: 28px !important;
+  margin-bottom: 9px !important;
+}
+
+.stats span,
+.stats p {
+  font-size: 13px !important;
+}
+
+/* Live civic issues panel */
+.hero-card {
+  max-width: 470px !important;
+  padding: 28px !important;
+  border-radius: 24px !important;
+}
+
+.hero-card h2,
+.hero-card h3 {
+  font-size: 19px !important;
+}
+
+.hero-card > div {
+  margin-top: 15px !important;
+  padding: 17px !important;
+}
+
+/* Map section */
+.map-section,
+.live-map-section,
+.civic-map-section {
+  width: min(1520px, calc(100% - 100px)) !important;
+  margin-top: 35px !important;
+  margin-bottom: 100px !important;
+}
+
+.map-section h2,
+.live-map-section h2,
+.civic-map-section h2 {
+  font-size: clamp(36px, 3.2vw, 46px) !important;
+}
+
+.map-section p,
+.live-map-section p,
+.civic-map-section p {
+  font-size: 16px !important;
+}
+
+.hero-card .leaflet-container,
+.map-section .leaflet-container,
+.live-map-section .leaflet-container,
+.civic-map-section .leaflet-container {
+  min-height: 500px !important;
+  border-radius: 19px !important;
+}
+
+/* Feature cards */
+.feature-grid {
+  width: min(1520px, calc(100% - 100px)) !important;
+  gap: 26px !important;
+  margin-top: 55px !important;
+  margin-bottom: 80px !important;
+}
+
+.feature-grid > * {
+  padding: 32px !important;
+  border-radius: 20px !important;
+}
+
+/* Medium screens */
+@media (max-width: 1050px) {
+  .hero-section {
+    width: calc(100% - 56px) !important;
+    min-height: 560px !important;
+    grid-template-columns: minmax(0, 1fr) minmax(290px, 370px) !important;
+    gap: 38px !important;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(46px, 5.2vw, 62px) !important;
+    letter-spacing: -2.4px !important;
+  }
+
+  .hero-card .leaflet-container,
+  .map-section .leaflet-container,
+  .live-map-section .leaflet-container,
+  .civic-map-section .leaflet-container {
+    min-height: 400px !important;
+  }
+}
+
+/* Mobile — keep content fitting the screen */
+@media (max-width: 700px) {
+  .navbar,
+  nav.navbar {
+    min-height: 70px !important;
+    padding: 12px 18px !important;
+  }
+
+  .navbar .logo {
+    font-size: 23px !important;
+  }
+
+  .hero-section {
+    width: calc(100% - 36px) !important;
+    min-height: auto !important;
+    padding-top: 48px !important;
+    padding-bottom: 45px !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 32px !important;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(40px, 9vw, 58px) !important;
+    letter-spacing: -2px !important;
+    line-height: 1.08 !important;
+  }
+
+  .hero-content p {
+    font-size: 16px !important;
+    line-height: 1.8 !important;
+  }
+
+  .hero-buttons button,
+  .hero-buttons a {
+    min-height: 48px !important;
+    padding: 13px 18px !important;
+    font-size: 14px !important;
+  }
+
+  .stats {
+    gap: 24px !important;
+    margin-top: 34px !important;
+  }
+
+  .stats strong {
+    font-size: 23px !important;
+  }
+
+  .hero-card {
+    max-width: none !important;
+    padding: 20px !important;
+  }
+
+  .map-section,
+  .live-map-section,
+  .civic-map-section,
+  .feature-grid {
+    width: calc(100% - 36px) !important;
+    margin-top: 36px !important;
+    margin-bottom: 55px !important;
+  }
+
+  .map-section h2,
+  .live-map-section h2,
+  .civic-map-section h2 {
+    font-size: 30px !important;
+  }
+
+  .hero-card .leaflet-container,
+  .map-section .leaflet-container,
+  .live-map-section .leaflet-container,
+  .civic-map-section .leaflet-container {
+    min-height: 330px !important;
+  }
+
+  .feature-grid > * {
+    padding: 24px !important;
+  }
+}
+
+
+/* CIVICEYE — HERO SECTION SIZE & ALIGNMENT FIX */
+
+/* Hero ko wide aur left aligned rakho */
+.hero-section {
+  width: min(1600px, calc(100% - 100px)) !important;
+  min-height: 720px !important;
+  margin: 0 auto !important;
+  padding: 100px 0 110px !important;
+
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(380px, 480px) !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: clamp(60px, 8vw, 140px) !important;
+
+  text-align: left !important;
+  box-sizing: border-box !important;
+}
+
+.hero-content {
+  width: 100% !important;
+  max-width: 850px !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+.hero-content h1 {
+  max-width: 850px !important;
+  margin: 28px 0 !important;
+
+  font-size: clamp(64px, 5.4vw, 88px) !important;
+  line-height: 1.03 !important;
+  letter-spacing: -3.5px !important;
+  font-weight: 900 !important;
+
+  text-align: left !important;
+}
+
+.hero-content p {
+  max-width: 650px !important;
+  margin: 0 0 30px !important;
+
+  font-size: 19px !important;
+  line-height: 1.9 !important;
+  text-align: left !important;
+}
+
+.hero-buttons {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+  margin-top: 34px !important;
+}
+
+.hero-buttons button,
+.hero-buttons a {
+  min-height: 56px !important;
+  padding: 17px 26px !important;
+  font-size: 15px !important;
+  border-radius: 12px !important;
+}
+
+.stats {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+  gap: clamp(35px, 4vw, 65px) !important;
+  margin-top: 48px !important;
+  text-align: left !important;
+}
+
+.stats strong {
+  font-size: 29px !important;
+  margin-bottom: 10px !important;
+}
+
+.stats span,
+.stats p {
+  font-size: 13px !important;
+}
+
+/* Keep the side panel large and balanced */
+.hero-card {
+  width: 100% !important;
+  max-width: 480px !important;
+  margin: 0 !important;
+  padding: 28px !important;
+  border-radius: 22px !important;
+  box-sizing: border-box !important;
+}
+
+/* Laptop */
+@media (min-width: 1200px) {
+  .hero-section {
+    width: min(1600px, calc(100% - 120px)) !important;
+    min-height: 760px !important;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(72px, 5.2vw, 92px) !important;
+  }
+}
+
+/* Tablet and mobile: stack sections */
+@media (max-width: 800px) {
+  .hero-section {
+    width: calc(100% - 40px) !important;
+    min-height: auto !important;
+    padding: 65px 0 55px !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 42px !important;
+  }
+
+  .hero-content {
+    max-width: 100% !important;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(43px, 8vw, 66px) !important;
+    letter-spacing: -2px !important;
+  }
+
+  .hero-content p {
+    font-size: 16px !important;
+  }
+
+  .hero-card {
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    width: calc(100% - 32px) !important;
+    padding: 48px 0 40px !important;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(38px, 10vw, 48px) !important;
+    letter-spacing: -1.5px !important;
+  }
+
+  .hero-buttons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .hero-buttons button,
+  .hero-buttons a {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .stats {
+    justify-content: space-between !important;
+    gap: 14px !important;
+  }
+
+  .stats strong {
+    font-size: 23px !important;
+  }
+}
+
+
+/* CIVICEYE — EXTRA LARGE HERO + CTA BUTTONS */
+
+.hero-section {
+  width: min(1700px, calc(100% - 100px)) !important;
+  min-height: 820px !important;
+  padding-top: 115px !important;
+  padding-bottom: 125px !important;
+  grid-template-columns: minmax(0, 1fr) minmax(400px, 500px) !important;
+  gap: clamp(65px, 8vw, 150px) !important;
+}
+
+.hero-content {
+  max-width: 950px !important;
+}
+
+.hero-content h1 {
+  max-width: 950px !important;
+  font-size: clamp(76px, 6.2vw, 106px) !important;
+  line-height: 1.02 !important;
+  letter-spacing: -4.5px !important;
+  margin: 32px 0 !important;
+}
+
+.hero-content p {
+  max-width: 760px !important;
+  font-size: 21px !important;
+  line-height: 1.9 !important;
+  margin-bottom: 36px !important;
+}
+
+/* Report an Issue + Track Your Complaint */
+.hero-buttons {
+  gap: 20px !important;
+  margin-top: 40px !important;
+}
+
+.hero-buttons button,
+.hero-buttons a {
+  min-height: 66px !important;
+  padding: 21px 32px !important;
+  font-size: 17px !important;
+  font-weight: 800 !important;
+  border-radius: 14px !important;
+  letter-spacing: 0.1px !important;
+}
+
+.hero-buttons button:hover,
+.hero-buttons a:hover {
+  transform: translateY(-4px) !important;
+}
+
+/* 24/7 — AI — 100% */
+.stats {
+  gap: clamp(45px, 5vw, 75px) !important;
+  margin-top: 58px !important;
+}
+
+.stats strong {
+  font-size: 34px !important;
+  margin-bottom: 12px !important;
+}
+
+.stats span,
+.stats p {
+  font-size: 14px !important;
+}
+
+/* Larger side panel */
+.hero-card {
+  max-width: 500px !important;
+  padding: 32px !important;
+}
+
+/* Tablet and mobile adjustments */
+@media (max-width: 1100px) {
+  .hero-section {
+    width: calc(100% - 56px) !important;
+    min-height: 680px !important;
+    grid-template-columns: minmax(0, 1fr) minmax(290px, 370px) !important;
+    gap: 35px !important;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(52px, 6vw, 76px) !important;
+    letter-spacing: -2.5px !important;
+  }
+
+  .hero-content p {
+    font-size: 17px !important;
+  }
+
+  .hero-buttons button,
+  .hero-buttons a {
+    min-height: 56px !important;
+    padding: 17px 22px !important;
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero-section {
+    width: calc(100% - 40px) !important;
+    min-height: auto !important;
+    padding: 60px 0 !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 38px !important;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(44px, 8.5vw, 68px) !important;
+    letter-spacing: -2px !important;
+  }
+
+  .hero-content p {
+    font-size: 17px !important;
+  }
+
+  .hero-buttons button,
+  .hero-buttons a {
+    min-height: 54px !important;
+    padding: 16px 22px !important;
+    font-size: 15px !important;
+  }
+
+  .stats {
+    gap: 28px !important;
+    margin-top: 38px !important;
+  }
+
+  .stats strong {
+    font-size: 27px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    width: calc(100% - 32px) !important;
+    padding: 45px 0 !important;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(39px, 10vw, 49px) !important;
+    letter-spacing: -1.5px !important;
+  }
+
+  .hero-content p {
+    font-size: 15px !important;
+  }
+
+  .hero-buttons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+
+  .hero-buttons button,
+  .hero-buttons a {
+    width: 100% !important;
+    min-height: 54px !important;
+    padding: 15px 18px !important;
+    font-size: 15px !important;
+  }
+
+  .stats {
+    justify-content: space-between !important;
+    gap: 12px !important;
+  }
+
+  .stats strong {
+    font-size: 24px !important;
+  }
+
+  .stats span,
+  .stats p {
+    font-size: 11px !important;
+  }
+}
+
+
+
+/* CIVICEYE — PREMIUM LARGE NAVBAR */
+
+.navbar,
+nav.navbar {
+  width: 100% !important;
+  min-height: 94px !important;
+  height: auto !important;
+  padding: 18px clamp(28px, 5vw, 90px) !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 32px !important;
+
+  background: rgba(7, 17, 31, 0.97) !important;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.20) !important;
+  box-sizing: border-box !important;
+}
+
+/* Logo */
+.navbar .logo {
+  display: flex !important;
+  align-items: center !important;
+  flex-shrink: 0 !important;
+  font-size: 32px !important;
+  font-weight: 900 !important;
+  letter-spacing: -1.2px !important;
+  white-space: nowrap !important;
+}
+
+.navbar .logo img {
+  width: 42px !important;
+  height: 42px !important;
+  object-fit: contain !important;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(25px, 3vw, 48px) !important;
+}
+
+.nav-links a {
+  color: #c5d2e3 !important;
+  font-size: 16px !important;
+  font-weight: 650 !important;
+  text-decoration: none !important;
+  transition: color .2s ease !important;
+}
+
+.nav-links a:hover {
+  color: #27d6a2 !important;
+}
+
+/* Login and signup */
+.navbar .login-btn,
+.navbar .signup-btn,
+.navbar button {
+  min-height: 46px !important;
+  padding: 12px 23px !important;
+  border-radius: 11px !important;
+  font-size: 14px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+}
+
+.navbar .login-btn {
+  border: 1px solid rgba(148, 163, 184, .34) !important;
+  background: transparent !important;
+  color: #f1f5f9 !important;
+}
+
+.navbar .login-btn:hover {
+  border-color: #27d6a2 !important;
+  color: #27d6a2 !important;
+}
+
+.navbar .signup-btn {
+  background: #27d6a2 !important;
+  color: #05251c !important;
+  border: 1px solid #27d6a2 !important;
+}
+
+.navbar .signup-btn:hover {
+  background: #5be8bd !important;
+  transform: translateY(-2px) !important;
+}
+
+/* Laptop screens */
+@media (min-width: 1200px) {
+  .navbar,
+  nav.navbar {
+    min-height: 100px !important;
+    padding-left: clamp(50px, 7vw, 120px) !important;
+    padding-right: clamp(50px, 7vw, 120px) !important;
+  }
+
+  .navbar .logo {
+    font-size: 35px !important;
+  }
+
+  .nav-links a {
+    font-size: 17px !important;
+  }
+
+  .navbar .login-btn,
+  .navbar .signup-btn,
+  .navbar button {
+    min-height: 50px !important;
+    padding: 14px 26px !important;
+    font-size: 15px !important;
+  }
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .navbar,
+  nav.navbar {
+    min-height: 78px !important;
+    padding: 14px 22px !important;
+    gap: 18px !important;
+  }
+
+  .navbar .logo {
+    font-size: 27px !important;
+  }
+
+  .nav-links {
+    gap: 18px !important;
+  }
+
+  .nav-links a {
+    font-size: 14px !important;
+  }
+
+  .navbar .login-btn,
+  .navbar .signup-btn,
+  .navbar button {
+    min-height: 42px !important;
+    padding: 10px 16px !important;
+    font-size: 13px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 550px) {
+  .navbar,
+  nav.navbar {
+    min-height: 72px !important;
+    padding: 12px 15px !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+  }
+
+  .navbar .logo {
+    font-size: 24px !important;
+  }
+
+  .navbar .logo img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .nav-links {
+    gap: 13px !important;
+  }
+
+  .nav-links a {
+    font-size: 12px !important;
+  }
+
+  .navbar .login-btn,
+  .navbar .signup-btn,
+  .navbar button {
+    min-height: 39px !important;
+    padding: 9px 12px !important;
+    font-size: 12px !important;
+  }
+}
+
+
+
+/* CIVICEYE — EXTRA LARGE PREMIUM NAVBAR */
+
+.navbar,
+nav.navbar {
+  width: 100% !important;
+  min-height: 125px !important;
+  padding: 24px clamp(32px, 5vw, 90px) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 36px !important;
+  box-sizing: border-box !important;
+}
+
+/* Large CivicEye logo */
+.navbar .logo {
+  font-size: 42px !important;
+  font-weight: 900 !important;
+  letter-spacing: -1.5px !important;
+  white-space: nowrap !important;
+}
+
+.navbar .logo img {
+  width: 52px !important;
+  height: 52px !important;
+}
+
+/* Large navigation links */
+.nav-links {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(30px, 4vw, 65px) !important;
+}
+
+.nav-links a {
+  font-size: 21px !important;
+  font-weight: 700 !important;
+  padding: 12px 5px !important;
+  white-space: nowrap !important;
+}
+
+/* Large Login and Sign Up buttons */
+.navbar .login-btn,
+.navbar .signup-btn,
+.navbar button {
+  min-width: 100px !important;
+  min-height: 62px !important;
+  padding: 18px 28px !important;
+  border-radius: 14px !important;
+  font-size: 18px !important;
+  font-weight: 850 !important;
+  white-space: nowrap !important;
+}
+
+/* More spacing on wide laptop/desktop */
+@media (min-width: 1200px) {
+  .navbar,
+  nav.navbar {
+    min-height: 140px !important;
+    padding-left: clamp(45px, 5vw, 100px) !important;
+    padding-right: clamp(45px, 5vw, 100px) !important;
+    gap: 45px !important;
+  }
+
+  .navbar .logo {
+    font-size: 46px !important;
+  }
+
+  .nav-links a {
+    font-size: 22px !important;
+  }
+
+  .navbar .login-btn,
+  .navbar .signup-btn,
+  .navbar button {
+    min-width: 115px !important;
+    min-height: 68px !important;
+    padding: 20px 30px !important;
+    font-size: 19px !important;
+  }
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .navbar,
+  nav.navbar {
+    min-height: 95px !important;
+    padding: 18px 24px !important;
+    gap: 22px !important;
+  }
+
+  .navbar .logo {
+    font-size: 32px !important;
+  }
+
+  .nav-links {
+    gap: 20px !important;
+  }
+
+  .nav-links a {
+    font-size: 16px !important;
+  }
+
+  .navbar .login-btn,
+  .navbar .signup-btn,
+  .navbar button {
+    min-width: 78px !important;
+    min-height: 48px !important;
+    padding: 12px 17px !important;
+    font-size: 14px !important;
+  }
+}
+
+/* Mobile: keep everything readable without overflow */
+@media (max-width: 550px) {
+  .navbar,
+  nav.navbar {
+    min-height: 78px !important;
+    padding: 13px 15px !important;
+    gap: 12px !important;
+    flex-wrap: wrap !important;
+  }
+
+  .navbar .logo {
+    font-size: 27px !important;
+  }
+
+  .navbar .logo img {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  .nav-links {
+    gap: 12px !important;
+  }
+
+  .nav-links a {
+    font-size: 13px !important;
+    padding: 7px 0 !important;
+  }
+
+  .navbar .login-btn,
+  .navbar .signup-btn,
+  .navbar button {
+    min-width: 65px !important;
+    min-height: 40px !important;
+    padding: 9px 12px !important;
+    border-radius: 9px !important;
+    font-size: 12px !important;
+  }
+}
+
+
+
+/* CIVICEYE — LARGE LIVE CIVIC ISSUES PANEL */
+
+.hero-card {
+  width: 100% !important;
+  max-width: 620px !important;
+  min-width: 0 !important;
+  padding: 36px !important;
+  border-radius: 26px !important;
+  box-sizing: border-box !important;
+}
+
+/* Panel heading */
+.hero-card h2,
+.hero-card h3 {
+  font-size: 24px !important;
+  line-height: 1.35 !important;
+  margin-bottom: 18px !important;
+}
+
+/* Individual issue cards */
+.hero-card > div {
+  padding: 23px !important;
+  margin-top: 17px !important;
+  min-height: 84px !important;
+  border-radius: 15px !important;
+  box-sizing: border-box !important;
+}
+
+/* Issue title */
+.hero-card > div h3,
+.hero-card > div strong {
+  font-size: 18px !important;
+  line-height: 1.4 !important;
+}
+
+/* Supporting text */
+.hero-card > div p,
+.hero-card > div small {
+  font-size: 13px !important;
+  line-height: 1.6 !important;
+}
+
+/* Icons */
+.hero-card > div img {
+  width: 42px !important;
+  height: 42px !important;
+}
+
+/* Status labels */
+.hero-card > div span {
+  font-size: 12px !important;
+}
+
+/* Larger laptop layout */
+@media (min-width: 1200px) {
+  .hero-section {
+    grid-template-columns: minmax(0, 1fr) minmax(480px, 620px) !important;
+    gap: clamp(60px, 6vw, 110px) !important;
+  }
+
+  .hero-card {
+    max-width: 620px !important;
+    padding: 38px !important;
+  }
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .hero-card {
+    max-width: 100% !important;
+    padding: 24px !important;
+  }
+
+  .hero-card > div {
+    padding: 18px !important;
+    min-height: 74px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .hero-card {
+    padding: 17px !important;
+    border-radius: 19px !important;
+  }
+
+  .hero-card h2,
+  .hero-card h3 {
+    font-size: 20px !important;
+  }
+
+  .hero-card > div {
+    padding: 15px !important;
+    margin-top: 12px !important;
+    min-height: 68px !important;
+  }
+
+  .hero-card > div h3,
+  .hero-card > div strong {
+    font-size: 15px !important;
+  }
+}
+
+
+/* =====================================================
+   CIVICEYE AI — PREMIUM HERO REDESIGN V2
+   Visual-only update. Existing functionality preserved.
+   ===================================================== */
+
+:root {
+  --ce-hero-bg: #07111f;
+  --ce-hero-panel: #122238;
+  --ce-hero-green: #27d6a2;
+  --ce-hero-muted: #a5b8d0;
+  --ce-hero-border: rgba(148, 163, 184, 0.18);
+}
+
+/* Hero background and overall layout */
+.hero-section {
+  position: relative !important;
+  isolation: isolate;
+  width: min(1640px, calc(100% - 100px)) !important;
+  min-height: 740px !important;
+  margin: 0 auto !important;
+  padding: 100px 0 115px !important;
+
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(440px, 600px) !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: clamp(55px, 6vw, 105px) !important;
+
+  text-align: left !important;
+  box-sizing: border-box !important;
+}
+
+/* Soft decorative lighting */
+.hero-section::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 8%;
+  left: -8%;
+  width: 55%;
+  height: 78%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse,
+    rgba(39, 214, 162, 0.09),
+    rgba(39, 214, 162, 0.025) 42%,
+    transparent 72%
+  );
+  pointer-events: none;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: -5%;
+  top: 5%;
+  width: 45%;
+  height: 80%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse,
+    rgba(59, 130, 246, 0.08),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Main text column */
+.hero-content {
+  position: relative;
+  width: 100% !important;
+  max-width: 900px !important;
+  min-width: 0;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+/* Small AI platform label */
+.hero-content > :first-child {
+  max-width: 100%;
+}
+
+/* Large headline */
+.hero-content h1 {
+  max-width: 900px !important;
+  margin: 30px 0 26px !important;
+
+  color: #f7faff !important;
+  font-size: clamp(64px, 5.6vw, 92px) !important;
+  font-weight: 900 !important;
+  line-height: 1.025 !important;
+  letter-spacing: -4px !important;
+
+  text-align: left !important;
+  text-wrap: balance;
+}
+
+/* Keep existing accent text green */
+.hero-content h1 span,
+.hero-content h1 strong {
+  color: var(--ce-hero-green);
+}
+
+/* Supporting description */
+.hero-content p {
+  max-width: 700px !important;
+  margin: 0 0 30px !important;
+
+  color: #b3c3d7 !important;
+  font-size: 19px !important;
+  line-height: 1.9 !important;
+  font-weight: 400 !important;
+
+  text-align: left !important;
+}
+
+/* CTA buttons */
+.hero-buttons {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  flex-wrap: wrap !important;
+  gap: 16px !important;
+  margin-top: 36px !important;
+}
+
+.hero-buttons button,
+.hero-buttons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 60px !important;
+  padding: 18px 28px !important;
+
+  border-radius: 13px !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease !important;
+}
+
+.hero-buttons button:first-child,
+.hero-buttons a:first-child {
+  box-shadow: 0 8px 26px rgba(39, 214, 162, 0.14);
+}
+
+.hero-buttons button:hover,
+.hero-buttons a:hover {
+  transform: translateY(-3px);
+}
+
+.hero-buttons button:first-child:hover,
+.hero-buttons a:first-child:hover {
+  box-shadow: 0 12px 32px rgba(39, 214, 162, 0.25);
+}
+
+/* 24/7, AI, 100% statistics */
+.stats {
+  display: flex !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  flex-wrap: wrap !important;
+  gap: clamp(32px, 4vw, 62px) !important;
+  margin-top: 48px !important;
+  text-align: left !important;
+}
+
+.stats > div,
+.stats > article {
+  min-width: 80px;
+}
+
+.stats strong {
+  display: block;
+  margin-bottom: 9px !important;
+  color: #f7faff !important;
+  font-size: 30px !important;
+  font-weight: 900 !important;
+  letter-spacing: -0.7px;
+}
+
+.stats span,
+.stats p {
+  color: var(--ce-hero-muted) !important;
+  font-size: 13px !important;
+  line-height: 1.6;
+}
+
+/* Live Civic Issues panel */
+.hero-card {
+  position: relative;
+  width: 100% !important;
+  max-width: 600px !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 30px !important;
+
+  border: 1px solid rgba(148, 163, 184, 0.22) !important;
+  border-radius: 24px !important;
+
+  background:
+    linear-gradient(145deg, rgba(21, 40, 62, 0.98), rgba(10, 24, 40, 0.98)) !important;
+
+  box-shadow:
+    0 28px 70px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.035) !important;
+
+  box-sizing: border-box !important;
+}
+
+/* Panel rows */
+.hero-card > div {
+  min-width: 0;
+  margin-top: 14px !important;
+  padding: 20px !important;
+
+  border: 1px solid rgba(148, 163, 184, 0.10);
+  border-radius: 14px !important;
+
+  background: rgba(148, 163, 184, 0.065) !important;
+  box-sizing: border-box !important;
+
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    transform 180ms ease !important;
+}
+
+.hero-card > div:hover {
+  background: rgba(148, 163, 184, 0.105) !important;
+  border-color: rgba(39, 214, 162, 0.24);
+  transform: translateY(-2px);
+}
+
+/* Panel typography */
+.hero-card h2,
+.hero-card h3 {
+  color: #f4f8ff !important;
+  font-weight: 800 !important;
+  line-height: 1.45 !important;
+}
+
+.hero-card h2 {
+  font-size: 20px !important;
+}
+
+.hero-card h3 {
+  font-size: 16px !important;
+}
+
+.hero-card p,
+.hero-card small {
+  color: #9eb3cc !important;
+  line-height: 1.65 !important;
+}
+
+/* AI issue detection row */
+.hero-card > div:last-child {
+  border: 1px solid rgba(39, 214, 162, 0.25) !important;
+  background: rgba(39, 214, 162, 0.065) !important;
+}
+
+/* Accessible focus for keyboard navigation */
+.hero-content a:focus-visible,
+.hero-content button:focus-visible,
+.hero-card a:focus-visible,
+.hero-card button:focus-visible {
+  outline: 2px solid var(--ce-hero-green);
+  outline-offset: 4px;
+}
+
+/* Laptop */
+@media (min-width: 1200px) {
+  .hero-section {
+    width: min(1640px, calc(100% - 120px)) !important;
+    min-height: 760px !important;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(72px, 5.3vw, 96px) !important;
+  }
+}
+
+/* Tablet and smaller laptops */
+@media (max-width: 1050px) {
+  .hero-section {
+    width: calc(100% - 56px) !important;
+    min-height: auto !important;
+    padding: 75px 0 85px !important;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 400px) !important;
+    gap: 34px !important;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(46px, 5.5vw, 68px) !important;
+    letter-spacing: -2.6px !important;
+  }
+
+  .hero-content p {
+    font-size: 17px !important;
+  }
+
+  .hero-card {
+    padding: 22px !important;
+  }
+
+  .hero-card > div {
+    padding: 16px !important;
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 800px) {
+  .hero-section {
+    width: calc(100% - 40px) !important;
+    min-height: auto !important;
+    padding: 55px 0 60px !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 38px !important;
+  }
+
+  .hero-content {
+    max-width: 100% !important;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(43px, 8vw, 65px) !important;
+    letter-spacing: -2px !important;
+    line-height: 1.08 !important;
+  }
+
+  .hero-content p {
+    font-size: 16px !important;
+    line-height: 1.8 !important;
+  }
+
+  .hero-buttons {
+    gap: 12px !important;
+    margin-top: 26px !important;
+  }
+
+  .hero-buttons button,
+  .hero-buttons a {
+    min-height: 52px !important;
+    padding: 15px 20px !important;
+    font-size: 14px !important;
+  }
+
+  .stats {
+    gap: 28px !important;
+    margin-top: 35px !important;
+  }
+
+  .stats strong {
+    font-size: 25px !important;
+  }
+
+  .hero-card {
+    max-width: 100% !important;
+    padding: 20px !important;
+    border-radius: 19px !important;
+  }
+
+  .hero-card > div {
+    padding: 15px !important;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .hero-section {
+    width: calc(100% - 32px) !important;
+    padding: 42px 0 48px !important;
+    gap: 30px !important;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(38px, 10vw, 48px) !important;
+    letter-spacing: -1.6px !important;
+  }
+
+  .hero-content p {
+    font-size: 15px !important;
+  }
+
+  .hero-buttons {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .hero-buttons button,
+  .hero-buttons a {
+    width: 100% !important;
+    min-height: 50px !important;
+  }
+
+  .stats {
+    justify-content: space-between !important;
+    gap: 12px !important;
+  }
+
+  .stats strong {
+    font-size: 23px !important;
+  }
+
+  .stats span,
+  .stats p {
+    font-size: 11px !important;
+  }
+
+  .hero-card {
+    padding: 15px !important;
+  }
+
+  .hero-card > div {
+    padding: 13px !important;
+  }
+
+  .hero-card h2 {
+    font-size: 18px !important;
+  }
+
+  .hero-card h3 {
+    font-size: 14px !important;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .hero-buttons button,
+  .hero-buttons a,
+  .hero-card > div {
+    transition: none !important;
+  }
+}
+
+
+/* ==================================================
+   CIVICEYE — PREMIUM REPORT ISSUE MODAL
+   Styling only: preserve existing event handlers
+   ================================================== */
+
+/* Modal backdrop */
+.modal-overlay {
+  padding: 28px !important;
+  background: rgba(2, 8, 17, 0.82) !important;
+  backdrop-filter: blur(9px) !important;
+}
+
+/* Main complaint form panel */
+.modal-content {
+  width: min(620px, calc(100vw - 40px)) !important;
+  max-width: 620px !important;
+  max-height: calc(100dvh - 48px) !important;
+  overflow-y: auto !important;
+  padding: 38px !important;
+  margin: auto !important;
+
+  color: #f4f8ff !important;
+  background: linear-gradient(145deg, #14263c, #0c192a) !important;
+  border: 1px solid rgba(148, 163, 184, 0.24) !important;
+  border-radius: 25px !important;
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04) !important;
+}
+
+/* Form heading */
+.modal-content h1,
+.modal-content h2 {
+  color: #f7faff !important;
+  font-size: 30px !important;
+  line-height: 1.25 !important;
+  font-weight: 850 !important;
+  letter-spacing: -0.7px !important;
+  margin-bottom: 10px !important;
+}
+
+.modal-content p {
+  color: #a4b8d0 !important;
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+/* Title, description, category and location */
+.modal-content form > input:not([type="file"]),
+.modal-content form > textarea,
+.modal-content form > select {
+  display: block !important;
+  width: 100% !important;
+  min-height: 54px !important;
+  margin: 12px 0 !important;
+  padding: 15px 17px !important;
+
+  color: #f1f5f9 !important;
+  background: #091626 !important;
+  border: 1px solid rgba(148, 163, 184, 0.26) !important;
+  border-radius: 12px !important;
+
+  font-size: 15px !important;
+  line-height: 1.5 !important;
+  box-sizing: border-box !important;
+  transition: border-color .2s ease, box-shadow .2s ease !important;
+}
+
+.modal-content form > textarea {
+  min-height: 125px !important;
+  resize: vertical !important;
+}
+
+.modal-content form > input::placeholder,
+.modal-content form > textarea::placeholder {
+  color: #7f94ad !important;
+}
+
+.modal-content form > input:focus,
+.modal-content form > textarea:focus,
+.modal-content form > select:focus {
+  outline: none !important;
+  border-color: #27d6a2 !important;
+  box-shadow: 0 0 0 3px rgba(39, 214, 162, 0.11) !important;
+}
+
+/* AI analysis */
+.modal-content .ai-analyze-btn {
+  width: 100% !important;
+  min-height: 54px !important;
+  margin: 8px 0 12px !important;
+  padding: 14px 18px !important;
+
+  color: #c9fff0 !important;
+  background: linear-gradient(135deg, #174a47, #103a3d) !important;
+  border: 1px solid rgba(39, 214, 162, 0.42) !important;
+  border-radius: 12px !important;
+
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  cursor: pointer !important;
+  transition: transform .2s ease, background .2s ease !important;
+}
+
+.modal-content .ai-analyze-btn:hover:not(:disabled) {
+  transform: translateY(-2px) !important;
+  background: linear-gradient(135deg, #1a6257, #124a49) !important;
+}
+
+.modal-content .ai-analyze-btn:disabled {
+  opacity: 0.65 !important;
+  cursor: wait !important;
+}
+
+/* Location selection block */
+.modal-content .issue-location-picker {
+  margin: 22px 0 !important;
+  padding: 20px !important;
+  border: 1px solid rgba(148, 163, 184, 0.18) !important;
+  border-radius: 15px !important;
+  background: rgba(148, 163, 184, 0.055) !important;
+}
+
+.modal-content .issue-location-label {
+  display: block !important;
+  margin-bottom: 7px !important;
+  color: #f1f7ff !important;
+  font-size: 16px !important;
+  font-weight: 800 !important;
+}
+
+.modal-content .issue-location-help {
+  margin: 0 0 14px !important;
+  font-size: 13px !important;
+}
+
+/* Map, camera, upload and remove-photo buttons */
+.modal-content .modal-btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+
+  width: 100% !important;
+  min-height: 54px !important;
+  margin: 10px 0 !important;
+  padding: 14px 18px !important;
+
+  color: #eaf5ff !important;
+  background: #192d44 !important;
+  border: 1px solid rgba(148, 163, 184, 0.22) !important;
+  border-radius: 12px !important;
+
+  font-size: 14px !important;
+  font-weight: 750 !important;
+  line-height: 1.45 !important;
+  cursor: pointer !important;
+
+  transition:
+    transform .18s ease,
+    border-color .18s ease,
+    background .18s ease !important;
+}
+
+.modal-content .modal-btn:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(39, 214, 162, 0.45) !important;
+  background: #203952 !important;
+}
+
+/* Submit button — target submit action only */
+.modal-content form button[type="submit"] {
+  min-height: 60px !important;
+  margin-top: 18px !important;
+
+  color: #04271d !important;
+  background: linear-gradient(135deg, #36e4b2, #20c997) !important;
+  border: 1px solid #36e4b2 !important;
+  border-radius: 13px !important;
+
+  font-size: 16px !important;
+  font-weight: 900 !important;
+  box-shadow: 0 9px 24px rgba(39, 214, 162, 0.14) !important;
+}
+
+.modal-content form button[type="submit"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 12px 30px rgba(39, 214, 162, 0.24) !important;
+}
+
+/* Selected image preview */
+.modal-content img[alt="Selected civic issue"] {
+  width: 100% !important;
+  max-height: 300px !important;
+  object-fit: cover !important;
+  border-radius: 14px !important;
+  border: 1px solid rgba(148, 163, 184, 0.2) !important;
+}
+
+/* Small screens */
+@media (max-width: 600px) {
+  .modal-overlay {
+    padding: 12px !important;
+  }
+
+  .modal-content {
+    width: calc(100vw - 24px) !important;
+    max-width: none !important;
+    max-height: calc(100dvh - 24px) !important;
+    padding: 22px !important;
+    border-radius: 19px !important;
+  }
+
+  .modal-content h1,
+  .modal-content h2 {
+    font-size: 25px !important;
+  }
+
+  .modal-content form > input:not([type="file"]),
+  .modal-content form > textarea,
+  .modal-content form > select {
+    min-height: 50px !important;
+    padding: 13px 14px !important;
+    font-size: 14px !important;
+  }
+
+  .modal-content form > textarea {
+    min-height: 105px !important;
+  }
+
+  .modal-content .modal-btn {
+    min-height: 50px !important;
+    font-size: 13px !important;
+  }
+
+  .modal-content form button[type="submit"] {
+    min-height: 54px !important;
+  }
+}
+
+
+/* CIVICEYE — FIX NAVBAR RIGHT CORNER */
+
+.navbar,
+nav.navbar {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Right-side user controls */
+.navbar > div:last-child,
+nav.navbar > div:last-child {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 16px !important;
+  margin-left: auto !important;
+  flex-shrink: 0 !important;
+}
+
+/* Notification button */
+.navbar button[aria-label*="notification" i],
+.navbar button[aria-label*="bell" i],
+.navbar .notification-btn,
+.navbar .notification-button {
+  min-width: 64px !important;
+  min-height: 54px !important;
+  padding: 12px 18px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 12px !important;
+}
+
+/* Logged-in user label */
+.navbar .user-info,
+.navbar .user-greeting,
+.navbar .user-name {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  font-size: 15px !important;
+  font-weight: 750 !important;
+  margin: 0 !important;
+}
+
+/* Logout button */
+.navbar .logout-btn,
+.navbar button.logout-btn,
+.navbar a.logout-btn {
+  min-width: 105px !important;
+  min-height: 54px !important;
+  padding: 13px 22px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  border-radius: 12px !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+}
+
+/* Desktop spacing */
+@media (min-width: 1200px) {
+  .navbar,
+  nav.navbar {
+    padding-left: 5vw !important;
+    padding-right: 5vw !important;
+  }
+
+  .navbar > div:last-child,
+  nav.navbar > div:last-child {
+    gap: 18px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 550px) {
+  .navbar > div:last-child,
+  nav.navbar > div:last-child {
+    gap: 8px !important;
+  }
+
+  .navbar .notification-btn,
+  .navbar .notification-button {
+    min-width: 42px !important;
+    min-height: 42px !important;
+    padding: 8px !important;
+  }
+
+  .navbar .user-info,
+  .navbar .user-greeting,
+  .navbar .user-name {
+    font-size: 12px !important;
+  }
+
+  .navbar .logout-btn,
+  .navbar button.logout-btn,
+  .navbar a.logout-btn {
+    min-width: 72px !important;
+    min-height: 42px !important;
+    padding: 9px 12px !important;
+    font-size: 12px !important;
+  }
+}
+
+
+/* Restore navbar navigation to previous centered position */
+.navbar .nav-links,
+nav.navbar .nav-links {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 42px !important;
+
+  width: max-content !important;
+  margin: 0 !important;
+}
+
+.navbar .nav-links a,
+nav.navbar .nav-links a {
+  font-size: 16px !important;
+  font-weight: 650 !important;
+  padding: 10px 4px !important;
+  white-space: nowrap !important;
+}
+
+/* Keep the logo on the left and account controls on the right */
+.navbar,
+nav.navbar {
+  position: relative !important;
+}
+
+.navbar > div:last-child,
+nav.navbar > div:last-child {
+  margin-left: auto !important;
+}
+
+/* Mobile: avoid overlapping navigation */
+@media (max-width: 700px) {
+  .navbar .nav-links,
+  nav.navbar .nav-links {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    order: 3 !important;
+    justify-content: center !important;
+    gap: 24px !important;
+  }
+}
+
+
+/* CIVICEYE — EXTRA LARGE NAVBAR ELEMENTS */
+
+.navbar,
+nav.navbar {
+  min-height: 150px !important;
+  padding: 28px 5vw !important;
+  gap: 36px !important;
+}
+
+/* Logo */
+.navbar .logo {
+  font-size: 48px !important;
+  font-weight: 900 !important;
+  letter-spacing: -1.5px !important;
+}
+
+.navbar .logo img {
+  width: 58px !important;
+  height: 58px !important;
+}
+
+/* Home, Features, About — keep centered */
+.navbar .nav-links,
+nav.navbar .nav-links {
+  gap: clamp(35px, 4vw, 65px) !important;
+}
+
+.navbar .nav-links a,
+nav.navbar .nav-links a {
+  font-size: 25px !important;
+  font-weight: 800 !important;
+  padding: 16px 8px !important;
+}
+
+/* Notification, username and Logout */
+.navbar > div:last-child,
+nav.navbar > div:last-child {
+  gap: 20px !important;
+}
+
+.navbar .notification-btn,
+.navbar .notification-button {
+  min-width: 78px !important;
+  min-height: 72px !important;
+  padding: 18px !important;
+  font-size: 25px !important;
+  border-radius: 15px !important;
+}
+
+.navbar .user-info,
+.navbar .user-greeting,
+.navbar .user-name {
+  font-size: 20px !important;
+  font-weight: 800 !important;
+}
+
+.navbar .logout-btn,
+.navbar button.logout-btn,
+.navbar a.logout-btn {
+  min-width: 145px !important;
+  min-height: 72px !important;
+  padding: 20px 30px !important;
+  font-size: 20px !important;
+  font-weight: 850 !important;
+  border-radius: 15px !important;
+}
+
+/* Large desktop */
+@media (min-width: 1200px) {
+  .navbar,
+  nav.navbar {
+    min-height: 155px !important;
+    padding-left: 5vw !important;
+    padding-right: 5vw !important;
+  }
+
+  .navbar .logo {
+    font-size: 50px !important;
+  }
+
+  .navbar .nav-links a,
+  nav.navbar .nav-links a {
+    font-size: 26px !important;
+  }
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .navbar,
+  nav.navbar {
+    min-height: 95px !important;
+    padding: 16px 22px !important;
+    gap: 16px !important;
+  }
+
+  .navbar .logo {
+    font-size: 30px !important;
+  }
+
+  .navbar .nav-links a,
+  nav.navbar .nav-links a {
+    font-size: 16px !important;
+  }
+
+  .navbar .notification-btn,
+  .navbar .notification-button,
+  .navbar .logout-btn,
+  .navbar button.logout-btn,
+  .navbar a.logout-btn {
+    min-width: 60px !important;
+    min-height: 46px !important;
+    padding: 10px 14px !important;
+    font-size: 13px !important;
+  }
+
+  .navbar .user-info,
+  .navbar .user-greeting,
+  .navbar .user-name {
+    font-size: 13px !important;
+  }
+}
+
+/* Mobile: readable without overflow */
+@media (max-width: 550px) {
+  .navbar,
+  nav.navbar {
+    min-height: 76px !important;
+    padding: 12px 14px !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+
+  .navbar .logo {
+    font-size: 25px !important;
+  }
+
+  .navbar .logo img {
+    width: 34px !important;
+    height: 34px !important;
+  }
+
+  .navbar .nav-links,
+  nav.navbar .nav-links {
+    position: static !important;
+    transform: none !important;
+    order: 3 !important;
+    width: 100% !important;
+    gap: 20px !important;
+  }
+
+  .navbar .nav-links a,
+  nav.navbar .nav-links a {
+    font-size: 14px !important;
+    padding: 8px 2px !important;
+  }
+
+  .navbar > div:last-child,
+  nav.navbar > div:last-child {
+    gap: 7px !important;
+  }
+
+  .navbar .notification-btn,
+  .navbar .notification-button,
+  .navbar .logout-btn,
+  .navbar button.logout-btn,
+  .navbar a.logout-btn {
+    min-width: 40px !important;
+    min-height: 38px !important;
+    padding: 8px 10px !important;
+    font-size: 11px !important;
+  }
+
+  .navbar .user-info,
+  .navbar .user-greeting,
+  .navbar .user-name {
+    font-size: 11px !important;
+  }
+}
+
+
+/* CIVICEYE — EXTRA LARGE USER CONTROLS */
+
+.navbar > div:last-child,
+nav.navbar > div:last-child {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  gap: 28px !important;
+  margin-left: auto !important;
+}
+
+/* Notification bell */
+.navbar .notification-btn,
+.navbar .notification-button,
+.navbar button[aria-label*="notification" i] {
+  width: 90px !important;
+  min-width: 90px !important;
+  height: 82px !important;
+  min-height: 82px !important;
+  padding: 20px !important;
+  font-size: 28px !important;
+  border-radius: 16px !important;
+}
+
+/* Username */
+.navbar .user-info,
+.navbar .user-greeting,
+.navbar .user-name {
+  font-size: 23px !important;
+  font-weight: 850 !important;
+  white-space: nowrap !important;
+  margin: 0 8px !important;
+}
+
+/* Logout */
+.navbar .logout-btn,
+.navbar button.logout-btn,
+.navbar a.logout-btn {
+  min-width: 165px !important;
+  min-height: 82px !important;
+  padding: 22px 32px !important;
+  font-size: 22px !important;
+  font-weight: 850 !important;
+  border-radius: 16px !important;
+  white-space: nowrap !important;
+}
+
+/* Desktop spacing */
+@media (min-width: 1200px) {
+  .navbar > div:last-child,
+  nav.navbar > div:last-child {
+    gap: 30px !important;
+  }
+}
+
+/* Mobile safety */
+@media (max-width: 550px) {
+  .navbar > div:last-child,
+  nav.navbar > div:last-child {
+    gap: 8px !important;
+  }
+
+  .navbar .notification-btn,
+  .navbar .notification-button,
+  .navbar button[aria-label*="notification" i] {
+    width: 42px !important;
+    min-width: 42px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    padding: 8px !important;
+    font-size: 15px !important;
+  }
+
+  .navbar .user-info,
+  .navbar .user-greeting,
+  .navbar .user-name {
+    font-size: 12px !important;
+    margin: 0 !important;
+  }
+
+  .navbar .logout-btn,
+  .navbar button.logout-btn,
+  .navbar a.logout-btn {
+    min-width: 65px !important;
+    min-height: 40px !important;
+    padding: 9px 11px !important;
+    font-size: 12px !important;
+  }
+}
+
+
+/* CIVICEYE — EXTRA LARGE LIVE CIVIC MAP SECTION */
+
+.map-section,
+.live-map-section,
+.civic-map-section {
+  width: min(1800px, calc(100% - 64px)) !important;
+  max-width: 1800px !important;
+  margin: 60px auto 100px !important;
+  padding: 35px 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Section label and heading */
+.map-section h2,
+.live-map-section h2,
+.civic-map-section h2 {
+  font-size: clamp(38px, 4vw, 58px) !important;
+  line-height: 1.2 !important;
+  font-weight: 900 !important;
+  letter-spacing: -1.5px !important;
+  margin-bottom: 18px !important;
+}
+
+/* Description */
+.map-section p,
+.live-map-section p,
+.civic-map-section p {
+  font-size: 18px !important;
+  line-height: 1.8 !important;
+  margin-bottom: 25px !important;
+}
+
+/* Large map container */
+.map-section .leaflet-container,
+.live-map-section .leaflet-container,
+.civic-map-section .leaflet-container {
+  width: 100% !important;
+  height: clamp(500px, 65vh, 850px) !important;
+  min-height: 500px !important;
+  border-radius: 22px !important;
+  border: 1px solid rgba(148, 163, 184, .25) !important;
+  box-shadow: 0 24px 65px rgba(0, 0, 0, .28) !important;
+}
+
+/* Make map attribution readable */
+.leaflet-control-attribution {
+  font-size: 11px !important;
+}
+
+/* Map zoom controls */
+.leaflet-control-zoom a {
+  width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  font-size: 22px !important;
+}
+
+/* Larger legend and supporting text */
+.map-section small,
+.live-map-section small,
+.civic-map-section small {
+  font-size: 14px !important;
+}
+
+/* Wide laptop / desktop */
+@media (min-width: 1200px) {
+  .map-section,
+  .live-map-section,
+  .civic-map-section {
+    width: min(1800px, calc(100% - 80px)) !important;
+  }
+
+  .map-section .leaflet-container,
+  .live-map-section .leaflet-container,
+  .civic-map-section .leaflet-container {
+    height: 720px !important;
+  }
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .map-section,
+  .live-map-section,
+  .civic-map-section {
+    width: calc(100% - 36px) !important;
+    margin: 40px auto 65px !important;
+    padding: 15px 0 !important;
+  }
+
+  .map-section h2,
+  .live-map-section h2,
+  .civic-map-section h2 {
+    font-size: clamp(30px, 6vw, 42px) !important;
+    letter-spacing: -.8px !important;
+  }
+
+  .map-section p,
+  .live-map-section p,
+  .civic-map-section p {
+    font-size: 16px !important;
+  }
+
+  .map-section .leaflet-container,
+  .live-map-section .leaflet-container,
+  .civic-map-section .leaflet-container {
+    height: 480px !important;
+    min-height: 380px !important;
+    border-radius: 17px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .map-section,
+  .live-map-section,
+  .civic-map-section {
+    width: calc(100% - 24px) !important;
+  }
+
+  .map-section h2,
+  .live-map-section h2,
+  .civic-map-section h2 {
+    font-size: 29px !important;
+  }
+
+  .map-section .leaflet-container,
+  .live-map-section .leaflet-container,
+  .civic-map-section .leaflet-container {
+    height: 360px !important;
+    min-height: 320px !important;
+    border-radius: 14px !important;
+  }
+}
+
+
+/* ==========================================
+   CIVICEYE — FULL-WIDTH MAP ALIGNMENT
+   ========================================== */
+
+.map-section,
+.live-map-section,
+.civic-map-section {
+  width: calc(100% - 64px) !important;
+  max-width: 1800px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+}
+
+/* Map should occupy the complete section width */
+.map-section .leaflet-container,
+.live-map-section .leaflet-container,
+.civic-map-section .leaflet-container {
+  display: block !important;
+  width: 100% !important;
+  max-width: none !important;
+  height: clamp(450px, 65vh, 760px) !important;
+  min-height: 450px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  box-sizing: border-box !important;
+  border-radius: 20px !important;
+}
+
+/* Keep map captions centered */
+.map-section p,
+.live-map-section p,
+.civic-map-section p {
+  text-align: center !important;
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+  .map-section,
+  .live-map-section,
+  .civic-map-section {
+    width: calc(100% - 80px) !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .map-section,
+  .live-map-section,
+  .civic-map-section {
+    width: calc(100% - 24px) !important;
+  }
+
+  .map-section .leaflet-container,
+  .live-map-section .leaflet-container,
+  .civic-map-section .leaflet-container {
+    height: 360px !important;
+    min-height: 320px !important;
+    border-radius: 14px !important;
+  }
+}
+
+/* ==========================================
+   CIVICEYE — CONSISTENT LOGIN / LOGOUT BUTTONS
+   ========================================== */
+
+.navbar .login-btn,
+.navbar .logout-btn,
+.navbar button.login-btn,
+.navbar button.logout-btn,
+.navbar a.login-btn,
+.navbar a.logout-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+
+  width: 145px !important;
+  min-width: 145px !important;
+  height: 64px !important;
+  min-height: 64px !important;
+
+  padding: 14px 20px !important;
+  border-radius: 13px !important;
+  font-size: 17px !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
+}
+
+/* Mobile button sizing */
+@media (max-width: 550px) {
+  .navbar .login-btn,
+  .navbar .logout-btn,
+  .navbar button.login-btn,
+  .navbar button.logout-btn,
+  .navbar a.login-btn,
+  .navbar a.logout-btn {
+    width: 82px !important;
+    min-width: 82px !important;
+    height: 42px !important;
+    min-height: 42px !important;
+    padding: 9px 12px !important;
+    font-size: 12px !important;
+  }
+}
+
+
+/* ============================================
+   CIVICEYE — WHY CIVICEYE PREMIUM SECTION
+   Full-width cards + larger readable text
+   ============================================ */
+
+/* Section wrapper */
+.features,
+.features-section,
+.why-civiceye,
+#features {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 auto !important;
+  padding: 90px 35px 100px !important;
+  box-sizing: border-box !important;
+}
+
+/* Section headings */
+.features h2,
+.features-section h2,
+.why-civiceye h2,
+#features h2 {
+  font-size: clamp(36px, 3.2vw, 48px) !important;
+  line-height: 1.2 !important;
+  font-weight: 850 !important;
+  letter-spacing: -1px !important;
+  margin-bottom: 18px !important;
+}
+
+.features p,
+.features-section p,
+.why-civiceye p,
+#features p {
+  font-size: 17px !important;
+  line-height: 1.8 !important;
+}
+
+/* Feature cards grid */
+.feature-grid,
+.features-grid,
+.feature-cards {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+
+  width: 100% !important;
+  max-width: none !important;
+  margin: 42px auto 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Individual cards */
+.feature-grid > *,
+.features-grid > *,
+.feature-cards > * {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 220px !important;
+  padding: 34px 26px !important;
+  box-sizing: border-box !important;
+
+  border: 1px solid rgba(148, 163, 184, .22) !important;
+  border-radius: 20px !important;
+
+  background: linear-gradient(
+    145deg,
+    #14263c,
+    #0c192a
+  ) !important;
+
+  box-shadow: 0 14px 32px rgba(0, 0, 0, .12) !important;
+  text-align: center !important;
+
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease !important;
+}
+
+/* Hover effect */
+.feature-grid > *:hover,
+.features-grid > *:hover,
+.feature-cards > *:hover {
+  transform: translateY(-5px) !important;
+  border-color: rgba(39, 214, 162, .5) !important;
+  box-shadow: 0 20px 42px rgba(0, 0, 0, .22) !important;
+}
+
+/* Feature titles */
+.feature-grid h3,
+.features-grid h3,
+.feature-cards h3,
+.feature-grid h4,
+.features-grid h4,
+.feature-cards h4 {
+  font-size: 23px !important;
+  font-weight: 800 !important;
+  line-height: 1.4 !important;
+  margin: 15px 0 12px !important;
+  color: #f4f8ff !important;
+}
+
+/* Feature descriptions */
+.feature-grid p,
+.features-grid p,
+.feature-cards p {
+  font-size: 16px !important;
+  line-height: 1.8 !important;
+  color: #a8bbd2 !important;
+  max-width: 400px !important;
+  margin: 0 auto !important;
+}
+
+/* Emoji / icon sizing */
+.feature-grid svg,
+.features-grid svg,
+.feature-cards svg {
+  width: 38px !important;
+  height: 38px !important;
+}
+
+.feature-grid .feature-icon,
+.features-grid .feature-icon,
+.feature-cards .feature-icon {
+  font-size: 36px !important;
+  margin-bottom: 14px !important;
+}
+
+/* Wide desktop */
+@media (min-width: 1400px) {
+  .features,
+  .features-section,
+  .why-civiceye,
+  #features {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+  }
+
+  .feature-grid,
+  .features-grid,
+  .feature-cards {
+    gap: 28px !important;
+  }
+
+  .feature-grid > *,
+  .features-grid > *,
+  .feature-cards > * {
+    min-height: 245px !important;
+    padding: 40px 32px !important;
+  }
+
+  .feature-grid h3,
+  .features-grid h3,
+  .feature-cards h3 {
+    font-size: 25px !important;
+  }
+
+  .feature-grid p,
+  .features-grid p,
+  .feature-cards p {
+    font-size: 17px !important;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .features,
+  .features-section,
+  .why-civiceye,
+  #features {
+    padding: 65px 24px 75px !important;
+  }
+
+  .feature-grid,
+  .features-grid,
+  .feature-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+  }
+
+  .feature-grid > *,
+  .features-grid > *,
+  .feature-cards > * {
+    min-height: 200px !important;
+    padding: 26px 20px !important;
+  }
+
+  .feature-grid h3,
+  .features-grid h3,
+  .feature-cards h3 {
+    font-size: 21px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .features,
+  .features-section,
+  .why-civiceye,
+  #features {
+    padding: 48px 16px 55px !important;
+  }
+
+  .features h2,
+  .features-section h2,
+  .why-civiceye h2,
+  #features h2 {
+    font-size: 30px !important;
+  }
+
+  .features p,
+  .features-section p,
+  .why-civiceye p,
+  #features p {
+    font-size: 15px !important;
+  }
+
+  .feature-grid,
+  .features-grid,
+  .feature-cards {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+    margin-top: 28px !important;
+  }
+
+  .feature-grid > *,
+  .features-grid > *,
+  .feature-cards > * {
+    min-height: 170px !important;
+    padding: 25px 20px !important;
+  }
+
+  .feature-grid h3,
+  .features-grid h3,
+  .feature-cards h3 {
+    font-size: 20px !important;
+  }
+
+  .feature-grid p,
+  .features-grid p,
+  .feature-cards p {
+    font-size: 15px !important;
+  }
+}
+
+
+/* ==========================================
+   CIVICEYE — PREMIUM ABOUT STRIP + FOOTER
+   ========================================== */
+
+/* Technology for a better tomorrow section */
+.about-section,
+.mission-section,
+.brand-message,
+.cta-about {
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 300px !important;
+  margin: 0 auto !important;
+  padding: 75px 5vw !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 60px !important;
+  box-sizing: border-box !important;
+}
+
+/* Main heading */
+.about-section h2,
+.mission-section h2,
+.brand-message h2,
+.cta-about h2 {
+  font-size: clamp(36px, 3vw, 50px) !important;
+  line-height: 1.25 !important;
+  font-weight: 850 !important;
+  letter-spacing: -1px !important;
+  margin: 15px 0 !important;
+}
+
+/* Description */
+.about-section p,
+.mission-section p,
+.brand-message p,
+.cta-about p {
+  max-width: 760px !important;
+  font-size: 18px !important;
+  line-height: 1.9 !important;
+  color: #afc1d6 !important;
+}
+
+/* Footer */
+footer {
+  width: 100% !important;
+  min-height: 115px !important;
+  padding: 30px 5vw !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 30px !important;
+
+  box-sizing: border-box !important;
+  border-top: 1px solid rgba(148, 163, 184, .2) !important;
+  background: #07111f !important;
+}
+
+/* Footer logo */
+footer .logo,
+footer .brand,
+footer .footer-logo {
+  font-size: 30px !important;
+  font-weight: 900 !important;
+  letter-spacing: -.6px !important;
+}
+
+footer .logo img,
+footer .brand img,
+footer .footer-logo img {
+  width: 38px !important;
+  height: 38px !important;
+}
+
+/* Footer text and tagline */
+footer p,
+footer small,
+footer .footer-tagline {
+  font-size: 14px !important;
+  line-height: 1.8 !important;
+  color: #a5b8d0 !important;
+}
+
+/* Footer links */
+footer a {
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+
+footer a:hover {
+  color: #27d6a2 !important;
+}
+
+/* Wide desktop */
+@media (min-width: 1200px) {
+  footer {
+    min-height: 135px !important;
+    padding-left: 5vw !important;
+    padding-right: 5vw !important;
+  }
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .about-section,
+  .mission-section,
+  .brand-message,
+  .cta-about {
+    min-height: auto !important;
+    padding: 55px 24px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 22px !important;
+  }
+
+  .about-section h2,
+  .mission-section h2,
+  .brand-message h2,
+  .cta-about h2 {
+    font-size: 34px !important;
+  }
+
+  .about-section p,
+  .mission-section p,
+  .brand-message p,
+  .cta-about p {
+    font-size: 16px !important;
+  }
+
+  footer {
+    padding: 25px 24px !important;
+    flex-wrap: wrap !important;
+    gap: 20px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 550px) {
+  .about-section,
+  .mission-section,
+  .brand-message,
+  .cta-about {
+    padding: 42px 18px !important;
+  }
+
+  .about-section h2,
+  .mission-section h2,
+  .brand-message h2,
+  .cta-about h2 {
+    font-size: 29px !important;
+  }
+
+  footer {
+    min-height: auto !important;
+    padding: 24px 18px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+
+  footer .logo,
+  footer .brand,
+  footer .footer-logo {
+    font-size: 25px !important;
+  }
+
+  footer p,
+  footer small,
+  footer .footer-tagline {
+    font-size: 13px !important;
+  }
+}
+
+
+/* CIVICEYE — ALIGN BRANDING WITH TECHNOLOGY SECTION */
+
+/* Give the technology section and footer a consistent width */
+.about-section,
+.mission-section,
+.brand-message,
+.cta-about {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding-left: 5vw !important;
+  padding-right: 5vw !important;
+}
+
+/* Bring footer branding closer to the content above */
+footer {
+  width: 100% !important;
+  min-height: 105px !important;
+  padding: 24px 5vw !important;
+  margin-top: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 30px !important;
+  box-sizing: border-box !important;
+}
+
+/* Make footer logo prominent */
+footer .logo,
+footer .brand,
+footer .footer-logo {
+  font-size: 30px !important;
+  font-weight: 900 !important;
+  margin: 0 !important;
+}
+
+/* Footer tagline */
+footer p,
+footer small,
+footer .footer-tagline {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+  margin: 0 !important;
+}
+
+/* Mobile alignment */
+@media (max-width: 600px) {
+  footer {
+    padding: 22px 18px !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+  }
+
+  .about-section,
+  .mission-section,
+  .brand-message,
+  .cta-about {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+}
+
+
+/* CIVICEYE — REMOVE THE SEPARATE FOOTER BRAND ROW */
+
+/* Hide only the bottom footer row visually */
+footer {
+  display: none !important;
+}
+
+/* Give the technology section a balanced layout */
+.about-section,
+.mission-section,
+.brand-message,
+.cta-about {
+  width: 100% !important;
+  max-width: none !important;
+  min-height: 260px !important;
+  margin: 0 !important;
+  padding: 55px 5vw !important;
+  box-sizing: border-box !important;
+
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  align-items: center !important;
+  gap: 50px !important;
+}
+
+/* Left-side branding and heading */
+.about-section h2,
+.mission-section h2,
+.brand-message h2,
+.cta-about h2 {
+  font-size: clamp(30px, 2.5vw, 42px) !important;
+  line-height: 1.3 !important;
+  margin: 12px 0 !important;
+}
+
+/* Right-side description */
+.about-section p,
+.mission-section p,
+.brand-message p,
+.cta-about p {
+  font-size: 16px !important;
+  line-height: 1.9 !important;
+}
+
+/* Tablet and mobile */
+@media (max-width: 700px) {
+  .about-section,
+  .mission-section,
+  .brand-message,
+  .cta-about {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    padding: 38px 20px !important;
+  }
+}
+
+
+/* CIVICEYE — BRAND LOGO ALIGNMENT */
+
+.about-section,
+.mission-section,
+.brand-message,
+.cta-about {
+  position: relative !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding-left: 5vw !important;
+  padding-right: 5vw !important;
+}
+
+/* Align the logo with the technology heading */
+.about-section .logo,
+.mission-section .logo,
+.brand-message .logo,
+.cta-about .logo,
+.about-section .brand,
+.mission-section .brand,
+.brand-message .brand,
+.cta-about .brand {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 8px !important;
+
+  margin: 0 0 22px 0 !important;
+  font-size: 38px !important;
+  line-height: 1.2 !important;
+  font-weight: 900 !important;
+  letter-spacing: -1.2px !important;
+  white-space: nowrap !important;
+}
+
+/* Logo icon */
+.about-section .logo img,
+.mission-section .logo img,
+.brand-message .logo img,
+.cta-about .logo img,
+.about-section .brand img,
+.mission-section .brand img,
+.brand-message .brand img,
+.cta-about .brand img {
+  width: 44px !important;
+  height: 44px !important;
+  object-fit: contain !important;
+}
+
+/* Heading spacing */
+.about-section h2,
+.mission-section h2,
+.brand-message h2,
+.cta-about h2 {
+  margin-top: 0 !important;
+}
+
+/* Keep footer hidden if the logo has been moved above */
+footer {
+  display: none !important;
+}
+
+/* Mobile sizing */
+@media (max-width: 600px) {
+  .about-section,
+  .mission-section,
+  .brand-message,
+  .cta-about {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .about-section .logo,
+  .mission-section .logo,
+  .brand-message .logo,
+  .cta-about .logo,
+  .about-section .brand,
+  .mission-section .brand,
+  .brand-message .brand,
+  .cta-about .brand {
+    font-size: 29px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .about-section .logo img,
+  .mission-section .logo img,
+  .brand-message .logo img,
+  .cta-about .logo img,
+  .about-section .brand img,
+  .mission-section .brand img,
+  .brand-message .brand img,
+  .cta-about .brand img {
+    width: 34px !important;
+    height: 34px !important;
+  }
+}
+
+
+
+/* ==============================================
+   CIVICEYE — LARGE LIVE CIVIC ISSUES PANEL
+   ============================================== */
+
+/* Wider panel */
+.hero-card {
+  width: 100% !important;
+  max-width: 720px !important;
+  min-width: 0 !important;
+  padding: 36px !important;
+  margin-left: auto !important;
+  margin-right: 0 !important;
+  border-radius: 26px !important;
+  box-sizing: border-box !important;
+}
+
+/* Panel heading row */
+.hero-card > div:first-child {
+  min-height: 82px !important;
+  padding: 24px 26px !important;
+  margin-top: 0 !important;
+}
+
+/* Individual issue cards */
+.hero-card > div:not(:first-child) {
+  min-height: 100px !important;
+  padding: 23px 25px !important;
+  margin-top: 18px !important;
+  border-radius: 16px !important;
+  box-sizing: border-box !important;
+}
+
+/* Issue names */
+.hero-card h3,
+.hero-card h4 {
+  font-size: 19px !important;
+  line-height: 1.5 !important;
+  font-weight: 850 !important;
+  margin-bottom: 7px !important;
+}
+
+/* Locations and descriptions */
+.hero-card p,
+.hero-card small {
+  font-size: 14px !important;
+  line-height: 1.7 !important;
+}
+
+/* Icons */
+.hero-card img,
+.hero-card .issue-icon,
+.hero-card .icon-box {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  border-radius: 12px !important;
+}
+
+/* Status badges */
+.hero-card .status,
+.hero-card .badge {
+  padding: 10px 12px !important;
+  font-size: 13px !important;
+  font-weight: 750 !important;
+  border-radius: 9px !important;
+  white-space: nowrap !important;
+}
+
+/* AI detection card */
+.hero-card > div:last-child {
+  min-height: 90px !important;
+  padding: 22px 25px !important;
+  margin-top: 18px !important;
+}
+
+/* Desktop hero: let the panel use more of the right column */
+@media (min-width: 1200px) {
+  .hero-section {
+    grid-template-columns: minmax(0, 1fr) minmax(500px, 720px) !important;
+    gap: clamp(45px, 5vw, 90px) !important;
+  }
+
+  .hero-card {
+    max-width: 720px !important;
+  }
+}
+
+/* Medium screens */
+@media (max-width: 1050px) {
+  .hero-card {
+    padding: 24px !important;
+  }
+
+  .hero-card > div:not(:first-child) {
+    min-height: 86px !important;
+    padding: 18px !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  .hero-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+  }
+
+  .hero-card > div:first-child {
+    min-height: 65px !important;
+    padding: 18px !important;
+  }
+
+  .hero-card > div:not(:first-child) {
+    min-height: 76px !important;
+    padding: 15px !important;
+    margin-top: 13px !important;
+  }
+
+  .hero-card h3,
+  .hero-card h4 {
+    font-size: 16px !important;
+  }
+
+  .hero-card p,
+  .hero-card small {
+    font-size: 12px !important;
+  }
+
+  .hero-card img,
+  .hero-card .issue-icon,
+  .hero-card .icon-box {
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+  }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+  .hero-card {
+    padding: 14px !important;
+    border-radius: 18px !important;
+  }
+
+  .hero-card > div:not(:first-child) {
+    padding: 13px !important;
+  }
+
+  .hero-card h3,
+  .hero-card h4 {
+    font-size: 14px !important;
+  }
+}
+
+
+/* CIVICEYE — ALIGN LIVE PANEL WITH HERO HEIGHT */
+
+@media (min-width: 1200px) {
+  .hero-section {
+    grid-template-columns: minmax(0, 1fr) minmax(500px, 720px) !important;
+    align-items: stretch !important;
+    gap: 55px !important;
+    min-height: 760px !important;
+  }
+
+  .hero-card {
+    width: 100% !important;
+    max-width: 720px !important;
+    height: 100% !important;
+    min-height: 650px !important;
+    margin: 0 !important;
+    padding: 30px !important;
+    box-sizing: border-box !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+
+  .hero-card > div {
+    flex-shrink: 0 !important;
+    margin-top: 16px !important;
+  }
+
+  .hero-card > div:first-child {
+    margin-top: 0 !important;
+    min-height: 75px !important;
+  }
+
+  .hero-card > div:not(:first-child) {
+    min-height: 100px !important;
+  }
+}
+
+/* Laptop and tablet */
+@media (max-width: 1199px) and (min-width: 801px) {
+  .hero-section {
+    align-items: stretch !important;
+    gap: 30px !important;
+  }
+
+  .hero-card {
+    height: 100% !important;
+    min-height: 580px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+  }
+}
+
+/* Mobile: natural height, no forced stretching */
+@media (max-width: 800px) {
+  .hero-section {
+    min-height: auto !important;
+    align-items: start !important;
+  }
+
+  .hero-card {
+    height: auto !important;
+    min-height: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  .hero-card > div {
+    margin-top: 0 !important;
+  }
+}
+
+
+/* CIVICEYE — MOVE LIVE PANEL UP + MAKE IT BIGGER */
+
+@media (min-width: 1200px) {
+  .hero-section {
+    grid-template-columns: minmax(0, 1fr) minmax(600px, 800px) !important;
+    align-items: center !important;
+    gap: 45px !important;
+
+    width: calc(100% - 80px) !important;
+    max-width: 1800px !important;
+    min-height: 780px !important;
+
+    padding-top: 35px !important;
+    padding-bottom: 65px !important;
+  }
+
+  .hero-card {
+    position: relative !important;
+    top: -85px !important;
+
+    width: 100% !important;
+    max-width: 800px !important;
+    min-height: 700px !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 34px !important;
+    box-sizing: border-box !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    gap: 18px !important;
+  }
+
+  .hero-card > div {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-top: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .hero-card > div:first-child {
+    min-height: 80px !important;
+    padding: 24px !important;
+  }
+
+  .hero-card > div:not(:first-child) {
+    min-height: 105px !important;
+    padding: 25px !important;
+  }
+
+  .hero-card h3,
+  .hero-card h4 {
+    font-size: 20px !important;
+  }
+
+  .hero-card p,
+  .hero-card small {
+    font-size: 14px !important;
+  }
+}
+
+/* Tablet and mobile: normal flow, no upward overlap */
+@media (max-width: 1199px) {
+  .hero-card {
+    top: 0 !important;
+    min-height: 0 !important;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .hero-section {
+    width: calc(100% - 32px) !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 32px !important;
+    min-height: auto !important;
+    padding-top: 40px !important;
+  }
+
+  .hero-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 18px !important;
+  }
+}
+
+
+/* CIVICEYE — FIX HERO PANEL OVERLAP */
+
+@media (min-width: 1200px) {
+  .hero-section {
+    position: relative !important;
+    width: calc(100% - 80px) !important;
+    max-width: 1800px !important;
+
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(480px, 650px) !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 55px !important;
+
+    min-height: 720px !important;
+    padding: 55px 0 75px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+  }
+
+  /* Keep hero text fully visible */
+  .hero-content {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+  }
+
+  /* Keep the live panel inside its column */
+  .hero-card {
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: auto !important;
+    transform: none !important;
+
+    width: 100% !important;
+    max-width: 650px !important;
+    min-width: 0 !important;
+    min-height: 650px !important;
+    height: auto !important;
+
+    margin: 0 !important;
+    padding: 28px !important;
+    box-sizing: border-box !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    gap: 16px !important;
+  }
+
+  .hero-card > div {
+    width: 100% !important;
+    margin-top: 0 !important;
+    flex-shrink: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+
+/* Smaller laptops and tablets */
+@media (max-width: 1199px) {
+  .hero-section {
+    width: calc(100% - 48px) !important;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 440px) !important;
+    align-items: center !important;
+    gap: 28px !important;
+    min-height: auto !important;
+    padding: 50px 0 !important;
+  }
+
+  .hero-content,
+  .hero-card {
+    position: relative !important;
+    top: 0 !important;
+    left: auto !important;
+    transform: none !important;
+    min-width: 0 !important;
+  }
+
+  .hero-card {
+    width: 100% !important;
+    min-height: 0 !important;
+    height: auto !important;
+  }
+}
+
+/* Mobile: stack the columns */
+@media (max-width: 800px) {
+  .hero-section {
+    width: calc(100% - 32px) !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 32px !important;
+    padding: 42px 0 !important;
+  }
+
+  .hero-content {
+    max-width: 100% !important;
+  }
+
+  .hero-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    padding: 18px !important;
+  }
+}
+
+
+/* =========================================
+   CIVICEYE — EXTRA LARGE LIVE ISSUES CONTENT
+   ========================================= */
+
+@media (min-width: 801px) {
+  /* Main panel */
+  .hero-card {
+    max-width: 760px !important;
+    padding: 36px !important;
+    gap: 22px !important;
+  }
+
+  /* Live Civic Issues header */
+  .hero-card > div:first-child {
+    min-height: 100px !important;
+    padding: 28px 30px !important;
+  }
+
+  /* All issue cards and AI detection */
+  .hero-card > div:not(:first-child) {
+    min-height: 125px !important;
+    padding: 28px 30px !important;
+    border-radius: 18px !important;
+  }
+
+  /* Issue titles */
+  .hero-card h3,
+  .hero-card h4 {
+    font-size: 25px !important;
+    line-height: 1.4 !important;
+    font-weight: 850 !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Locations and descriptions */
+  .hero-card p,
+  .hero-card small {
+    font-size: 17px !important;
+    line-height: 1.7 !important;
+  }
+
+  /* Icons and icon backgrounds */
+  .hero-card img,
+  .hero-card .issue-icon,
+  .hero-card .icon-box {
+    width: 58px !important;
+    height: 58px !important;
+    min-width: 58px !important;
+    border-radius: 14px !important;
+  }
+
+  /* Status badges */
+  .hero-card .status,
+  .hero-card .badge {
+    padding: 14px 16px !important;
+    font-size: 16px !important;
+    font-weight: 800 !important;
+    border-radius: 10px !important;
+  }
+
+  /* AI detection card */
+  .hero-card > div:last-child {
+    min-height: 115px !important;
+    padding: 28px 30px !important;
+  }
+}
+
+/* Tablet */
+@media (max-width: 800px) {
+  .hero-card {
+    padding: 22px !important;
+    gap: 16px !important;
+  }
+
+  .hero-card > div:first-child {
+    min-height: 75px !important;
+    padding: 20px !important;
+  }
+
+  .hero-card > div:not(:first-child) {
+    min-height: 95px !important;
+    padding: 18px !important;
+  }
+
+  .hero-card h3,
+  .hero-card h4 {
+    font-size: 19px !important;
+  }
+
+  .hero-card p,
+  .hero-card small {
+    font-size: 14px !important;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .hero-card {
+    padding: 15px !important;
+    gap: 12px !important;
+  }
+
+  .hero-card > div:not(:first-child) {
+    min-height: 80px !important;
+    padding: 13px !important;
+  }
+
+  .hero-card h3,
+  .hero-card h4 {
+    font-size: 16px !important;
+  }
+
+  .hero-card p,
+  .hero-card small {
+    font-size: 12px !important;
+  }
+}
+
+
+/* Move Live Civic Issues panel slightly below navbar */
+@media (min-width: 801px) {
+  .hero-card {
+    top: 25px !important;
+  }
+}
+
+/* Keep mobile layout unchanged */
+@media (max-width: 800px) {
+  .hero-card {
+    top: 0 !important;
+  }
+}
+
+
+/* =========================================
+   CIVICEYE — PREMIUM LARGE LOGIN MODAL
+   ========================================= */
+
+/* Main login/signup modal */
+.login-modal,
+.auth-modal,
+.modal-content,
+.auth-card,
+.login-card {
+  width: min(620px, calc(100vw - 40px)) !important;
+  max-width: 620px !important;
+  min-height: 0 !important;
+  padding: 48px !important;
+  border-radius: 24px !important;
+  box-sizing: border-box !important;
+}
+
+/* Modal heading */
+.login-modal h2,
+.auth-modal h2,
+.modal-content h2,
+.auth-card h2,
+.login-card h2 {
+  font-size: 38px !important;
+  line-height: 1.25 !important;
+  font-weight: 850 !important;
+  margin: 18px 0 12px !important;
+}
+
+/* Supporting text */
+.login-modal p,
+.auth-modal p,
+.modal-content p,
+.auth-card p,
+.login-card p {
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+}
+
+/* Input fields */
+.login-modal input,
+.auth-modal input,
+.modal-content input,
+.auth-card input,
+.login-card input {
+  width: 100% !important;
+  min-height: 62px !important;
+  padding: 18px 20px !important;
+  margin-bottom: 16px !important;
+  box-sizing: border-box !important;
+  border-radius: 11px !important;
+  font-size: 17px !important;
+}
+
+/* Login / submit button */
+.login-modal button[type="submit"],
+.auth-modal button[type="submit"],
+.modal-content button[type="submit"],
+.auth-card button[type="submit"],
+.login-card button[type="submit"] {
+  width: 100% !important;
+  min-height: 62px !important;
+  margin-top: 8px !important;
+  padding: 16px 22px !important;
+  border-radius: 11px !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+}
+
+/* Eye / brand icon */
+.login-modal .auth-icon,
+.auth-modal .auth-icon,
+.modal-content .auth-icon,
+.auth-card .auth-icon,
+.login-card .auth-icon {
+  font-size: 42px !important;
+  margin-bottom: 8px !important;
+}
+
+/* Close button */
+.login-modal .close-btn,
+.auth-modal .close-btn,
+.modal-content .close-btn,
+.auth-card .close-btn,
+.login-card .close-btn {
+  width: 42px !important;
+  height: 42px !important;
+  font-size: 25px !important;
+}
+
+/* Signup link and bottom text */
+.login-modal a,
+.auth-modal a,
+.modal-content a,
+.auth-card a,
+.login-card a {
+  font-size: 16px !important;
+  font-weight: 750 !important;
+}
+
+/* Mobile sizing */
+@media (max-width: 600px) {
+  .login-modal,
+  .auth-modal,
+  .modal-content,
+  .auth-card,
+  .login-card {
+    width: calc(100vw - 28px) !important;
+    max-width: 480px !important;
+    padding: 28px 22px !important;
+    border-radius: 20px !important;
+  }
+
+  .login-modal h2,
+  .auth-modal h2,
+  .modal-content h2,
+  .auth-card h2,
+  .login-card h2 {
+    font-size: 30px !important;
+  }
+
+  .login-modal input,
+  .auth-modal input,
+  .modal-content input,
+  .auth-card input,
+  .login-card input {
+    min-height: 54px !important;
+    font-size: 15px !important;
+  }
+
+  .login-modal button[type="submit"],
+  .auth-modal button[type="submit"],
+  .modal-content button[type="submit"],
+  .auth-card button[type="submit"],
+  .login-card button[type="submit"] {
+    min-height: 54px !important;
+    font-size: 16px !important;
+  }
+}
+
+
+
+/* ==========================================
+   CIVICEYE — ACTUAL LOGIN MODAL SIZE FIX
+   ========================================== */
+
+/* Target the modal using its actual contents */
+.modal-icon {
+  font-size: 48px !important;
+  margin-bottom: 20px !important;
+}
+
+/* Login heading */
+.modal-icon + h2 {
+  font-size: 38px !important;
+  line-height: 1.25 !important;
+  margin: 16px 0 12px !important;
+  font-weight: 850 !important;
+}
+
+/* Login subtitle */
+.modal-icon + h2 + p {
+  font-size: 16px !important;
+  line-height: 1.7 !important;
+  margin-bottom: 28px !important;
+}
+
+/* Actual login modal wrapper:
+   match the container that directly holds the icon */
+div:has(> .modal-icon) {
+  width: min(620px, calc(100vw - 40px)) !important;
+  max-width: 620px !important;
+  padding: 48px !important;
+  box-sizing: border-box !important;
+  border-radius: 24px !important;
+}
+
+/* Inputs */
+div:has(> .modal-icon) form input {
+  width: 100% !important;
+  min-height: 62px !important;
+  padding: 18px 20px !important;
+  margin-bottom: 16px !important;
+  box-sizing: border-box !important;
+  border-radius: 11px !important;
+  font-size: 17px !important;
+}
+
+/* Login button */
+div:has(> .modal-icon) .modal-btn {
+  width: 100% !important;
+  min-height: 62px !important;
+  padding: 16px 22px !important;
+  margin-top: 8px !important;
+  border-radius: 11px !important;
+  font-size: 18px !important;
+  font-weight: 800 !important;
+}
+
+/* Switch to Sign Up */
+div:has(> .modal-icon) .switch {
+  margin-top: 24px !important;
+  font-size: 15px !important;
+  line-height: 1.8 !important;
+}
+
+div:has(> .modal-icon) .switch button {
+  font-size: 15px !important;
+  margin-left: 8px !important;
+  font-weight: 800 !important;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  div:has(> .modal-icon) {
+    width: calc(100vw - 28px) !important;
+    max-width: 480px !important;
+    padding: 28px 22px !important;
+    border-radius: 20px !important;
+  }
+
+  .modal-icon + h2 {
+    font-size: 30px !important;
+  }
+
+  div:has(> .modal-icon) form input {
+    min-height: 54px !important;
+    font-size: 15px !important;
+  }
+
+  div:has(> .modal-icon) .modal-btn {
+    min-height: 54px !important;
+    font-size: 16px !important;
+  }
+}
+
+
+.assistant-nav-btn {
+  background: rgba(39, 214, 162, 0.08);
+  border: 1px solid rgba(39, 214, 162, 0.3);
+  color: #27d6a2;
+  padding: 8px 13px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.assistant-nav-btn:hover {
+  background: rgba(39, 214, 162, 0.16);
+}
