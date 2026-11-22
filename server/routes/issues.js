@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 
 const Issue = require("../models/Issue");
 const Notification = require("../models/Notification");
-const User = require("../models/User");
+const User = require("../models/user");
 const { auth } = require("../middleware/auth");
 
 const ALLOWED_CATEGORIES = [

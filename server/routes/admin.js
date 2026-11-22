@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const router = express.Router();
 
 const Issue = require("../models/Issue");
-const User = require("../models/User");
+const User = require("../models/user");
 const Notification = require("../models/Notification");
 const { auth, adminOnly } = require("../middleware/auth");
 

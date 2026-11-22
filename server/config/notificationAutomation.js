@@ -1,5 +1,5 @@
 const Issue = require("../models/Issue");
-const User = require("../models/User");
+const User = require("../models/user");
 const Notification = require("../models/Notification");
 const { getIO } = require("./socket");
 
