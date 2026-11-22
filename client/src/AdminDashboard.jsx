@@ -29,7 +29,7 @@ function AdminDashboard() {
       setLoading(true);
 
       const response = await fetch(
-        "http://localhost:5000/api/admin/issues",
+        "https://civiceye-ai-m1cw.onrender.com/api/admin/issues",
         { headers: getAuthHeaders() }
       );
 
@@ -55,7 +55,7 @@ function AdminDashboard() {
   const fetchUsers = async () => {
     try {
       const response = await fetch(
-        "http://localhost:5000/api/admin/users",
+        "https://civiceye-ai-m1cw.onrender.com/api/admin/users",
         { headers: getAuthHeaders() }
       );
 
@@ -81,7 +81,7 @@ function AdminDashboard() {
   const updateStatus = async (issueId, status) => {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/admin/issues/${issueId}/status`,
+        `https://civiceye-ai-m1cw.onrender.com/api/admin/issues/${issueId}/status`,
         {
           method: "PUT",
           headers: {
@@ -137,7 +137,7 @@ function AdminDashboard() {
       setSavingLocation(true);
 
       const response = await fetch(
-        `http://localhost:5000/api/admin/issues/${selectedMapIssue._id}/location`,
+        `https://civiceye-ai-m1cw.onrender.com/api/admin/issues/${selectedMapIssue._id}/location`,
         {
           method: "PUT",
           headers: {

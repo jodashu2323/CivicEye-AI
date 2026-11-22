@@ -10138,3 +10138,135 @@ div:has(> .modal-icon) .switch button {
 .assistant-nav-btn:hover {
   background: rgba(39, 214, 162, 0.16);
 }
+
+
+/* =====================================
+   CIVICEYE RESPONSIVE NAVBAR FIX
+   ===================================== */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 100;
+}
+
+.navbar .logo {
+  flex-shrink: 0;
+}
+
+.navbar .nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  min-width: 0;
+}
+
+.navbar .nav-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-width: 0;
+}
+
+.navbar button,
+.navbar a {
+  white-space: nowrap;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.navbar .welcome {
+  overflow-wrap: anywhere;
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .navbar {
+    justify-content: center;
+    padding: 14px;
+  }
+
+  .navbar .logo {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .navbar .nav-links,
+  .navbar .nav-buttons {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 12px;
+  }
+
+  .navbar .logo {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar .nav-links {
+    width: 100%;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .navbar .nav-links a,
+  .navbar .assistant-nav-btn {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .navbar .nav-buttons {
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .navbar .welcome {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .navbar .login-btn,
+  .navbar .signup-btn {
+    font-size: 13px;
+    padding: 9px 12px;
+  }
+}
+
+/* VERY SMALL MOBILE */
+@media (max-width: 360px) {
+  .navbar .nav-links {
+    gap: 6px;
+  }
+
+  .navbar .nav-links a,
+  .navbar .assistant-nav-btn {
+    font-size: 11px;
+    padding: 7px 8px;
+  }
+
+  .navbar .nav-buttons {
+    gap: 6px;
+  }
+}
