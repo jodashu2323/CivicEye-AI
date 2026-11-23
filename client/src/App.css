@@ -10371,3 +10371,42 @@ div:has(> .modal-icon) .switch button {
     margin: 0 !important;
   }
 }
+
+
+/* MOBILE NAVBAR - SECOND ROW SPACING FIX */
+
+@media screen and (max-width: 768px) {
+
+  .navbar .nav-links {
+    order: 3 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+
+    width: 100% !important;
+    flex: 0 0 100% !important;
+
+    padding: 0 16px !important;
+    margin: 0 !important;
+    gap: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  .navbar .nav-links a {
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    white-space: nowrap !important;
+    font-size: inherit;
+  }
+
+  .navbar .nav-links .assistant-nav-btn {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    padding: 8px 12px !important;
+    font-size: 12px !important;
+    margin: 0 !important;
+  }
+}
+
