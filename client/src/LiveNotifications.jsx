@@ -136,7 +136,7 @@ export default function LiveNotifications({
     };
   }, [token, fetchNotifications, onNewNotification]);
 
-  // NEW: Unlock audio when the existing App.jsx bell is clicked.
+  // Unlock audio when the existing App.jsx bell is clicked.
   useEffect(() => {
     const handleUnlockAudio = () => {
       unlockAudio();
@@ -284,25 +284,24 @@ export default function LiveNotifications({
 
       {isOpen && (
         <div
-        className="notifications-dropdown"
+          className="notifications-dropdown"
           style={{
-  position: "absolute",
-  top: "45px",
-  right: 0,
-  width: "380px",
-  maxWidth: "380px",
-  minWidth: 0,
-  maxHeight: "420px",
-  overflowY: "auto",
-  overflowX: "hidden",
-  boxSizing: "border-box",
-  background: "#111827",
-  color: "#f8fafc",
-  border: "1px solid #334155",
-  borderRadius: "12px",
-  boxShadow: "0 12px 35px rgba(0,0,0,0.35)",
-  padding: "14px",
-}}
+            position: "absolute",
+            top: "45px",
+            right: 0,
+            width: "380px",
+            maxWidth: "380px",
+            minWidth: 0,
+            maxHeight: "420px",
+            overflow: "hidden",
+            boxSizing: "border-box",
+            background: "#111827",
+            color: "#f8fafc",
+            border: "1px solid #334155",
+            borderRadius: "12px",
+            boxShadow: "0 12px 35px rgba(0,0,0,0.35)",
+            padding: "14px",
+          }}
         >
           <div
             style={{
@@ -332,54 +331,63 @@ export default function LiveNotifications({
             )}
           </div>
 
-          {notifications.length === 0 ? (
-            <p style={{ color: "#94a3b8", fontSize: "13px" }}>
-              No notifications yet.
-            </p>
-          ) : (
-            notifications.map((notification) => (
-              <button
-                type="button"
-                key={notification._id}
-                onClick={() => handleNotificationClick(notification)}
-                style={{
-                  display: "block",
-                  width: "100%",
-                  textAlign: "left",
-                  padding: "12px 8px",
-                  marginBottom: "6px",
-                  border: 0,
-                  borderRadius: "8px",
-                  background: notification.isRead
-                    ? "#1e293b"
-                    : "#26364f",
-                  color: "#f8fafc",
-                  cursor: "pointer",
-                }}
-              >
-                <strong style={{ fontSize: "13px" }}>
-                  {notification.title}
-                </strong>
-
-                <p
+          <div
+            style={{
+              maxHeight: "340px",
+              overflowY: "auto",
+              overflowX: "hidden",
+              paddingRight: "5px",
+            }}
+          >
+            {notifications.length === 0 ? (
+              <p style={{ color: "#94a3b8", fontSize: "13px" }}>
+                No notifications yet.
+              </p>
+            ) : (
+              notifications.map((notification) => (
+                <button
+                  type="button"
+                  key={notification._id}
+                  onClick={() => handleNotificationClick(notification)}
                   style={{
-                    margin: "5px 0",
-                    fontSize: "12px",
-                    color: "#cbd5e1",
+                    display: "block",
+                    width: "100%",
+                    textAlign: "left",
+                    padding: "12px 8px",
+                    marginBottom: "6px",
+                    border: 0,
+                    borderRadius: "8px",
+                    background: notification.isRead
+                      ? "#1e293b"
+                      : "#26364f",
+                    color: "#f8fafc",
+                    cursor: "pointer",
                   }}
                 >
-                  {notification.message}
-                </p>
+                  <strong style={{ fontSize: "13px" }}>
+                    {notification.title}
+                  </strong>
 
-                <span style={{ fontSize: "10px", color: "#94a3b8" }}>
-                  {notification.createdAt
-                    ? new Date(notification.createdAt).toLocaleString()
-                    : ""}
-                  {!notification.isRead ? " • New" : ""}
-                </span>
-              </button>
-            ))
-          )}
+                  <p
+                    style={{
+                      margin: "5px 0",
+                      fontSize: "12px",
+                      color: "#cbd5e1",
+                    }}
+                  >
+                    {notification.message}
+                  </p>
+
+                  <span style={{ fontSize: "10px", color: "#94a3b8" }}>
+                    {notification.createdAt
+                      ? new Date(notification.createdAt).toLocaleString()
+                      : ""}
+                    {!notification.isRead ? " • New" : ""}
+                  </span>
+                </button>
+              ))
+            )}
+          </div>
         </div>
       )}
     </div>

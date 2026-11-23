@@ -140,6 +140,8 @@ router.post("/", auth, async (req, res) => {
       const prompt = `
 You are an AI civic issue analyzer.
 
+Analyze the following civic complaint carefully.
+
 Title: ${title.trim()}
 Description: ${description.trim()}
 Location: ${location.trim()}
@@ -149,6 +151,14 @@ Allowed categories: Road Damage, Street Light, Garbage,
 Water Supply, Drainage, Other.
 
 Allowed priorities: Low, Medium, High, Critical.
+
+Choose the most appropriate category based on the complaint.
+Do not blindly copy the selected category if another category
+matches the complaint better.
+
+Assign priority based on the seriousness of the issue.
+
+Write a short, professional summary of the complaint.
 
 Return only valid JSON:
 {
@@ -162,7 +172,7 @@ Confidence must be a number between 0 and 100.
 `;
 
       const response = await ai.models.generateContent({
-        model: "gemini-3.7-flash",
+        model: "gemini-3.8-flash",
         contents: prompt,
         config: {
           temperature: 0.2,
@@ -170,11 +180,15 @@ Confidence must be a number between 0 and 100.
         },
       });
 
-      if (!response.text) {
+      if (!response.text || typeof response.text !== "string") {
         throw new Error("AI returned an empty response");
       }
 
-      const result = JSON.parse(response.text);
+      const result = JSON.parse(response.text.trim());
+
+      if (!result || typeof result !== "object") {
+        throw new Error("AI returned an invalid JSON response");
+      }
 
       if (ALLOWED_CATEGORIES.includes(result.category)) {
         aiCategory = result.category;
@@ -195,6 +209,12 @@ Confidence must be a number between 0 and 100.
       ) {
         aiConfidence = result.confidence;
       }
+
+      console.log("AI ISSUE ANALYSIS SUCCESS:", {
+        category: aiCategory,
+        priority: aiPriority,
+        confidence: aiConfidence,
+      });
     } catch (aiError) {
       console.error("Issue AI analysis failed:", aiError.message);
 

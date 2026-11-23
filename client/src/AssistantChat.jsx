@@ -2,7 +2,9 @@
 import { useEffect, useRef, useState } from "react";
 import "./AssistantChat.css";
 
-const API_URL = "http://localhost:5000/api/assistant/chat";
+// const API_URL = "http://localhost:5000/api/assistant/chat"; 
+
+const API_URL = `${import.meta.env.VITE_API_URL}/api/assistant/chat`;
 
 const WELCOME_MESSAGE = {
   role: "assistant",
