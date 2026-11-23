@@ -1377,3 +1377,396 @@ body,
 }
 
 
+
+/* ==========================================
+   CIVICEYE ADMIN NAVBAR - MOBILE ONE ROW FIX
+   ========================================== */
+
+@media screen and (max-width: 768px) {
+
+  .admin-navbar {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 10px 12px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* LOGO - LEFT */
+  .admin-navbar > .logo {
+    order: 1 !important;
+    flex: 0 1 auto !important;
+    min-width: 0 !important;
+    white-space: nowrap !important;
+    font-size: 17px !important;
+    margin: 0 !important;
+  }
+
+  /* HIDE ADMIN TITLE ON MOBILE */
+  .admin-navbar > .admin-title {
+    display: none !important;
+  }
+
+  /* NOTIFICATION BELL */
+  .admin-navbar > :nth-child(3) {
+    order: 2 !important;
+    flex: 0 0 40px !important;
+    width: 40px !important;
+    min-width: 40px !important;
+    height: 40px !important;
+    margin-left: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* .admin-navbar > :nth-child(3) button {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    padding: 0 !important;
+  } */
+
+
+  /* Only the bell button should receive the 40px size */
+.admin-navbar > :nth-child(3) > button {
+  width: 40px !important;
+  height: 40px !important;
+  min-width: 40px !important;
+  padding: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+
+  /* PROFILE GROUP */
+  .admin-navbar .admin-profile {
+    order: 3 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    flex: 0 0 auto !important;
+    gap: 8px !important;
+    width: auto !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* HIDE NAME AND ROLE */
+  .admin-navbar .admin-user-info {
+    display: none !important;
+  }
+
+  /* AVATAR */
+  .admin-navbar .admin-avatar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    flex: 0 0 40px !important;
+    font-size: 16px !important;
+  }
+
+  /* LOGOUT */
+  .admin-navbar .admin-logout-btn {
+    padding: 8px 12px !important;
+    font-size: 14px !important;
+    white-space: nowrap !important;
+    flex: 0 0 auto !important;
+  }
+
+  .admin-navbar .logo,
+  .admin-navbar .admin-profile,
+  .admin-navbar > :nth-child(3) {
+    align-self: center !important;
+  }
+}
+
+
+
+/* =========================================
+   CIVICEYE - NOTIFICATIONS DROPDOWN FIX
+========================================= */
+
+.admin-navbar .live-notifications {
+  position: relative !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 40px !important;
+  width: 40px !important;
+  min-width: 40px !important;
+  height: 40px !important;
+  z-index: 10000 !important;
+}
+
+/* Bell button only */
+.admin-navbar .live-notifications > .notifications-bell {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 40px !important;
+  min-width: 40px !important;
+  height: 40px !important;
+  padding: 0 !important;
+  flex-shrink: 0 !important;
+  background: transparent !important;
+  border: 1px solid #475569 !important;
+  border-radius: 8px !important;
+  color: inherit !important;
+  font-size: 18px !important;
+  cursor: pointer !important;
+}
+
+.notifications-badge {
+  position: absolute !important;
+  top: -7px !important;
+  right: -7px !important;
+  min-width: 18px !important;
+  height: 18px !important;
+  padding: 0 4px !important;
+  border-radius: 20px !important;
+  background: #ef4444 !important;
+  color: #fff !important;
+  font-size: 11px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Dropdown */
+.notifications-dropdown {
+  position: absolute !important;
+  top: calc(100% + 10px) !important;
+  right: 0 !important;
+  width: 360px !important;
+  max-width: min(92vw, 360px) !important;
+  max-height: 60vh !important;
+  overflow: hidden !important;
+  display: flex !important;
+  flex-direction: column !important;
+  box-sizing: border-box !important;
+  padding: 14px !important;
+  background: #111827 !important;
+  color: #f8fafc !important;
+  border: 1px solid #334155 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35) !important;
+  z-index: 10001 !important;
+}
+
+.notifications-header {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 10px !important;
+  flex-shrink: 0 !important;
+  margin-bottom: 12px !important;
+}
+
+.notifications-header strong {
+  font-size: 14px !important;
+  color: #f8fafc !important;
+}
+
+.notifications-mark-all {
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+  padding: 5px 7px !important;
+  background: transparent !important;
+  border: 0 !important;
+  color: #2ad8a0 !important;
+  font-size: 12px !important;
+  white-space: nowrap !important;
+  cursor: pointer !important;
+}
+
+/* Notification list */
+.notifications-list {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-height: 60vh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+}
+
+/* Each notification card */
+.notifications-list > .notification-item {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 12px !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: fit-content !important;
+  max-height: none !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
+  padding: 12px !important;
+  margin: 0 !important;
+  text-align: left !important;
+  white-space: normal !important;
+  border: 1px solid #334155 !important;
+  border-radius: 9px !important;
+  color: #f8fafc !important;
+  cursor: pointer !important;
+}
+
+.notifications-list > .notification-item.is-read {
+  background: #1e293b !important;
+}
+
+.notifications-list > .notification-item.is-unread {
+  background: #26364f !important;
+  border-left: 3px solid #2ad8a0 !important;
+}
+
+/* Left icon/dot */
+.notification-icon {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex: 0 0 10px !important;
+  width: 10px !important;
+  min-width: 10px !important;
+  height: 20px !important;
+  margin-top: 2px !important;
+}
+
+.notification-dot {
+  display: block !important;
+  width: 8px !important;
+  height: 8px !important;
+  flex-shrink: 0 !important;
+  border-radius: 50% !important;
+  background: #2ad8a0 !important;
+}
+
+/* Right text container */
+.notification-content {
+  display: flex !important;
+  flex: 1 1 auto !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 5px !important;
+  width: auto !important;
+  min-width: 0 !important;
+  height: auto !important;
+  position: static !important;
+  overflow-wrap: anywhere !important;
+  white-space: normal !important;
+}
+
+/* Title */
+.notification-title {
+  display: block !important;
+  width: 100% !important;
+  position: static !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  color: #f8fafc !important;
+}
+
+/* Description */
+.notification-description {
+  display: block !important;
+  width: 100% !important;
+  position: static !important;
+  margin: 0 !important;
+  font-size: 12px !important;
+  line-height: 1.4 !important;
+  white-space: normal !important;
+  word-break: normal !important;
+  overflow-wrap: anywhere !important;
+  color: #cbd5e1 !important;
+}
+
+/* Date */
+.notification-date {
+  display: block !important;
+  width: 100% !important;
+  position: static !important;
+  margin-top: 2px !important;
+  font-size: 10px !important;
+  line-height: 1.4 !important;
+  white-space: normal !important;
+  color: #94a3b8 !important;
+}
+
+.notifications-empty {
+  margin: 5px 0 !important;
+  color: #94a3b8 !important;
+  font-size: 13px !important;
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+  .admin-navbar .notifications-dropdown {
+    right: 0 !important;
+    left: auto !important;
+    width: min(92vw, 360px) !important;
+    max-width: min(92vw, 360px) !important;
+    max-height: 60vh !important;
+  }
+}
+
+
+/* MOBILE NOTIFICATION DROPDOWN POSITION FIX */
+@media screen and (max-width: 768px) {
+  .admin-navbar .live-notifications > div:not(.notifications-badge) {
+    /* Do not use this generic selector for positioning */
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .admin-navbar .notifications-dropdown {
+    position: fixed !important;
+    top: 72px !important;
+    left: 12px !important;
+    right: 12px !important;
+    bottom: auto !important;
+
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+
+    margin: 0 !important;
+    transform: none !important;
+    box-sizing: border-box !important;
+
+    max-height: calc(100vh - 100px) !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+
+    padding: 16px !important;
+    z-index: 10001 !important;
+  }
+
+  .admin-navbar .notifications-dropdown > div:first-child {
+    position: sticky !important;
+    top: -16px !important;
+    z-index: 5 !important;
+    background: #111827 !important;
+    padding: 16px !important;
+    margin: -16px -16px 12px !important;
+    box-sizing: border-box !important;
+  }
+}

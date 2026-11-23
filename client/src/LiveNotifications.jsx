@@ -284,20 +284,25 @@ export default function LiveNotifications({
 
       {isOpen && (
         <div
+        className="notifications-dropdown"
           style={{
-            position: "absolute",
-            top: "45px",
-            right: 0,
-            width: "min(350px, 90vw)",
-            maxHeight: "420px",
-            overflowY: "auto",
-            background: "#111827",
-            color: "#f8fafc",
-            border: "1px solid #334155",
-            borderRadius: "12px",
-            boxShadow: "0 12px 35px rgba(0,0,0,0.35)",
-            padding: "14px",
-          }}
+  position: "absolute",
+  top: "45px",
+  right: 0,
+  width: "380px",
+  maxWidth: "380px",
+  minWidth: 0,
+  maxHeight: "420px",
+  overflowY: "auto",
+  overflowX: "hidden",
+  boxSizing: "border-box",
+  background: "#111827",
+  color: "#f8fafc",
+  border: "1px solid #334155",
+  borderRadius: "12px",
+  boxShadow: "0 12px 35px rgba(0,0,0,0.35)",
+  padding: "14px",
+}}
         >
           <div
             style={{

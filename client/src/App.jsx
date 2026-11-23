@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
 
-
+import { createPortal } from "react-dom";
 
 
 
@@ -197,6 +197,22 @@ useEffect(() => {
 }, [showNotifications]);
 
 
+// LOCK BACKGROUND SCROLL WHEN REPORT MODAL IS OPEN
+useEffect(() => {
+  if (!showReport) return;
+
+  const previousBodyOverflow = document.body.style.overflow;
+  const previousHtmlOverflow = document.documentElement.style.overflow;
+
+  document.body.style.overflow = "hidden";
+  document.documentElement.style.overflow = "hidden";
+
+  return () => {
+    document.body.style.overflow = previousBodyOverflow;
+    document.documentElement.style.overflow = previousHtmlOverflow;
+  };
+}, [showReport]);
+
   // ADMIN DASHBOARD
 
 
@@ -291,11 +307,22 @@ useEffect(() => {
 
 
 
+const [aiError, setAiError] = useState("");
 
 
 
 
+// YAHAN PASTE KARNA HAI
+const resetAIAnalysis = () => {
+  setAiLoading(false);
+  setAiResult(null);
+  setAiError("");
+};
 
+const closeReportModal = () => {
+  resetAIAnalysis();
+  setShowReport(false);
+};
 
 
 
@@ -348,6 +375,11 @@ useEffect(() => {
     longitude: null,
 
   });
+
+
+
+
+
 
   // PUBLIC MAP ISSUES
   // Only complaints with saved coordinates appear as map markers.
@@ -2056,18 +2088,16 @@ setIsSubmitting(true);
       setShowReport(false);
 
     } catch (error) {
+  console.error("Issue Submission Error:", error);
 
-      console.error("Issue Submission Error:", error);
-
-      alert(
-
-        "Unable to connect to the backend. Check that the server is running on https://civiceye-ai-m1cw.onrender.com."
-
-      );
-
-    }
-
-  };
+  alert(
+    "Unable to connect to the backend. Check that the server is running on https://civiceye-ai-m1cw.onrender.com."
+  );
+} finally {
+  submitLockRef.current = false;
+  setIsSubmitting(false);
+}
+};
 
 
 
@@ -2348,7 +2378,10 @@ setIsSubmitting(true);
 
 
 
-      <nav className="navbar">
+      {/* <nav className="navbar"> */}
+
+
+      <nav className={`navbar ${user ? "logged-in-navbar" : "logged-out-navbar"}`}>
 
 
 
@@ -2461,304 +2494,94 @@ setIsSubmitting(true);
 
 
 
-        <div className="nav-buttons">
-          {user && user.role !== "admin" && (
-            // <div style={{ position: "relative", display: "inline-block" }}>
-            <div
-  ref={notificationRef}
-  style={{ position: "relative", display: "inline-block" }}
->
-              <button
-                type="button"
-                className="login-btn"
-                aria-label={`Notifications, ${unreadCount} unread`}
-                onClick={() => {
-                  setShowNotifications((open) => !open);
-                  fetchNotifications();
-                }}
-              >
-                🔔{unreadCount > 0 ? ` ${unreadCount}` : ""}
-              </button>
-              {showNotifications && (
-                <div style={{ position: "absolute", right: "100px", top: "110%", width: "min(850px, 85vw)", maxHeight: "500px", overflowY: "auto", zIndex: 1000, background: "var(--card-bg, #fff)", color: "var(--text-color, #111)", border: "1px solid #ddd", borderRadius: "12px", padding: "12px", boxShadow: "0 8px 24px rgba(0,0,0,.18)" }}>
-                  <strong>Notifications</strong>
-                  {notifications.length === 0 ? (
-                    <p style={{ marginBottom: 0 }}>No notifications yet.</p>
-                  ) : notifications.map((notification) => (
-                    <button
-                      type="button"
-                      key={notification._id}
-                      onClick={() => markNotificationRead(notification._id)}
-                      style={{ display: "block", width: "100%", textAlign: "left", padding: "10px 6px", marginTop: "6px", border: 0, borderRadius: "8px", background: notification.isRead ? "transparent" : "#eaf2ff", color: "inherit", cursor: "pointer" }}
-                    >
-                      <strong>{notification.title}</strong>
-                      <div>{notification.message}</div>
-                      <small>{notification.createdAt ? new Date(notification.createdAt).toLocaleString() : ""}{notification.isRead ? " · Read" : " · Click to mark read"}</small>
-                    </button>
-                  ))}
-                </div>
-              )}
+        
+<div className="nav-buttons">
+  {user && user.role !== "admin" && (
+    <div
+      ref={notificationRef}
+      style={{ position: "relative", display: "inline-block" }}
+    >
+      <button
+        type="button"
+        className="login-btn"
+        aria-label={`Notifications, ${unreadCount} unread`}
+        onClick={() => {
+          setShowNotifications((open) => !open);
+          fetchNotifications();
+        }}
+      >
+        🔔{unreadCount > 0 ? ` ${unreadCount}` : ""}
+      </button>
+
+      {showNotifications && (
+        <div className="user-notifications-dropdown">
+          <strong className="user-notifications-heading">
+            Notifications
+          </strong>
+
+          {notifications.length === 0 ? (
+            <p className="user-notifications-empty">
+              No notifications yet.
+            </p>
+          ) : (
+            <div className="user-notifications-list">
+              {notifications.map((notification) => (
+                <button
+                  type="button"
+                  key={notification._id}
+                  onClick={() => markNotificationRead(notification._id)}
+                  className={`user-notification-card ${
+                    notification.isRead ? "is-read" : "is-unread"
+                  }`}
+                >
+                  <strong className="user-notification-title">
+                    {notification.title}
+                  </strong>
+
+                  <span className="user-notification-message">
+                    {notification.message}
+                  </span>
+
+                  <small className="user-notification-time">
+                    {notification.createdAt
+                      ? new Date(notification.createdAt).toLocaleString()
+                      : ""}
+                    {notification.isRead
+                      ? " · Read"
+                      : " · Click to mark read"}
+                  </small>
+                </button>
+              ))}
             </div>
           )}
-
-
-
-
-
-
-
-          {user ? (
-
-
-
-
-
-
-
-            <>
-
-
-
-
-
-
-
-              <span className="welcome">
-
-
-
-
-
-
-
-                Hi, {user.name}
-
-
-
-
-
-
-
-              </span>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-              <button
-
-
-
-
-
-
-
-                className="login-btn"
-
-
-
-
-
-
-
-                onClick={handleLogout}
-
-
-
-
-
-
-
-              >
-
-
-
-
-
-
-
-                Logout
-
-
-
-
-
-
-
-              </button>
-
-
-
-
-
-
-
-            </>
-
-
-
-
-
-
-
-          ) : (
-
-
-
-
-
-
-
-            <>
-
-
-
-
-
-
-
-              <button
-
-
-
-
-
-
-
-                className="login-btn"
-
-
-
-
-
-
-
-                onClick={() => setShowLogin(true)}
-
-
-
-
-
-
-
-              >
-
-
-
-
-
-
-
-                Login
-
-
-
-
-
-
-
-              </button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-              <button
-
-
-
-
-
-
-
-                className="signup-btn"
-
-
-
-
-
-
-
-                onClick={() => setShowSignup(true)}
-
-
-
-
-
-
-
-              >
-
-
-
-
-
-
-
-                Sign Up
-
-
-
-
-
-
-
-              </button>
-
-
-
-
-
-
-
-            </>
-
-
-
-
-
-
-
-          )}
-
-
-
-
-
-
-
         </div>
+      )}
+    </div>
+  )}
+
+  {user ? (
+    <>
+      <span className="welcome">Hi, {user.name}</span>
+      <button className="login-btn" onClick={handleLogout}>
+        Logout
+      </button>
+    </>
+  ) : (
+    <>
+      <button className="login-btn" onClick={() => setShowLogin(true)}>
+        Login
+      </button>
+      <button className="signup-btn" onClick={() => setShowSignup(true)}>
+        Sign Up
+      </button>
+    </>
+  )}
+</div>
 
 
 
 
-
-
-
-      </nav>
-
-
-
+   </nav>
 
 
 
@@ -7275,16 +7098,16 @@ setIsSubmitting(true);
 
 
 
-
+               disabled={isSubmitting}
               >
 
 
 
 
 
+              {isSubmitting ? "Submitting..." : "Submit Issue"}
 
-
-                Submit Issue
+                {/* Submit Issue */}
 
 
 

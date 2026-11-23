@@ -21,6 +21,12 @@ function AssistantChat({ user, isPage, onOpenPage, onClosePage }) {
 
   const messagesEndRef = useRef(null);
 
+  // NEW: Chat window reference
+  const chatWindowRef = useRef(null);
+
+  // NEW: Floating toggle button reference
+  const toggleButtonRef = useRef(null);
+
   // Prevent duplicate API requests.
   const requestInProgressRef = useRef(false);
 
@@ -32,6 +38,49 @@ function AssistantChat({ user, isPage, onOpenPage, onClosePage }) {
       behavior: "smooth",
     });
   }, [messages, loading]);
+
+  // ==========================================
+  // NEW: CLOSE CHAT ON OUTSIDE CLICK / TOUCH
+  // ==========================================
+
+  useEffect(() => {
+    // Listener only runs while chatbot is open.
+    if (!isOpen || isPage) return;
+
+    const handleOutsideClick = (event) => {
+      const target = event.target;
+
+      // Ignore clicks inside chatbot window.
+      if (chatWindowRef.current?.contains(target)) {
+        return;
+      }
+
+      // Ignore clicks on floating toggle button.
+      if (toggleButtonRef.current?.contains(target)) {
+        return;
+      }
+
+      // Click outside: close chatbot.
+      setIsOpen(false);
+    };
+
+    // Capture phase helps detect outside interactions
+    // even if another element stops event propagation.
+    document.addEventListener(
+      "pointerdown",
+      handleOutsideClick,
+      true
+    );
+
+    return () => {
+      // NEW: Remove listener when chatbot closes/unmounts.
+      document.removeEventListener(
+        "pointerdown",
+        handleOutsideClick,
+        true
+      );
+    };
+  }, [isOpen, isPage]);
 
   // ==========================================
   // SEND MESSAGE
@@ -181,15 +230,21 @@ function AssistantChat({ user, isPage, onOpenPage, onClosePage }) {
       {!isPage && (
         <>
           <button
+            // NEW: Toggle button ref
+            ref={toggleButtonRef}
             className="civic-ai-float"
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setIsOpen((previous) => !previous)}
             aria-label="Open CivicEye AI Assistant"
           >
             {isOpen ? "×" : "🤖"}
           </button>
 
           {isOpen && (
-            <div className="civic-ai-window">
+            <div
+              // NEW: Chat window ref
+              ref={chatWindowRef}
+              className="civic-ai-window"
+            >
               <div className="civic-ai-header">
                 <div className="civic-ai-heading">
                   <div className="civic-ai-avatar">🤖</div>
