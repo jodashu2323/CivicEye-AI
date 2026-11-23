@@ -10358,22 +10358,7 @@ div:has(> .modal-icon) .switch button {
     white-space: nowrap !important;
   }
 
-  /* SECOND ROW - NAVIGATION LINKS */
-  .navbar .nav-links {
-    order: 3 !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    width: 100% !important;
-    flex: 0 0 100% !important;
-    margin: 0 !important;
-  }
-}
-
-
-/* MOBILE NAVBAR - SECOND ROW SPACING FIX */
+  /* MOBILE NAVBAR - SECOND ROW SPACING FIX */
 
 @media screen and (max-width: 768px) {
 
@@ -10388,25 +10373,27 @@ div:has(> .modal-icon) .switch button {
     width: 100% !important;
     flex: 0 0 100% !important;
 
-    padding: 0 16px !important;
+    padding: 0 !important;      /* navbar ka apna padding already hai to yahan 0 */
     margin: 0 !important;
-    gap: 8px !important;
+    gap: 6px !important;
     box-sizing: border-box !important;
+    overflow: visible !important;
   }
 
   .navbar .nav-links a {
-    flex: 0 1 auto !important;
-    min-width: 0 !important;
+    flex: 0 0 auto !important;
+    padding: 8px 0 !important;  /* links ka left/right padding hatao */
+    margin: 0 !important;
     white-space: nowrap !important;
-    font-size: inherit;
+    font-size: 15px !important;
   }
 
   .navbar .nav-links .assistant-nav-btn {
     flex: 0 0 auto !important;
-    white-space: nowrap !important;
     padding: 8px 12px !important;
-    font-size: 12px !important;
     margin: 0 !important;
+    font-size: 14px !important;
+    white-space: nowrap !important;
   }
 }
-
+}
